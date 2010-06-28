@@ -11,7 +11,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
-\title{Calculo de descensos en un campo de bombeo con 2 bombas de agua}
+\title{Calculo de descensos en un campo de bombeo en medios porosos}
 \author{Christian N. Pfarher, Juan Pablo Garbarino, Marina Castro\\
 \textit{Trabajo práctico final de ``Métodos numéricos y simulación'', II-FICH-UNL.}}
 \markboth{Método numérico y simulación: TRABAJO FINAL}{}
@@ -30,12 +30,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introducción}
-medios porosos
+En el presente trabajo, se presentan los resultados de la simulación de un campo de bombeo en medios porosos. El campo
+consta de 2 pozos de bombeo de agua que funcionan por 15 horas seguidas. 
+
+Para la realización del trabajo se utilizó el software de pre y pos proceso GiD \footnote{http://gid.cimne.upc.es/}. Mediante el mismo, se utilizó el \emph{módulo de pre-proceso} para la carga de los datos del problema, mientras que para
+la simulación se utilizó Tdyn \footnote{es un entorno tridimensional de análisis fluidodinámico (CFD) y multifísica basado en el método de los elementos finitos estabilizado}(\emph{módulo de post-proceso}).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Objetivos}
-que queremos hacer....
+El objetivo de este trabajo, consiste en la simulación de lineas de corrientes y equipotenciales en un campo de bombeo (medio poroso) con 2 bombas de extracción de agua en un acuífero libre (no confinado), homogéneo e isótropo.
 \begin{figure}[tbhp]
 \centerline{\includegraphics[scale=0.75]{img/estadistica_noche_iguales}}
 \caption{Influencia de las constantes de penalización $\gamma$.}
@@ -47,12 +51,12 @@ que queremos hacer....
 \section{Base Teórica}
 básicamente es la ecuación de poisson con k
 representado la permeabilidad.
-\subsection{modelo matemático o fisico.. ver}
+\subsection{Modelo matemático o fisico.. ver}
 describir mod mate.
  son las ecuaciones matemáticas, en nuestro caso las
 ecuaciones de navier stokes
 %
-\subsection{modelo numérico}
+\subsection{Modelo numérico}
 describir mod num.
 tdyn resuelve en el espacio por el método de
 elementos finitos y temporalmente hay que fijarse que opción está
