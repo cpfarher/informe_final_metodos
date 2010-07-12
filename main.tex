@@ -171,7 +171,8 @@ En la pestaña ransol de la ventana de materiales de fluidos para el material su
 \item Densidad: $999.7~Kg/m^3$ (agua a $10° C$) \footnote{ según datos obtenidos de Tabla-libro ...}
 \item Viscosidad: $0.001307~Pa.s$ (agua a $10° C$)\footnote{ según datos obtenidos de Tabla-libro ...}
 \item Resistencia de la Ley de Darcy:
-quizas explicar que corno y como se haya este coeficiente de 0.0000017
+quizas explicar que corno y como se haya este coeficiente de 0.0000017 y que representa la ley de darcy.. porosidad del suelo...\\
+silvina: Ley de resistencia de darcy: es la ley que habla de la velocidad que tiene el agua para moverse dentro del medio poroso. Hay 6 valores porque este coef puede ser homogeneo en todo el suelo, esto se llama suelo isotropico, es el que tiene el mismo coef de trasmisividad en todos los sentidos: x,y,z. Cuando el suelo tiene distinto coef se usa toda la matriz que es lo real y lo normal. A los fines del cálculo lo usamos como isotropico, entonces solo completamos la diag principal y con el mismo valor (hay que ver el tema de la unidad, porque esta distinta a los datos). 
 \begin{equation}
 \begin{pmatrix}{}
 0.0000017 & 0.0 & 0.0 \\ 
@@ -182,9 +183,26 @@ quizas explicar que corno y como se haya este coeficiente de 0.0000017
 \end{equation}
 Debido a que se está en presencia de un acuífero isótropo, en (\ref{matrizdarcys}) se puede observar que sólo la diagonal principal de la matriz tiene valores diferentes de cero.
 \end{itemize}
-Características de Fluido: Flujo laminar, se comporta como viscoso por
-la velocidad lenta.
+En la figura \ref{datos_materiales_suelo_vista} se puede observar la asignación del material definido a la parte del dominio correspondiente.
+
+\begin{figure}[tbhp]
+\centerline{\includegraphics[scale=0.75]{img/datos_materiales_suelo_vista}}
+\caption{Material Suelo asignado a la geometría}
+\label{datos_materiales_suelo_vista}
+\end{figure}
+
+Características de Fluido: Flujo laminar, se comporta como viscoso por la velocidad lenta. \begin{LARGE}
+que onda esto????
+\end{LARGE} 
 %
+\subsubsection{Material Wall o Pared}
+En la ventana de contornos fluidos se asigno a las paredes de ambos pozos el contorno definido por defecto Wall. El tipo de contorno seleccionado fue el \emph{V fixWall} con el ángulo por defecto de $60°$. De esta manera se creo la condición para hacer notar que no había penetración de agua en dicha superficie. En la figura \ref{datos_contornos_fluidos_vista} se puede observar el material asignado a ambos pozos.
+\begin{figure}[tbhp]
+\centerline{\includegraphics[scale=0.75]{img/datos_contornos_fluidos_vista}}
+\caption{Material Wall o Pared asignado a la geometría}
+\label{datos_contornos_fluidos_vista}
+\end{figure}
+
 %
 \subsection{Condiciones de borde}
 Condiciones de contorno: sacarlas del proyecto, enumerarlas y decir
@@ -199,11 +217,10 @@ esta desbirtuado por el tema de la lluvai porque la magnitud esta en otro sentid
 **************************************************************************************************
 En los softwares específicos de hidrogeología, fijate que aca tenes el esquema de calculo que es una malla muy guresa en dos dimensiones, que te va a dar isocurvas de niveles. Se va a ver como esto va bombeando y ese nivel de agua cerca de la bomba va ir deprimiendose formando el cono de desenso. Eso, asi de esa forma aca no lo vamos a poder hacer, porque para poder hacer eso en 3D (en 2D si se puede) tenes que tener un soft que distinga entre suelo no saturado y suelo saturado. En el suelo saturado las ecs de gobierno son distintas a las del no saturado. El soft que tenemos solamente tiene las ecs de gob del suelo saturado, el no saturado tiene un modelo mucho mas complejo, en realidad estos modelos son bidimensionales porque no calculan el flujo en suelo saturado, lo que calculan seria la curva, la interfaz, seria la sup que los separa, nada mas, sería la ubicación de esa sup que distingue zona saturada de la no saturada. que tiene ecuaciones simples, pero no calcula detalles del flujo, este modelo calcula el flujo en suelo saturado. 
 
-Vamos a considerar que nuestro estrato de suelo solo es el que esta lleno de agua (saturado), y como no vamos a tener una superficie que a medida que la bomba vaya chupando se vaya deprimiendo... Vamos a tener lineas equipotenciales que son las lineas perpendiculares a las lineas del flujo y unen lineas de igual potencial hidraulico. Serian valores de presión que ejerce el agua sobre el suelo. Esas líneas equipotenciales van a ser equivalentes en interpretacion a las lineas de superficie que se calculan tradicionalmente en hidrologia. No podemos dibujar las superficies pero si las equipotenciales.
+Se coincidiera que se esta en presencia de un estrato de suleo saturado (esto es saturado de agua). 
+Vamos a tener lineas equipotenciales (unen lineas de igual potencial hidráulico) las cuales son perpendiculares a las lineas del flujo y serian valores de presión que ejerce el agua sobre el suelo. Esas líneas equipotenciales van a ser equivalentes en interpretacion a las lineas de superficie que se calculan tradicionalmente en hidrologia.
 
-coef de trasmisividad: cuanto mas chiquito es mas lento se mueve el agua en el suelo.
-
-ley de resistencia de darcy: es la ley que habla de la velocidad que tiene el agua para moverse dentro del medio poroso. Hay 6 valores porque este coef puede ser homogeneo en todo el suelo, esto se llama suelo isotropico, es el que tiene el mismo coef de trasmisividad en todos los sentidos: x,y,z. Cuando el suelo tiene distinto coef se usa toda la matriz que es lo real y lo normal. A los fines del cálculo lo usamos como isotropico, entonces solo completamos la diag principal y con el mismo valor (hay que ver el tema de la unidad, porque esta distinta a los datos). 
+Coef de trasmisividad: cuanto mas chiquito es mas lento se mueve el agua en el suelo.
 
 Tenes las propiedades del suelo, que serian equivalentes a los parametros del modelo, los parametros de las ecuaciones de gobierno; Y las condiciones de borde serían los valores de contorno, de arranque (son particulares del problema).
 
