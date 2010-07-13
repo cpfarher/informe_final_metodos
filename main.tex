@@ -52,7 +52,25 @@ El objetivo de este trabajo, consiste en la simulación de lineas de corrientes 
 básicamente es la ecuación de poisson con k
 representado la permeabilidad.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Modelo matemático o fisico.. ver}
+\subsection{Modelo matemático}
+Para la resolución del problema utilizamos \emph{Tdyn}, el cual está basado en la solución numérica de las ecuaciones de \emph{Navier-Stokes} empleando el \emph{FEM}.
+\emph{Tdyn} resuelve las ecuaciones de Navier-Stokes en tres dimensiones para un fluido incompresible o ligeramente compresible de un dominio $\Omega$ dado y un intervalo de tiempo $(0,t):$
+\begin{eqnarray}
+\rho \left(\frac{\partial u}{\partial t}+\left( u \bullet  \nabla \right)u \right)+ \nabla p - \nabla \bullet(\mu \nabla u) &=& \rho f~ \mbox{ en  }\Omega \times (0,t)\\
+\nabla \bullet u&=&0 ~ \mbox{ en  } \Omega \times (0,t)
+\end{eqnarray}
+donde $u = u(x,t)$ denota el vector velocidad, $p=p(x,t)$ el campo de presiones, $\rho$ la densidad (constante), $\mu$ la viscosidad dinámica del fluido y la $f$ la aceleración volumétrica.\\
+Las ecuaciones de arriba necesitan ser combinadas con las siguientes condiciones de borde:
+\begin{eqnarray}
+u &=& u_c \mbox{ en  } \Gamma_D \times (0,t);\\
+p &=& p_c \mbox{ en  } \Gamma_P \times (0,t);\\
+n \cdot \sigma \cdot g_1=0 \mbox{, } n \cdot \sigma \cdot g_2=0~ \mbox{, } n \cdot u&=&u_M \mbox{ en  } \Gamma_M \times (0,t);\\
+u(x,0)&=&u_0(x) \mbox{ en  } \Omega_D \times \lbrace 0 \rbrace ;\\
+p(x,0)&=&p_0(x) \mbox{ en  } \Omega_D \times \lbrace 0 \rbrace ;
+\end{eqnarray}
+En las ecuaciones de arriba, $\Gamma = \partial \Omega$ denota la forntera del dominio $\Omega$, siendo $n$ el vector normal unitario y $g_1$, $g_2$ los vectores tangentes de la frontera $\partial \Omega$, $u_c$ es el campo de velocidad sobre $\Gamma_D$, $p_c$ la presión sobre $\Gamma_P$, $\sigma$ es el campo de tensiones, $u_M$ el valor de la velocidad normal y $u_0$, $p_0$ los campos de velocidad y presión iniciales. La unión de $\Gamma_D$, $\Gamma_P$ y $\Gamma_M$ debe ser $\Gamma$; la intersección entre ellos es el conjunto vacío, ya que un punto de la frontera puede ser parte de un único tipo de superficie, a menos que forme parte del borde entre dos de ellas.
+
+La discretización espacial de las ecuaciones de \emph{Navier - Stokes} puede ser realizada mediante el método de elementos finitos, mientras que para la discretización en el tiempo debe considerarse un algoritmo iterativo tal como el \emph{Método de pasos fraccionarios (Fractional Step Method) de dos pasos (implícito)}.\\
 describir mod mate.
  son las ecuaciones matemáticas, en nuestro caso las
 ecuaciones de navier stokes\\
@@ -161,7 +179,7 @@ A partir de los datos del problema se tuvieron que realizar conversiones de unid
 \subsubsection{Material Suelo}
 En la pestaña ransol de la ventana de materiales de fluidos para el material suelo de  se introdujeron los siguientes valores:
 \begin{itemize}
-\item Modelo de Fluido: incompresible
+\item Modelo de Fluido: flujo incompresible (la densidad del fluido permanece constante con el tiempo $\rho = cte.$)
 \item Densidad: $999.7~Kg/m^3$ (agua a $10° C$) \footnote{ según datos obtenidos de Tabla-libro ...}
 \item Viscosidad: $0.001307~Pa.s$ (agua a $10° C$)\footnote{ según datos obtenidos de Tabla-libro ...}
 \item Resistencia de la Ley de Darcy:
@@ -252,6 +270,7 @@ En la figura \ref{datos_condiciones_ransol_presion} se puede observar que se fij
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection*{Campo de Velocidad}
+aclarar aca
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Mallado}
 Para el mallado, se asignaron diferentes tamaños a las superficies debido a que se deseó obtener un mayor detalle en las cercanías de ambos pozos. Para ello se subdividió el dominio como se muestra en las figuras \ref{cotas_superiores_generalesXY} y \ref{cotas_superiores_detallesXY}, luego se aplicó una malla no estructurada de diferentes tamaños para las diferentes entidades como se puede ver en las figuras \ref{tam_malla_xy} y \ref{tam_malla_pozo_interior}. Además, en las preferencias de mallado de Gid, \emph{(Utilidades -> preferencias -> pestaña malla)}, se fijó la transición de tamaños no estructurados a $0.4$.
