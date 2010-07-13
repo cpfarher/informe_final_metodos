@@ -196,7 +196,7 @@ que onda esto????
 \end{LARGE} 
 %
 \subsubsection{Material Wall o Pared}
-En la ventana de contornos fluidos se asigno a las paredes de ambos pozos el contorno definido por defecto Wall. El tipo de contorno seleccionado fue el \emph{V fixWall} con el ángulo por defecto de $60°$. De esta manera se creo la condición para hacer notar que no había penetración de agua en dicha superficie. En la figura \ref{datos_contornos_fluidos_vista} se puede observar el material asignado a ambos pozos.
+En la ventana de contornos fluidos se asigno a las paredes de ambos pozos el contorno definido por defecto Wall. El tipo de contorno seleccionado fue el \emph{V fixWall} con el ángulo por defecto de $60°$. Este es el modelo elegido en Tdyn para simular el comportamiento del flujo en las paredes del dominio. Básicamente, impone que la velocidad en las superficies asignadas será nula, "simulando" así la pared del pozo por la que no existe penegración de agua. En la figura \ref{datos_contornos_fluidos_vista} se puede observar el material asignado a ambos pozos.
 \begin{figure}[tbhp]
 \centerline{\includegraphics[scale=0.75]{img/datos_contornos_fluidos_vista}}
 \caption{Material Wall o Pared asignado a la geometría}
@@ -206,9 +206,40 @@ En la ventana de contornos fluidos se asigno a las paredes de ambos pozos el con
 %
 \subsection{Condiciones de borde}
 Para fijar las condiciones de borde, se procedió mediante el menú datos -> condiciones -> ransol. Luego se selecciono la opción de asignación de propiedades a superficies y se procedió a fijar las diferentes condiciones:
+\begin{figure}[tbhp]
+\centerline{\includegraphics[scale=0.75]{img/datos_condiciones_ransol_fijar_velocidadinterno_leyendas}}
+\caption{Velocidades Fijas}
+\label{datos_condiciones_ransol_fijar_velocidadinterno_leyendas}
+\end{figure}
 \subsubsection*{Fijar Velocidad}
-
+Como se puede ver en la figura \ref{datos_condiciones_ransol_fijar_velocidadinterno_leyendas} las condiciones asignadas a cada una de las superficies enumeradas son las siguientes:
+\begin{enumerate}
+\item Superficie 1 y 2:
+\begin{eqnarray*}
+Fija~V_x&=&0.0000017~[m/s]\\
+Fija~V_y&=&0.0~[m/s]\\
+Fija~V_z&=&0.0~[m/s]\\
+\end{eqnarray*}
+\item Superficie 3 y 4:\begin{eqnarray*}
+V_x&=&0.0000017~[m/s]\\
+V_y&=&0.0~[m/s]\\
+Fija~V_z&=&0.0~[m/s]
+\end{eqnarray*}
+\item Superficie 5:
+\begin{eqnarray*}
+V_x&=&0.0000017~[m/s]\\
+Fija~V_y&=&0.0~[m/s]\\
+V_z&=&0.0~[m/s]
+\end{eqnarray*}
+\end{enumerate}
 \subsubsection*{Fijar Presión}
+En la figura \ref{datos_condiciones_ransol_presion} se puede observar que se fijó un valor de referencia para la presión en la superficie del extremo final de salida del campo con valor igual a $0.0~Pa$. Esto significa que los resultados que obtendremos para la presión serán relativos a esta condición.
+
+\begin{figure}[tbhp]
+\centerline{\includegraphics[scale=0.75]{img/datos_condiciones_ransol_presion}}
+\caption{Condición fija de presión}
+\label{datos_condiciones_ransol_presion}
+\end{figure}
 
 \subsubsection*{Campo de Velocidad}
 
@@ -216,7 +247,6 @@ Para fijar las condiciones de borde, se procedió mediante el menú datos -> con
 que deslice en x y y..(fijamos z).
 el flujo puede ir volver avanzar y retroceder pero no puede subir y bajar. El value field esta en 0 porque lo calcula el codigo.. al no fijarlo el codigo lo calcula
 el moviemiento va a ser adentro del dominio. se lo asigno  a la superficie de arriba
-esta desbirtuado por el tema de la lluvai porque la magnitud esta en otro sentido....
 **************************************************************************************************
 En los softwares específicos de hidrogeología, fijate que aca tenes el esquema de calculo que es una malla muy guresa en dos dimensiones, que te va a dar isocurvas de niveles. Se va a ver como esto va bombeando y ese nivel de agua cerca de la bomba va ir deprimiendose formando el cono de desenso. Eso, asi de esa forma aca no lo vamos a poder hacer, porque para poder hacer eso en 3D (en 2D si se puede) tenes que tener un soft que distinga entre suelo no saturado y suelo saturado. En el suelo saturado las ecs de gobierno son distintas a las del no saturado. El soft que tenemos solamente tiene las ecs de gob del suelo saturado, el no saturado tiene un modelo mucho mas complejo, en realidad estos modelos son bidimensionales porque no calculan el flujo en suelo saturado, lo que calculan seria la curva, la interfaz, seria la sup que los separa, nada mas, sería la ubicación de esa sup que distingue zona saturada de la no saturada. que tiene ecuaciones simples, pero no calcula detalles del flujo, este modelo calcula el flujo en suelo saturado. 
 
@@ -281,20 +311,6 @@ poner X=0.0000017 y Y=0 y Z=0
 a las de los costados fijo solamente Y=0
 y la de salida le ponemos una condicion de presion porque el modelo la presion la calcula por incremento. le damos un valor de referencia para que calcule la presion. fix pressure =0.
 
-velocity field -> te referencia el general)
-	
-	parametros de calculo:
-	
-	problem data: analisis fijamos el paso de tiempo y delta t
-	
-	.cnd condicinoes
-	
-	.g geometria
-	
-	.mat materiales
-	
-	problem: variables del tiempo
-	
 **************************************************************************************************
 %
 \subsection{Mallado}
