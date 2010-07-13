@@ -205,11 +205,14 @@ En la ventana de contornos fluidos se asigno a las paredes de ambos pozos el con
 
 %
 \subsection{Condiciones de borde}
-Condiciones de contorno: sacarlas del proyecto, enumerarlas y decir
-que representa cada condición en nuestro problema. Recordar que
-tenemos una condición que es la que calcula la función.
+Para fijar las condiciones de borde, se procedió mediante el menú datos -> condiciones -> ransol. Luego se selecciono la opción de asignación de propiedades a superficies y se procedió a fijar las diferentes condiciones:
+\subsubsection*{Fijar Velocidad}
 
-(velocidad de campo) Libre x,libre y,  (lo muestra al reves). Porque incorporo componentes los valores estan incoroprados en data.
+\subsubsection*{Fijar Presión}
+
+\subsubsection*{Campo de Velocidad}
+
+(velocidad de campo) Libre x,libre y. Porque incorporo componentes los valores estan incoroprados en data.
 que deslice en x y y..(fijamos z).
 el flujo puede ir volver avanzar y retroceder pero no puede subir y bajar. El value field esta en 0 porque lo calcula el codigo.. al no fijarlo el codigo lo calcula
 el moviemiento va a ser adentro del dominio. se lo asigno  a la superficie de arriba
@@ -295,6 +298,8 @@ velocity field -> te referencia el general)
 **************************************************************************************************
 %
 \subsection{Mallado}
+Para el mallado, se asignaron diferentes tamaños a las superficies debido a que se deseó obtener un mayor detalle en las cercanías de ambos pozos. Para ello se subdividió el dominio como se muestra en las figuras \ref{cotas_superiores_generalesXY} y \ref{cotas_superiores_detallesXY}, luego se aplicó una malla no estructurada de diferentes tamaños para las diferentes entidades como se puede ver en las figuras \ref{tam_malla_xy} y \ref{tam_malla_pozo_interior}. Además, en las preferencias de mallado de Gid, \emph{(Utilidades -> preferencias -> pestaña malla)}, se fijó la transición de tamaños no estructurados a $0.4$.
+A continuación, se presentan los tipos y cantidades de elementos con los que esta conformado la geometría:
 \begin{itemize}
 \item Número de nodos: 118551
 \item Número de tetraedros: 651913. En la Fig. \ref{calidadtetraedros} se puede observar la calidad del mallado.
@@ -303,13 +308,13 @@ velocity field -> te referencia el general)
 \end{itemize}
 
 \begin{figure}[tbhp]
-\centerline{\includegraphics[scale=0.75]{img/cant_tetraedros}}
+\centerline{\includegraphics[scale=0.60]{img/cant_tetraedros}}
 \caption{Calidad de la Malla - Tetraedros}
 \label{calidadtetraedros}
 \end{figure}
 
 \begin{figure}[tbhp]
-\centerline{\includegraphics[scale=0.75]{img/cant_triangulos}}
+\centerline{\includegraphics[scale=0.60]{img/cant_triangulos}}
 \caption{Calida de la Malla - Triángulos}
 \label{calidadtriangulos}
 \end{figure}
@@ -319,7 +324,30 @@ velocity field -> te referencia el general)
 \caption{Vista en el plano XY de la malla}
 \label{contorno_malla_xy}
 \end{figure}
-%contorno_malla_yz
+
+%\begin{figure}[tbhp]
+%\centerline{\includegraphics[scale=0.50]{img/contorno_malla_yz}}
+%\caption{Vista en el plano YZ de la malla}
+%\label{contorno_malla_yz}
+%\end{figure}
+
+\begin{figure}[tbhp]
+\centerline{\includegraphics[scale=0.50]{img/contorno_malla_yz1}}
+\caption{Vista en el plano YZ de la malla}
+\label{contorno_malla_yz1}
+\end{figure}
+
+\begin{figure}[tbhp]
+\centerline{\includegraphics[scale=0.50]{img/tam_malla_xy}}
+\caption{Tamaños de elementos de la malla - Vista en el plano XY}
+\label{tam_malla_xy}
+\end{figure}
+
+\begin{figure}[tbhp]
+\centerline{\includegraphics[scale=0.50]{img/tam_malla_pozo_interior}}
+\caption{Tamaños de elementos de la malla - Corte transversal}
+\label{tam_malla_pozo_interior}
+\end{figure}
 %
 \subsection{Condiciones temporales}
 describir como oelegimos en
