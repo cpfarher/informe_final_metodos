@@ -6,6 +6,7 @@
 \usepackage{geometry}
 \usepackage{anysize} % Soporte para el comando \marginsize
 \usepackage{graphicx}
+\usepackage{listings}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage[spanish]{babel}
@@ -34,11 +35,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introducción}
-En el presente trabajo, se presentan los resultados de la simulación de un campo de bombeo en medios porosos. El campo
-consta de 2 pozos de bombeo de agua que funcionan por 15 horas seguidas. 
+El flujo subterráneo de agua es un componente importante de todos los sistemas hidráulicos. Tiene un papel central en el presupuesto de agua para uso doméstico, industrial y en agricultura. La administración del recurso implica tomar decisiones sobre donde perforar para extraer o inyectar y sobre las estrategias de control. También implica decisiones sobre la calidad del agua producida, lo que a su vez se relaciona con la disponibilidad del recurso.
+Las reservas de agua subterránea como las napas y los acuíferos están formadas por la infiltración natural de agua de lluvia. Proveen el líquido a casas e industrias, a través de perforaciones individuales o de la explotación a gran escala por parte de empresas de servicios públicos.
+Vamos a centrar nuestra atención en los acuíferos. Un acuífero es una formación geológica subterránea capaz de almacenar y rendir agua. El acuífero ocupa un dominio constituido por un medio poroso: tierra, arena, basaltos, granitos –usualmente fisurados– son todos ejemplos de medios porosos, que exhiben en común el estar constituidos por una matriz sólida y poros. Las condiciones geológicas e hidrológicas determinan su tipo y funcionamiento. Hay dos tipos de acuíferos: los confinados y los no confinados. En el acuífero confinado, el agua está atrapada entre las capas impermeables de la roca o entre grietas de la formación rocosa. Dicha agua podría encontrarse almacenada a presión. Si perforamos, el nivel de agua asciende hasta situarse en una determinada posición que coincide con el nivel de saturación del acuífero en el área de recarga.
+Si la topografía es tal que la boca del pozo está por debajo del nivel del agua, el pozo es
+surgente o artesiano; si no es así el nivel del agua ascenderá hasta el nivel correspondiente, pero no será surgente. El agua está sometida a una presión superior a la atmosférica y ocupa totalmente los poros o huecos de la formación geológica, saturándola totalmente. No existe zona no saturada. 
+En un acuífero no confinado, en cambio, el agua no está almacenada a presión por no estar encapsulada en la roca. Si se hiciera un pozo en él, el agua se tendría que bombear a la superficie.
+En el presente trabajo, se presentan los resultados de la simulación de un campo de bombeo en medios porosos en un acuífero
 
-Para la realización del trabajo se utilizó el software de pre y pos proceso GiD \footnote{http://gid.cimne.upc.es/}. Mediante el mismo, se utilizó el \emph{módulo de pre-proceso} para la carga de los datos del problema, mientras que para
-la simulación se utilizó Tdyn \footnote{es un entorno tridimensional de análisis fluidodinámico (CFD) y multifísica basado en el método de los elementos finitos estabilizado}(\emph{módulo de post-proceso}).
+\begin{LARGE} ver si el acuifero es libreo o confinado!!!!!!!!! \end{LARGE}
+
+
+. El campo consta de dos pozos de bombeo de agua que funcionan un cierto período de tiempo extrayendo un caudal de agua.
+Para la realización del trabajo se utilizó el software de pre y pos proceso GiD \footnote{http://gid.cimne.upc.es/}. Mediante el mismo, se utilizó el \emph{módulo de pre-proceso} para la carga de los datos del problema, mientras que para la simulación se utilizó Tdyn \footnote{es un entorno tridimensional de análisis fluidodinámico (CFD) y multifísica basado en el método de los elementos finitos estabilizado}(\emph{módulo de post-proceso}).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -49,8 +58,6 @@ El objetivo de este trabajo, consiste en la simulación de lineas de corrientes 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Base Teórica}
-básicamente es la ecuación de poisson con k
-representado la permeabilidad.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Modelo matemático}
 Para la resolución del problema utilizamos \emph{Tdyn}, el cual está basado en la solución numérica de las ecuaciones de \emph{Navier-Stokes} empleando el \emph{FEM}.
@@ -70,20 +77,9 @@ p(x,0)&=&p_0(x) \mbox{ en  } \Omega_D \times \lbrace 0 \rbrace ;
 \end{eqnarray}
 En las ecuaciones de arriba, $\Gamma = \partial \Omega$ denota la forntera del dominio $\Omega$, siendo $n$ el vector normal unitario y $g_1$, $g_2$ los vectores tangentes de la frontera $\partial \Omega$, $u_c$ es el campo de velocidad sobre $\Gamma_D$, $p_c$ la presión sobre $\Gamma_P$, $\sigma$ es el campo de tensiones, $u_M$ el valor de la velocidad normal y $u_0$, $p_0$ los campos de velocidad y presión iniciales. La unión de $\Gamma_D$, $\Gamma_P$ y $\Gamma_M$ debe ser $\Gamma$; la intersección entre ellos es el conjunto vacío, ya que un punto de la frontera puede ser parte de un único tipo de superficie, a menos que forme parte del borde entre dos de ellas.
 
-La discretización espacial de las ecuaciones de \emph{Navier - Stokes} puede ser realizada mediante el método de elementos finitos, mientras que para la discretización en el tiempo debe considerarse un algoritmo iterativo tal como el \emph{Método de pasos fraccionarios (Fractional Step Method) de dos pasos (implícito)}.\\
-describir mod mate.
- son las ecuaciones matemáticas, en nuestro caso las
-ecuaciones de navier stokes\\
-paredes de los costados:
-	el flujo se deberia poder mover libremente... de las ecuaciones de navier stoke	(tiene como variable la velocidad (vector) y la presion (escalar)).
+La discretización espacial de las ecuaciones de \emph{Navier - Stokes} es realizada mediante el método de elementos finitos, mientras que para la discretización en el tiempo debe considerarse un algoritmo iterativo tal como el \emph{Método de pasos fraccionarios (Fractional Step Method) de dos pasos (implícito)}.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Modelo numérico}
-describir mod num.
-tdyn resuelve en el espacio por el método de
-elementos finitos y 
-temporalmente hay que fijarse que opción está
-tildada. *************************************************ver*******************************************
+También hay que aclarar que no se utiliza un modelo te turbulencia (como lo es el de Smagorinsky) ya que se está en presencia de un flujo lento.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -94,25 +90,28 @@ Los datos que se pudieron obtener del problema son:
 \begin{itemize}
 	\item Discretización del área a modelar:	
 	\begin{itemize}
-		\item Dominio: $x=1000 ~m.$, $y=1000 ~m.$
+		\item Dominio: $x=1000 ~\left[m\right]$, $y=1000 ~\left[m\right]$
 		\item Acuífero libre, homogéneo e isótropo $(K_x = K_y = K_z)$
-		\item Espesor del acuífero: $20 ~m.$*
+		\item Espesor del acuífero: $20 ~\left[m\right]$*
 	\end{itemize}
 	%
 	\item Ubicación de los Pozos de bombeo:
 	\begin{itemize}
-		\item Pozo Bombeo 1: $x=150~m.$, $y=650 ~m.$
-		\item Pozo Bombeo 2: $x=750~m.$, $y=250 ~m.$
+		\item Pozo Bombeo 1: $x=150~~\left[m\right]$, $y=650 ~~\left[m\right]$
+		\item Pozo Bombeo 2: $x=750~~\left[m\right]$, $y=250 ~~\left[m\right]$
 	\end{itemize}
 	%
 	\item Caudal de bombeo:
 	\begin{itemize}
-		\item Pozo Bombeo 1: $60~m³/h$
-		\item Pozo Bombeo 2: $40~m³/h$
+		\item Pozo Bombeo 1: $60~\left[\frac{m³}{h}\right]$
+		\item Pozo Bombeo 2: $40~\left[\frac{m³}{h}\right]$
 		%\item[] Ambos posos trabajan 15 horas por día
 	\end{itemize}
-	\item Filtro: Tramo filtrante de $15~m.$ de longitud*
-	\item Transmisividad: $600~m²/d$\\
+	\begin{itemize}
+		\item Diámetro del pozo: $0.5 [m]$* \begin{Large} esto no era dato! pero los calculso lo hicimos con este valor \end{Large}
+	\end{itemize}
+	\item Filtro: Tramo filtrante de longitud $15~m.$*
+	\item Transmisividad: $600~\left[\frac{m^2}{d}\right]$\\
 \begin{LARGE}
 Coef de trasmisividad: cuanto mas chiquito es mas lento se mueve el agua en el suelo.ver!! \\
 \end{LARGE}	
@@ -122,10 +121,42 @@ Coef de trasmisividad: cuanto mas chiquito es mas lento se mueve el agua en el s
 	\item Porosidad efectiva: $5*10⁻²$
 \end{itemize}
 * Debido a problemas que se explican en el desarrollo del presente trabajo hay que aclarar que tanto el tramo filtrante como el espesor del acuífero se aumentó en un factor de 10, es decir los valores finales fueron de $150 m.$ y $200 m.$ respectivamente.\\
+En tanto que el diámetro de los pozos se amplificó por un factor de 40. \begin{LARGE}
+ver esto!!! 0.5m diametro original -> 0.5m*40 = 20 m que es lo que esta en la geometria
+\end{LARGE}\\
 También hay que aclarar que nos encontramos en presencia de suelo saturado, esto es.....ver!\\
-Caudal= velocidad por area ---ver aca lo de las velocidades para que de... Q=velocidad/area\\
-el diametro que le pusimos  a los posos fue de 0.5m...---esto posta...
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Cálculo de la velocidad de extracción de agua a partir del caudal}
+Se procedió a convertir las unidades de los datos del problema (Caudal de extracción de los pozos a velocidad) para poder ingresarlas en el software de simulación.
+En dinámica de fluidos, \emph{caudal} es la cantidad de fluido que avanza en una unidad de tiempo. Se denomina también ``Caudal volumétrico" o ``Indice de flujo fluido". El cálculo del caudal de agua viene expresado por:
+\begin{equation}
+Q=V \cdot S
+\label{caudal}
+\end{equation}
+donde en la ecuación (\ref{caudal}) $Q$ es el caudal, $V$ es la velocidad y $S$ es la sección de la tubería
+%
+\begin{itemize}
+\item Pozo de Bombeo 1: a partir de la ec. (\ref{caudal}) y dado que se conoce el caudal del pozo de bombeo 1 $Q_1=60 \left[\frac{m³}{h} \right]$ se puede calcular la velocidad de extracción $V_1$ como:\\
+\begin{eqnarray*}
+Q_1&=&V_1 \cdot S_1 \\
+Q_1/S_1&=&V_1 \\
+\frac{60 \left[\frac{m^3}{h}\right]}{\pi \cdot r^2} &=&V_1~~\textrm{donde $r$ es el radio de la tubería}\\
+\mbox {dado que $r=0.25 \left[m\right]$ y reemplazando}\\
+\frac{1 \left[h\right]}{3600 \left[s\right]}\cdot\frac{60 \left[\frac{m^3}{h}\right]}{\pi \cdot 0.25^2 [m^2]}&=&V_1 \\
+0.084883 \left[\frac{m}{s}\right]& = & V_1\\
+0.085 \left[\frac{m}{s}\right]&\approx& V_1\\
+\end{eqnarray*}
+\item Pozo de Bombeo 2: procediendo de la misma manera escrita arriba y con el caudal del pozo de bombeo 2 $Q_2=40 \left[\frac{m³}{h} \right]$ se puede calcular la velocidad de extracción $V_2$ como:\\
+\begin{eqnarray*}
+Q_2&=&V_2 \cdot S_2 \\
+Q_2/S_2&=&V_2 \\
+\frac{40 \left[\frac{m^3}{h}\right]}{\pi \cdot r^2} &=&V_1~~\textrm{donde $r$ es el radio de la tubería}\\
+\mbox {dado que $r=0.25 \left[m\right]$ y reemplazando}\\
+\frac{1 \left[h\right]}{3600 \left[s\right]}\cdot\frac{40 \left[\frac{m^3}{h}\right]}{\pi \cdot 0.25^2 [m^2]}&=&V_2 \\
+0.056588 \left[\frac{m}{s}\right]& = & V_2\\
+0.057 \left[\frac{m}{s}\right]&\approx& V_2\\
+\end{eqnarray*}
+\end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Definición de Geometría}
 Para la geometría en tres dimensiones se tiene los siguientes datos:
@@ -270,7 +301,57 @@ En la figura \ref{datos_condiciones_ransol_presion} se puede observar que se fij
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection*{Campo de Velocidad}
-aclarar aca
+Para modelar la extracción de agua de los pozos, se aplicó un campo de velocidad como se observa en la figura \ref{datos_condiciones_ransol_campo_de_velocidad}.
+Para ambos pozos se genero una función dependiente del tiempo que modela el proceso de extracción de agua de la bomba durante un periodo de tiempo. En las figuras (\ref{grafica1_0085}) y (\ref{grafica1_0057}) se puede observar una pendiente creciente entre los pasos 100 y 500 (encendido de la bomba de extracción de agua) y una pendiente decreciente entre los pasos de tiempo 50000 y 50400 (apagado de la bomba de extracción de agua).
+Entre los valores que se encuentran entre 500 y 50000 la velocidad es constante igual a la velocidad de extracción que posee el pozo.
+A continuación se presentan las condiciones asignadas a cada pozo:
+\begin{itemize}
+\item Pozo 1: 
+\begin{eqnarray} \label{pozo1_funcion}
+\nonumber
+Fijar~ValorX&=&0.0~[m/s]\\
+\nonumber
+Fijar~ValorY&=&0.0~[m/s]\\
+Fijar~ValorZ&=& if(t<=100|t>50400)then(vz=0)else(if(t>100\& t<=500)then\\
+\nonumber
+&&(vz=0.00021*(t-100))else(if(t>500\& t<=50000)then(vz=0.085)\\&&
+\nonumber
+else(vz=-0.00021*(t-50400))endif)endif)endif~~[m/s]
+\end{eqnarray}
+La función escrita para el $ValorZ$ en (\ref{pozo1_funcion}) se puede observar en la figura \ref{grafica1_0085}. 
+
+\begin{figure}[tbhp]
+\centerline{\includegraphics[scale=0.3]{graficas/grafica1_0085}}
+\caption{Función tiempo vs. velocidad de campo de velocidad en Z representada en (\ref{pozo1_funcion})}
+\label{grafica1_0085}
+\end{figure}
+
+\item Pozo 2:
+\begin{eqnarray} \label{pozo2_funcion}
+\nonumber
+Fijar~ValorX&=&0.0~[m/s]\\
+\nonumber
+Fijar~ValorY&=&0.0~[m/s]\\
+Fijar~ValorZ&=& if(t<=100|t>50400)then(vz=0)else(if(t>100\& t<=500)then\\
+\nonumber
+&&(vz=0.00014*(t-100))else(if(t>500\& t<=50000)then(vz=0.057)\\&&
+\nonumber
+else(vz=-0.00014*(t-50400))endif)endif)endif~~[m/s]
+\end{eqnarray}
+La función escrita para el $ValorZ$ en (\ref{pozo2_funcion}) se puede observar en la figura \ref{grafica1_0057}. 
+
+\begin{figure}[tbhp]
+\centerline{\includegraphics[scale=0.3]{graficas/grafica1_0057}}
+\caption{Función tiempo vs. velocidad de campo de velocidad en Z representada en (\ref{pozo2_funcion})}
+\label{grafica1_0057}
+\end{figure}
+
+\end{itemize}
+\begin{figure}[tbhp]
+\centerline{\includegraphics[scale=0.75]{img/datos_condiciones_ransol_campo_de_velocidad}}
+\caption{Condición de campo de velocidades}
+\label{datos_condiciones_ransol_campo_de_velocidad}
+\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Mallado}
 Para el mallado, se asignaron diferentes tamaños a las superficies debido a que se deseó obtener un mayor detalle en las cercanías de ambos pozos. Para ello se subdividió el dominio como se muestra en las figuras \ref{cotas_superiores_generalesXY} y \ref{cotas_superiores_detallesXY}, luego se aplicó una malla no estructurada de diferentes tamaños para las diferentes entidades como se puede ver en las figuras \ref{tam_malla_xy} y \ref{tam_malla_pozo_interior}. Además, en las preferencias de mallado de Gid, \emph{(Utilidades -> preferencias -> pestaña malla)}, se fijó la transición de tamaños no estructurados a $0.4$.
@@ -325,7 +406,9 @@ A continuación, se presentan los tipos y cantidades de elementos con los que es
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Condiciones temporales}
-describir como oelegimos en
+La simulación se llevo a cabo con un $\Delta t = 100 \left[s\right]$ y se simularon 50400 o 50500 pasos \begin{Large}
+ver!\\
+\end{Large}
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Ejecución}
