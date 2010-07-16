@@ -93,10 +93,8 @@ Los datos que se pudieron obtener del problema son:
 	\item Discretización del área a modelar:	
 	\begin{itemize}
 		\item Dominio: $x=1000 ~\left[m\right]$, $y=1000 ~\left[m\right]$
-		\item Acuífero libre, homogéneo e isótropo $(K_x = K_y = K_z)$ \begin{Large}
-		que significa cada una de estas cosas? \\
-		\end{Large}
-		\item Espesor del acuífero: $20 ~\left[m\right]$*
+		\item Acuífero libre, homogéneo e isótropo $(K_{xx} = K_{yy} = K_{zz})$
+		\item Espesor del acuífero: $20 ~\left[m\right]$
 	\end{itemize}
 	%
 	\item Ubicación de los Pozos de bombeo:
@@ -111,7 +109,7 @@ Los datos que se pudieron obtener del problema son:
 		\item Pozo Bombeo 2: $40~\left[\frac{m³}{h}\right]$
 	\end{itemize}
 	\item Diámetro del pozo: $0.5 [m]$* \begin{Large} esto no era dato! pero los calculso lo hicimos con este valor \end{Large}
-	\item Filtro: Tramo filtrante de longitud $15~m.$*
+	\item Filtro: Tramo filtrante de longitud $15~m.$
 	\item Transmisividad: $600~\left[\frac{m^2}{d}\right]$\\
 \begin{LARGE}
 Coef de trasmisividad: cuanto mas chiquito es mas lento se mueve el agua en el suelo.ver!! \\
@@ -260,7 +258,7 @@ Para fijar las condiciones de borde, se procedió mediante el menú datos $\Righ
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection*{Fijar Velocidad}
-Como se puede ver en la figura \ref{datos_condiciones_ransol_fijar_velocidadinterno_leyendas} las condiciones asignadas a cada una de las superficies enumeradas son las siguientes:
+Como se puede ver en la figura (\ref{datos_condiciones_ransol_fijar_velocidadinterno_leyendas}) las condiciones asignadas a cada una de las superficies enumeradas son las siguientes:
 
 \begin{enumerate}
 
@@ -271,7 +269,7 @@ V_x&=&0.0000017~[m/s]\\
 Fija~V_y&=&0.0~[m/s]\\
 V_z&=&0.0~[m/s]
 \end{eqnarray*}
-Observar, que en las superficies 1 y 2 se fija la velocidad $V_y$ a $0$, esto se hace con el objetivo de impedir que el fluido escape del dominio (impermeabilidad de las paredes laterales). En la dirección de $x$ y $y$ el movimiento es libre.
+Observar, que en las superficies 1 y 2 marcadas en la figura (\ref{datos_condiciones_ransol_fijar_velocidadinterno_leyendas}) se fija la velocidad $V_y$ a $0$, esto se hace con el objetivo de impedir que el fluido escape del dominio (impermeabilidad de las paredes laterales). En la dirección de $x$ y $y$ el movimiento es libre.
 
 \item Superficie 3 y 4:
 
@@ -281,7 +279,7 @@ V_y&=&0.0~[m/s]\\
 Fija~V_z&=&0.0~[m/s]
 \end{eqnarray*}
 
-En estas superficies se fija la velocidad $V_z$ a $0$ (para representar la impermeabilidad de la superficie superior e inferior del campo). En las direcciones de $x$ y $y$ el movimiento es libre.
+En estas superficies se fija la velocidad $V_z$ a $0$. En la superficie marcada con el número 4 en la figura (\ref{datos_condiciones_ransol_fijar_velocidadinterno_leyendas}), se lo hace para representar la impermeabilidad de la superficie inferior del campo, por otro lado en la superficie marcada con 3, representa la no existencia de recarga sobre el campo. En las direcciones de $x$ y $y$ el movimiento es libre.
 
 \item Superficie 5:
 
@@ -384,7 +382,7 @@ Vz_2(t) = \left\{
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Mallado}
-Para el mallado, se asignaron diferentes tamaños a las superficies debido a que se deseó obtener un mayor detalle en las cercanías de ambos pozos. Para ello se subdividió el dominio como se muestra en las figuras \ref{cotas_superiores_generalesXY} y \ref{cotas_superiores_detallesXY}, luego se aplicó una malla no estructurada de diferentes tamaños para las diferentes entidades como se puede ver en las figuras \ref{tam_malla_xy} y \ref{tam_malla_pozo_interior}. Además, en las preferencias de mallado de Gid, \emph{(Utilidades -> preferencias -> pestaña malla)}, se fijó la transición de tamaños no estructurados a $0.4$.
+Para el mallado, se asignaron diferentes tamaños a las superficies debido a que se deseó obtener un mayor detalle en las cercanías de ambos pozos. Para ello se subdividió el dominio como se muestra en las figuras \ref{cotas_superiores_generalesXY} y \ref{cotas_superiores_detallesXY}, luego se aplicó una malla no estructurada de diferentes tamaños para las diferentes entidades como se puede ver en las figuras \ref{tam_malla_xy} y \ref{tam_malla_pozo_interior}. Además, en las preferencias de mallado de Gid (Utilidades $\rightarrow$ preferencias $\rightarrow$ pestaña malla), se fijó la transición de tamaños no estructurados a $0.4$.
 A continuación, se presentan los tipos y cantidades de elementos con los que esta conformado la geometría:
 \begin{itemize}
 \item Número de nodos: 118551
@@ -443,7 +441,6 @@ ver!\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Ejecución}
 cambiar el titulo esto es como se llevo a cabao la corrida
-
 ver graficos en un nodo o punto la evolucion de una variable. -> point evolution ->velocity->module->elijo un nodo
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -455,7 +452,7 @@ realizar cortes
 lo que vamos a ver va a ser las equipotenciales (lineas de presion que son perpendiculares al flujo).siempre es contraria a la linea de velocidad\\
 En los softwares específicos de hidrogeología, fijate que aca tenes el esquema de calculo que es una malla muy guresa en dos dimensiones, que te va a dar isocurvas de niveles. Se va a ver como esto va bombeando y ese nivel de agua cerca de la bomba va ir deprimiendose formando el cono de desenso. Eso, asi de esa forma aca no lo vamos a poder hacer, porque para poder hacer eso en 3D (en 2D si se puede) tenes que tener un soft que distinga entre suelo no saturado y suelo saturado. En el suelo saturado las ecs de gobierno son distintas a las del no saturado. El soft que tenemos solamente tiene las ecs de gob del suelo saturado, el no saturado tiene un modelo mucho mas complejo, en realidad estos modelos son bidimensionales porque no calculan el flujo en suelo saturado, lo que calculan seria la curva, la interfaz, seria la sup que los separa, nada mas, sería la ubicación de esa sup que distingue zona saturada de la no saturada. que tiene ecuaciones simples, pero no calcula detalles del flujo, este modelo calcula el flujo en suelo saturado. 
 Se coincidiera que se esta en presencia de un estrato de suleo saturado (esto es saturado de agua). 
-Vamos a tener lineas equipotenciales (unen lineas de igual potencial hidráulico) las cuales son perpendiculares a las lineas del flujo y serian valores de presión que ejerce el agua sobre el suelo. Esas líneas equipotenciales van a ser equivalentes en interpretacion a las lineas de superficie que se calculan tradicionalmente en hidrologia.
+Vamos a tener lineas equipotenciales (unen lineas de igual potencial hidráulico) las cuales son perpendiculares a las lineas del flujo y serian valores de presión que ejerce el agua sobre el suelo. Esas líneas equipotenciales van a ser equivalentes en interpretación a las lineas de superficie que se calculan tradicionalmente en hidrologia.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
