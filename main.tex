@@ -315,9 +315,9 @@ A continuación se presentan las condiciones asignadas a cada pozo:
 Fijar~ValorX&=&0.0~[m/s]\\
 \nonumber
 Fijar~ValorY&=&0.0~[m/s]\\
-Fijar~ValorZ&=& if(t<=100|t>50400)then(vz=0)else(if(t>100\& t<=500)then\\
+Fijar~ValorZ&=& if(t<=100 | t>50400)then(vz=0)else(if(t>100 \& t<=500)then\\
 \nonumber
-&&(vz=0.00021*(t-100))else(if(t>500\& t<=50000)then(vz=0.085)\\&&
+&&(vz=0.00021*(t-100))else(if(t>500 \& t<=50000)then(vz=0.085)\\&&
 \nonumber
 else(vz=-0.00021*(t-50400))endif)endif)endif~~[m/s]
 \end{eqnarray}
@@ -327,9 +327,9 @@ La función escrita para el $ValorZ$ en (\ref{pozo1_funcion}) se puede observar 
 \begin{equation}\label{vz_ecuacion_pozo1}
 Vz_1(t) = \left\{
 \begin{array}{l@{,\quad}l}
-0 & t \leqslant 100 \vee t \> 50400 \\
-0.00021*(t-100) & t \> 100 \wedge t \leqslant 500 \\
-0.085 & t \> 500 \wedge t \leqslant 50000 \\
+0 & t\leqslant 100 \vee t > 50400 \\
+0.00021*(t-100) & t > 100 \wedge t\leqslant 500 \\
+0.085 & t > 500 \wedge t\leqslant 50000 \\
 -0.00021*(t-50400) & eoc
 \end{array}
 \right.
@@ -337,7 +337,7 @@ Vz_1(t) = \left\{
 %
 
 \begin{figure}[tbhp]
-\centerline{\includegraphics[scale=0.3]{graficas/grafica1_0085}}
+\centerline{\includegraphics[scale=0.6]{graficas/0085}}
 \caption{Función tiempo vs. velocidad de campo de velocidad en Z representada en (\ref{pozo1_funcion}) y (\ref{vz_ecuacion_pozo1})}
 \label{grafica1_0085}
 \end{figure}
@@ -348,9 +348,9 @@ Vz_1(t) = \left\{
 Fijar~ValorX&=&0.0~[m/s]\\
 \nonumber
 Fijar~ValorY&=&0.0~[m/s]\\
-Fijar~ValorZ&=& if(t<=100|t>50400)then(vz=0)else(if(t>100\& t<=500)then\\
+Fijar~ValorZ&=& if(t<=100 | t>50400) then(vz=0)else(if(t>100 \& t<=500)then\\
 \nonumber
-&&(vz=0.00014*(t-100))else(if(t>500\& t<=50000)then(vz=0.057)\\&&
+&&(vz=0.00014*(t-100))else(if(t>500 \& t<=50000)then(vz=0.057)\\&&
 \nonumber
 else(vz=-0.00014*(t-50400))endif)endif)endif~~[m/s]
 \end{eqnarray}
@@ -359,9 +359,9 @@ La función escrita para el $ValorZ$ en (\ref{pozo2_funcion}) se puede observar 
 \begin{equation}\label{vz_ecuacion_pozo2}
 Vz_2(t) = \left\{
 \begin{array}{l@{,\quad}l}
-0 & t \leqslant 100 \vee t \> 50400 \\
-0.00014*(t-100) & t \> 100 \wedge t \leqslant 500 \\
-0.057 & t \> 500 \wedge t \leqslant 50000 \\
+0 & t \leqslant 100\vee t > 50400 \\
+0.00014*(t-100) & t > 100 \wedge t \leqslant 500 \\
+0.057 & t > 500 \wedge t \leqslant 50000 \\
 -0.00014*(t-50400) & eoc
 \end{array}
 \right.
@@ -369,7 +369,7 @@ Vz_2(t) = \left\{
 %
 
 \begin{figure}[tbhp]
-\centerline{\includegraphics[scale=0.3]{graficas/grafica1_0057}}
+\centerline{\includegraphics[scale=0.6]{graficas/0057}}
 \caption{Función tiempo vs. velocidad de campo de velocidad en Z representada en (\ref{pozo2_funcion}) y (\ref{vz_ecuacion_pozo2})}
 \label{grafica1_0057}
 \end{figure}
