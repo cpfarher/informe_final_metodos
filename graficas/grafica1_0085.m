@@ -32,13 +32,24 @@ endif
 
 endfor
 
-plot(t,vz);
-title ("velocidad 0.085");
-xlabel ("tiempo");
-ylabel ("velocidad");
+#csvwrite("tiempo.csv", t');
+#csvwrite("velocidad.csv", vz');
+subplot (1, 2, 1);
+plot(t,vz,"*", "markersize", 7,t,vz);
+##title ("velocidad 0.085");
+xlabel ("tiempo [s]");
+ylabel ("velocidad [m/s]");
 grid ("minor","on");
-print('grafica1_0085.png','-dpng');
+axis([0,1100]);
+subplot (1, 2, 2);
+plot(t,vz,"*", "markersize", 7,t,vz);
+##title ("velocidad 0.085");
+xlabel ("tiempo [s]");
+ylabel ("velocidad [m/s]");
+grid ("minor","on");
+axis([49500,50600]);
 
+print('grafica1_0085.png','-dpng',"-S1280,600");
 
 
 
