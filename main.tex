@@ -16,7 +16,7 @@
 \marginsize{2cm}{2cm}{1.5cm}{1.5cm}
 %
 \begin{document}
-\title{Calculo de descensos en un campo de bombeo en medios porosos}
+\title{Cálculo de descensos en un campo de bombeo en medios porosos}
 \author{Christian N. Pfarher, Juan Pablo Garbarino, Marina Castro\\
 \textit{Trabajo práctico final de ``Métodos numéricos y simulación'', II-FICH-UNL.}}
 \markboth{Método numérico y simulación: TRABAJO FINAL}{}
@@ -27,6 +27,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \tableofcontents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\listoffigures % Índice de figuras
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -76,7 +81,7 @@ n \cdot \sigma \cdot g_1=0 \mbox{, } n \cdot \sigma \cdot g_2=0~ \mbox{, } n \cd
 u(x,0)&=&u_0(x) \mbox{ en  } \Omega_D \times \lbrace 0 \rbrace ;\\
 p(x,0)&=&p_0(x) \mbox{ en  } \Omega_D \times \lbrace 0 \rbrace ;
 \end{eqnarray}
-En las ecuaciones de arriba, $\Gamma = \partial \Omega$ denota la forntera del dominio $\Omega$, siendo $n$ el vector normal unitario y $g_1$, $g_2$ los vectores tangentes de la frontera $\partial \Omega$, $u_c$ es el campo de velocidad sobre $\Gamma_D$, $p_c$ la presión sobre $\Gamma_P$, $\sigma$ es el campo de tensiones, $u_M$ el valor de la velocidad normal y $u_0$, $p_0$ los campos de velocidad y presión iniciales. La unión de $\Gamma_D$, $\Gamma_P$ y $\Gamma_M$ debe ser $\Gamma$; la intersección entre ellos es el conjunto vacío, ya que un punto de la frontera puede ser parte de un único tipo de superficie, a menos que forme parte del borde entre dos de ellas.
+En las ecuaciones de arriba, $\Gamma = \partial \Omega$ denota la frontera del dominio $\Omega$, siendo $n$ el vector normal unitario y $g_1$, $g_2$ los vectores tangentes de la frontera $\partial \Omega$, $u_c$ es el campo de velocidad sobre $\Gamma_D$, $p_c$ la presión sobre $\Gamma_P$, $\sigma$ es el campo de tensiones, $u_M$ el valor de la velocidad normal y $u_0$, $p_0$ los campos de velocidad y presión iniciales. La unión de $\Gamma_D$, $\Gamma_P$ y $\Gamma_M$ debe ser $\Gamma$; la intersección entre ellos es el conjunto vacío, ya que un punto de la frontera puede ser parte de un único tipo de superficie, a menos que forme parte del borde entre dos de ellas.
 
 La discretización espacial de las ecuaciones de \emph{Navier - Stokes} es realizada mediante el método de elementos finitos, mientras que para la discretización en el tiempo debe considerarse un algoritmo iterativo tal como el \emph{Método de pasos fraccionarios (Fractional Step Method) de dos pasos (implícito)}.
 
@@ -114,7 +119,7 @@ El factor $K$ se puede descomponer como se puede ver en (\ref{k_descompuesto})
 \end{eqnarray}
 donde: 
 \begin{itemize}
-	\item[$K=$] permeabilidad de Darcy o conductividad hidraúlica,
+	\item[$K=$] permeabilidad de Darcy o conductividad hidráulica,
 	\item[$k=$] permeabilidad intrínseca (depende solo del medio poroso)
 	\item[$\gamma=$] peso específico del fluido
 	\item[$\mu=$] viscosidad dinámica del fluido
@@ -125,7 +130,7 @@ Por tanto, aunque sabemos que $K$ depende tanto del medio como del propio fluido
 \\
 En algunas circunstancias, la relación entre el caudal y el gradiente hidráulico no es lineal.
 Esto puede suceder cuando el valor de $K$ es muy bajo o cuando las velocidades del flujo son muy altas.
-En el primer caso, por ejemplo, calculando el flujo a través de una formación arcillosa, el caudal que obtendríamos aplicando la Ley de Darcy sería bajísimo, pero en la realidad, si no se aplican unos gradientes muy elevados, el agua no llega a circular, el caudal es 0.
+En el primer caso, por ejemplo, calculando el flujo a través de una formación arcillosa, el caudal que obtendríamos aplicando la Ley de Darcy sería muy bajo, pero en la realidad, si no se aplican unos gradientes muy elevados, el agua no llega a circular, el caudal es 0.
 En el segundo caso, si el agua circula a gran velocidad, el caudal es directamente proporcional a la sección y al gradiente, pero no linealmente proporcional.
 En el flujo subterráneo las velocidades son muy lentas y prácticamente siempre la relación es lineal, salvo en las proximidades de captaciones bombeando en ciertas condiciones.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -173,7 +178,7 @@ También hay que aclarar que nos encontramos en presencia de suelo saturado, est
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Cálculo de la velocidad de extracción de agua a partir del caudal}
 Se procedió a convertir las unidades de los datos del problema (Caudal de extracción de los pozos a velocidad) para poder ingresarlas en el software de simulación.
-En dinámica de fluidos, \emph{caudal} es la cantidad de fluido que avanza en una unidad de tiempo. Se denomina también ``Caudal volumétrico" o ``Indice de flujo fluido". El cálculo del caudal de agua viene expresado por:
+En dinámica de fluidos, \emph{caudal} es la cantidad de fluido que avanza en una unidad de tiempo. Se denomina también ``Caudal volumétrico" o ``Índice de flujo fluido". El cálculo del caudal de agua viene expresado por:
 \begin{equation}
 Q=V \cdot S
 \label{caudal}
@@ -215,7 +220,7 @@ También, se debe aclarar, que tanto el \emph{tramo filtrante}, el \emph{espesor
 		\item Tramo filtrante de longitud (amplificado por un factor 10): $150~m.$*
 		\item Diámetro del pozo (amplificado por un factor 40): $20 [m]$*
 		\begin{Large}
-		que vamos a poner al final? que la simulacion se hizo en un radio de 20 m? o que la redimensiones fue echa con ese objetivo? me parece que esto esta mal pero bueno.. ver que haceR!
+		que vamos a poner al final? que la simulación se hizo en un radio de 20 m? o que la redimensiones fue echa con ese objetivo? me parece que esto esta mal pero bueno.. ver que haceR!
 		\end{Large}
 \end{itemize}
 A continuación se presentan los datos de los elementos que forman la geometría:
@@ -223,7 +228,7 @@ A continuación se presentan los datos de los elementos que forman la geometría
 \item Número de puntos: 33
 \item Número de lineas: 52
 \item Número de superficies: 28
-\item Número de volumenes: 3
+\item Número de volúmenes: 3
 \end{itemize}
 
 \begin{figure}[tbhp]
@@ -267,9 +272,6 @@ En la pestaña ransol de la ventana de materiales de fluidos para el material su
 \item Densidad: $999.7~Kg/m^3$ (agua a $10° C$) \footnote{ según datos obtenidos de Tabla-libro ...}
 \item Viscosidad: $0.001307~Pa.s$ (agua a $10° C$)\footnote{ según datos obtenidos de Tabla-libro ...}
 \item Resistencia de la Ley de Darcy:
-quizas explicar que corno y como se haya este coeficiente de 0.0000017 y que representa la ley de darcy.. porosidad del suelo...\\
-	k = conductividad 1\/ m \^2 o 1 \/ darcy\\
-silvina: Ley de resistencia de darcy: es la ley que habla de la velocidad que tiene el agua para moverse dentro del medio poroso. Hay 6 valores porque este coef puede ser homogeneo en todo el suelo, esto se llama suelo isotropico, es el que tiene el mismo coef de trasmisividad en todos los sentidos: x,y,z. Cuando el suelo tiene distinto coef se usa toda la matriz que es lo real y lo normal. A los fines del cálculo lo usamos como isotropico, entonces solo completamos la diag principal y con el mismo valor (hay que ver el tema de la unidad, porque esta distinta a los datos). 
 \begin{equation}
 \begin{pmatrix}{}
 0.0000017 & 0.0 & 0.0 \\ 
@@ -278,7 +280,7 @@ silvina: Ley de resistencia de darcy: es la ley que habla de la velocidad que ti
 \end{pmatrix} [1/m²]
 \label{matrizdarcys}
 \end{equation}
-Debido a que se está en presencia de un acuífero isótropo, en (\ref{matrizdarcys}) se puede observar que sólo la diagonal principal de la matriz presenta valores diferentes de cero.
+Debido a que se está en presencia de un acuífero isótropo (homogéneo en todo el suelo), en (\ref{matrizdarcys}) se puede observar que sólo la diagonal principal de la matriz presenta valores diferentes de cero.
 \end{itemize}
 En la figura \ref{datos_materiales_suelo_vista} se puede observar la asignación del material definido a la parte del dominio correspondiente.
 
@@ -463,7 +465,7 @@ A continuación, se presentan los tipos y cantidades de elementos con los que es
 %\end{figure}
 
 \begin{figure}[tbhp]
-\centerline{\includegraphics[scale=0.50]{img/contorno_malla_yz1}}
+\centerline{\includegraphics[width=12cm]{img/contorno_malla_yz1}}
 \caption{Vista en el plano YZ de la malla}
 \label{contorno_malla_yz1}
 \end{figure}
