@@ -82,6 +82,53 @@ La discretización espacial de las ecuaciones de \emph{Navier - Stokes} es reali
 
 También hay que aclarar que no se utiliza un modelo te turbulencia (como lo es el de Smagorinsky) ya que se está en presencia de un flujo lento.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Ley de Darcy}
+La \emph{Ley de Darcy} expresa que el flujo de agua en un medio poroso, homogéneo e isotrópico es proporcional 
+a la conductividad del medio poroso o conductividad hidráulica $K$ y a una fuerza conductora o gradiente hidráulico $i$.
+\\
+La expresión matemática de la \emph{Ley de Darcy} viene dada por la ecuación (\ref{darcy_formula})
+\begin{eqnarray}
+Q&=&K \frac{h_3 - h_4}{L} A = K \cdot i \cdot A \label{darcy_formula}
+\end{eqnarray}
+donde:
+\begin{itemize}
+	\item[$Q=$] gasto, descarga o caudal en $m^3/s$,
+	\item[$L=$] longitud en metros de la muestra,
+	\item[$K=$] una constante, actualmente conocida como coeficiente de permeabilidad de Darcy, variable en función del material de la muestra, en $m/s$,
+	\item[$A=$] área de la sección transversal de la muestra, en $m^2$,
+	\item[$h_3=$] altura, sobre el plano de referencia que alcanza el agua en un tubo colocado a la entrada de la capa filtrante,
+	\item[$h_4=$] altura, sobre el plano de referencia que alcanza el agua en un tubo colocado a la salida de la capa filtrante,
+	\item[$i=$] $\frac{h_3 - h_4}{L}=$ el gradiente hidráulico.
+\end{itemize}
+%
+\begin{figure}[tbhp]
+\centerline{\includegraphics[scale=0.6]{img/darcy_grafica}}
+\caption{Ley de Darcy}
+\label{graf_leydarcy}
+\end{figure}
+%
+La ley de Darcy es válida para todo suelo donde el flujo sea laminar: arenas finas a medias, arenas gruesas bien graduadas, arcillas y limos. Entre sus limitaciones, es posible afirmar que la constante de proporcionalidad $K$ no es propia del medio poroso, sino que depende de las características del fluido (peso específico y viscosidad cinemática). 
+El factor $K$ se puede descomponer como se puede ver en (\ref{k_descompuesto}) 
+\begin{eqnarray}
+	K&=& k \cdot x \cdot \gamma \cdot \mu \label{k_descompuesto}
+\end{eqnarray}
+donde: 
+\begin{itemize}
+	\item[$K=$] permeabilidad de Darcy o conductividad hidraúlica,
+	\item[$k=$] permeabilidad intrínseca (depende solo del medio poroso)
+	\item[$\gamma=$] peso específico del fluido
+	\item[$\mu=$] viscosidad dinámica del fluido
+\end{itemize}
+Esta cuestión es fundamental en geología del petróleo, donde se estudian fluidos de diferentes características. En el caso del agua, la salinidad apenas hace variar el peso específico no la viscosidad.
+Solamente habría que considerar la variación de la viscosidad con la temperatura, que se duplica entre 5 y 35 º C, con lo que se duplicaría la permeabilidad de Darcy y también el caudal circulante por la sección considerada del medio poroso. Afortunadamente, las aguas subterráneas presentan mínimas diferencias de temperatura a lo largo del año en un mismo acuífero.
+Por tanto, aunque sabemos que $K$ depende tanto del medio como del propio fluido, como la parte que depende del fluido normalmente es despreciable, a efectos prácticos asumimos que la $K$ de Darcy, o \emph{conductividad hidráulica} es una característica del medio poroso.
+\\
+En algunas circunstancias, la relación entre el caudal y el gradiente hidráulico no es lineal.
+Esto puede suceder cuando el valor de $K$ es muy bajo o cuando las velocidades del flujo son muy altas.
+En el primer caso, por ejemplo, calculando el flujo a través de una formación arcillosa, el caudal que obtendríamos aplicando la Ley de Darcy sería bajísimo, pero en la realidad, si no se aplican unos gradientes muy elevados, el agua no llega a circular, el caudal es 0.
+En el segundo caso, si el agua circula a gran velocidad, el caudal es directamente proporcional a la sección y al gradiente, pero no linealmente proporcional.
+En el flujo subterráneo las velocidades son muy lentas y prácticamente siempre la relación es lineal, salvo en las proximidades de captaciones bombeando en ciertas condiciones.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Desarrollo}
