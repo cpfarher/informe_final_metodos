@@ -16,7 +16,7 @@
 \marginsize{2cm}{2cm}{1.5cm}{1.5cm}
 %
 \begin{document}
-\title{Cálculo de descensos en un campo de bombeo en medios porosos}
+\title{Cálculo de flujo subterráneo generado por bombeo}
 \author{Christian N. Pfarher, Juan Pablo Garbarino, Marina Castro\\
 \textit{Trabajo práctico final de ``Métodos numéricos y simulación'', II-FICH-UNL.}}
 \markboth{Método numérico y simulación: TRABAJO FINAL}{}
@@ -40,26 +40,28 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introducción}
-El flujo subterráneo de agua es un componente importante de todos los sistemas hidráulicos. Tiene un papel central en el presupuesto de agua para uso doméstico, industrial y en agricultura. La administración del recurso implica tomar decisiones sobre donde perforar para extraer o inyectar y sobre las estrategias de control. También implica decisiones sobre la calidad del agua producida, lo que a su vez se relaciona con la disponibilidad del recurso.\\
+El flujo subterráneo de agua es un componente importante de todos los sistemas hidráulicos. Tiene un papel central en el presupuesto de agua para uso doméstico, industrial y en agricultura. La administración del recurso, implica tomar decisiones sobre donde perforar para extraer o inyectar y sobre las estrategias de control. También, implica decisiones sobre la calidad del agua producida, lo que a su vez se relaciona con la disponibilidad del recurso.\\
 Las reservas de agua subterránea como las \emph{napas} y los \emph{acuíferos} están formadas por la infiltración natural de agua de lluvia. Proveen el líquido a casas e industrias, a través de perforaciones individuales o de la explotación a gran escala por parte de empresas de servicios públicos.\\
-Vamos a centrar nuestra atención en los acuíferos. Un acuífero es una formación geológica subterránea capaz de almacenar y rendir agua. El acuífero ocupa un dominio constituido por un medio poroso: tierra, arena, basaltos, granitos –usualmente fisurados– son todos ejemplos de medios porosos, que exhiben en común el estar constituidos por una matriz sólida y poros. Las condiciones geológicas e hidrológicas determinan su tipo y funcionamiento. Hay dos tipos de \emph{acuíferos}: los \emph{confinados} y los \emph{no confinados}. En el \emph{acuífero confinado}, el agua está atrapada entre las capas impermeables de la roca o entre grietas de la formación rocosa. Dicha agua podría encontrarse almacenada a presión. Si perforamos, el nivel de agua asciende hasta situarse en una determinada posición que coincide con el nivel de saturación del acuífero en el área de recarga.\\
+Centraremos la atención en los acuíferos. Un acuífero es una formación geológica subterránea, capaz de almacenar y rendir agua. El acuífero ocupa un dominio constituido por un medio poroso: tierra, arena, basaltos, granitos – usualmente fisurados – que exhiben en común el estar constituidos por una matriz sólida y poros. Las condiciones geológicas e hidrológicas determinan su tipo y funcionamiento.
+\subsubsection*{Tipos de acuíferos}
+Hay dos tipos de \emph{acuíferos}: 
+\begin{itemize}
+\item \emph{Confinados: }el agua está atrapada entre las capas impermeables de la roca o entre grietas de la formación rocosa. Dicha agua podría encontrarse almacenada a presión. Si perforamos, el nivel de agua asciende hasta situarse en una determinada posición que coincide con el nivel de saturación del acuífero en el área de recarga.\\
 Si la topografía es tal que la boca del pozo está por debajo del nivel del agua, el pozo es
 surgente o artesiano; si no es así el nivel del agua ascenderá hasta el nivel correspondiente, pero no será surgente. El agua está sometida a una presión superior a la atmosférica y ocupa totalmente los poros o huecos de la formación geológica, saturándola totalmente. No existe zona no saturada. \\
-Los acuíferos pueden estar cerca de la superficie terrestre, con estratos continuos formados por materiales de alta permeabilidad que se extienden desde la superficie del terreno hasta la base del acuífero. Este tipo de acuífero se conoce como un \emph{acuífero no confinado o libre}. La recarga de este acuífero se produce debido a una infiltración vertical a través de la zona no saturada. La recarga también se puede producir a través de flujo subterráneo lateral o desde estratos inferiores.\\
-En un acuífero no confinado, el agua no está almacenada a presión por no estar encapsulada en la roca. Si se hiciera un pozo en él, el agua se tendría que bombear a la superficie.\\
-En este trabajo trataremos el caso de un \emph{acuífero libre, homogéneo e isótropo}. 
+%
+\item \emph{No confinados o libres: } los acuíferos pueden estar cerca de la superficie terrestre, con estratos continuos formados por materiales de alta permeabilidad, que se extienden desde la superficie del terreno hasta la base del acuífero. La recarga de este acuífero, se produce debido a una infiltración vertical, a través de la zona no saturada. La recarga también se puede producir a través de flujo subterráneo lateral o desde estratos inferiores.\\
+\end{itemize}
+%
+El problema que se presenta en el presente trabajo, trata el caso de un \emph{acuífero confinado, homogéneo e isótropo} el cual consta de dos pozos de bombeo de agua que extraen, cada uno, un caudal de agua, por un tiempo determinado.
 Un medio \emph{homogéneo} es aquel que tiene las mismas propiedades en todas las posiciones. Esto significa que la porosidad y otros parámetros son similares en cualquier posición dentro de la unidad geológica.\\
 En un medio poroso compuesto de esferas del mismo diámetro, agrupadas uniformemente, la geometría de los huecos vacíos es la misma en cualquier dirección. De esta manera, la permeabilidad del medio es la misma en cualquier dirección, y el medio se denomina \emph{isotrópico}.
-El campo consta de dos pozos de bombeo de agua que funcionan un cierto período de tiempo extrayendo un caudal de agua.
 Para la realización del trabajo se utilizó el software de pre y pos proceso GiD \footnote{http://gid.cimne.upc.es/}. Mediante el mismo, se utilizó el \emph{módulo de pre-proceso} para la carga de los datos del problema, mientras que para la simulación se utilizó Tdyn \footnote{es un entorno tridimensional de análisis fluidodinámico (CFD) y multifísica basado en el método de los elementos finitos estabilizado}(\emph{módulo de post-proceso}).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Objetivos}
-El objetivo de este trabajo, consiste en la simulación de lineas de corrientes y equipotenciales en un campo de bombeo (medio poroso) con 2 bombas de extracción de agua en un acuífero libre (no confinado), homogéneo e isótropo. \begin{LARGE}
-ver bien que vamos a poner como objetivos
-\end{LARGE}
-
+El objetivo de este trabajo, es simular el flujo, en un medio poroso (acuífero confinado, homogéneo e isótropo), generado por un par de bombas de extracción de agua en un campo de bombeo para visualizar las lineas de corrientes y equipotenciales generadas.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -82,10 +84,17 @@ u(x,0)&=&u_0(x) \mbox{ en  } \Omega_D \times \lbrace 0 \rbrace ;\\
 p(x,0)&=&p_0(x) \mbox{ en  } \Omega_D \times \lbrace 0 \rbrace ;
 \end{eqnarray}
 En las ecuaciones de arriba, $\Gamma = \partial \Omega$ denota la frontera del dominio $\Omega$, siendo $n$ el vector normal unitario y $g_1$, $g_2$ los vectores tangentes de la frontera $\partial \Omega$, $u_c$ es el campo de velocidad sobre $\Gamma_D$, $p_c$ la presión sobre $\Gamma_P$, $\sigma$ es el campo de tensiones, $u_M$ el valor de la velocidad normal y $u_0$, $p_0$ los campos de velocidad y presión iniciales. La unión de $\Gamma_D$, $\Gamma_P$ y $\Gamma_M$ debe ser $\Gamma$; la intersección entre ellos es el conjunto vacío, ya que un punto de la frontera puede ser parte de un único tipo de superficie, a menos que forme parte del borde entre dos de ellas.
-
+% TDYN usa las ecuaciones de Navier Stoke para calcular el flujo en medios porosos desde que el flujo esta estático hasta que llega
+% a un estado de estabilidad que es el que presenta la ec. de darcy (representación del tiempo final de nuestra modelación)
+% Las ecuaciones de Navier Stokes son cuando tenemos flujo puro (no un medio poroso) pero se hace una analogía entre un flujo puro y un % medio poroso cambiando el mu (viscocidad del fluido) de la formular de Navier Stoke por la constante K de permeabilidad, simulando
+% de esta forma el medio poroso.
+% La capa donde entra el agua, la prseión es mayor que la parte donde sale.... y ese es el delta h de la formula de darcy.. h_4-h_3 y 
+% L es 
+%
+% En la superficie inferior del caño al estar succionando, se produce una baja de presión....
 La discretización espacial de las ecuaciones de \emph{Navier - Stokes} es realizada mediante el método de elementos finitos, mientras que para la discretización en el tiempo debe considerarse un algoritmo iterativo tal como el \emph{Método de pasos fraccionarios (Fractional Step Method) de dos pasos (implícito)}.
 
-También hay que aclarar que no se utiliza un modelo te turbulencia (como lo es el de Smagorinsky) ya que se está en presencia de un flujo lento.
+También hay que aclarar que no se utiliza un modelo te turbulencia (como lo es el de Smagorinsky) ya que se está en presencia de un flujo lento (laminar).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Ley de Darcy}
 La \emph{Ley de Darcy} expresa que el flujo de agua en un medio poroso, homogéneo e isotrópico es proporcional 
@@ -98,7 +107,7 @@ Q&=&K \frac{h_3 - h_4}{L} A = K \cdot i \cdot A \label{darcy_formula}
 donde:
 \begin{itemize}
 	\item[$Q=$] gasto, descarga o caudal en $m^3/s$,
-	\item[$L=$] longitud en metros de la muestra,
+	\item[$L=$] longitud en metros de la muestra, %seria la longitud del dominio nuestro.
 	\item[$K=$] una constante, actualmente conocida como coeficiente de permeabilidad de Darcy, variable en función del material de la muestra, en $m/s$,
 	\item[$A=$] área de la sección transversal de la muestra, en $m^2$,
 	\item[$h_3=$] altura, sobre el plano de referencia que alcanza el agua en un tubo colocado a la entrada de la capa filtrante,
@@ -112,7 +121,8 @@ donde:
 \label{graf_leydarcy}
 \end{figure}
 %
-La ley de Darcy es válida para todo suelo donde el flujo sea laminar: arenas finas a medias, arenas gruesas bien graduadas, arcillas y limos. Entre sus limitaciones, es posible afirmar que la constante de proporcionalidad $K$ no es propia del medio poroso, sino que depende de las características del fluido (peso específico y viscosidad cinemática). 
+%flujo laminar: es flujo es lento y en el movimiento influyes nas propiedades del seulo por ser lento justamente....
+La ley de Darcy es válida para todo suelo donde el flujo sea laminar (esto es, que tiene un movimiento lento): arenas finas a medias, arenas gruesas bien graduadas, arcillas y limos. Entre sus limitaciones, es posible afirmar que la constante de proporcionalidad $K$ no es propia del medio poroso, sino que depende de las características del fluido (peso específico y viscosidad cinemática). 
 El factor $K$ se puede descomponer como se puede ver en (\ref{k_descompuesto}) 
 \begin{eqnarray}
 	K&=& k \cdot x \cdot \gamma \cdot \mu \label{k_descompuesto}
@@ -124,14 +134,10 @@ donde:
 	\item[$\gamma=$] peso específico del fluido
 	\item[$\mu=$] viscosidad dinámica del fluido
 \end{itemize}
-Esta cuestión es fundamental en geología del petróleo, donde se estudian fluidos de diferentes características. En el caso del agua, la salinidad apenas hace variar el peso específico no la viscosidad.
-Solamente habría que considerar la variación de la viscosidad con la temperatura, que se duplica entre 5 y 35 º C, con lo que se duplicaría la permeabilidad de Darcy y también el caudal circulante por la sección considerada del medio poroso. Afortunadamente, las aguas subterráneas presentan mínimas diferencias de temperatura a lo largo del año en un mismo acuífero.
-Por tanto, aunque sabemos que $K$ depende tanto del medio como del propio fluido, como la parte que depende del fluido normalmente es despreciable, a efectos prácticos asumimos que la $K$ de Darcy, o \emph{conductividad hidráulica} es una característica del medio poroso.
+Aunque sabemos que $K$ depende tanto del medio como del propio fluido, como la parte que depende del fluido normalmente es despreciable (ya que estamos en presencia de agua, y la viscosidad y peso específico varían muy poco cuando la temperatura varía muy poco), a efectos práctico,s asumimos que la $K$ de Darcy, o \emph{conductividad hidráulica} es una característica del medio poroso.
 \\
 En algunas circunstancias, la relación entre el caudal y el gradiente hidráulico no es lineal.
 Esto puede suceder cuando el valor de $K$ es muy bajo o cuando las velocidades del flujo son muy altas.
-En el primer caso, por ejemplo, calculando el flujo a través de una formación arcillosa, el caudal que obtendríamos aplicando la Ley de Darcy sería muy bajo, pero en la realidad, si no se aplican unos gradientes muy elevados, el agua no llega a circular, el caudal es 0.
-En el segundo caso, si el agua circula a gran velocidad, el caudal es directamente proporcional a la sección y al gradiente, pero no linealmente proporcional.
 En el flujo subterráneo las velocidades son muy lentas y prácticamente siempre la relación es lineal, salvo en las proximidades de captaciones bombeando en ciertas condiciones.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -145,7 +151,7 @@ Los datos que se pudieron obtener del problema son:
 	\item Discretización del área a modelar:	
 	\begin{itemize}
 		\item Dominio: $x=1000 ~\left[m\right]$, $y=1000 ~\left[m\right]$
-		\item Acuífero libre, homogéneo e isótropo $(K_{xx} = K_{yy} = K_{zz})$
+		\item Acuífero confinado, homogéneo e isótropo $(K_{xx} = K_{yy} = K_{zz})$
 		\item Espesor del acuífero: $20 ~\left[m\right]$
 	\end{itemize}
 	%
@@ -161,20 +167,16 @@ Los datos que se pudieron obtener del problema son:
 		\item Pozo Bombeo 2: $40~\left[\frac{m³}{h}\right]$
 	\end{itemize}
 	\item Diámetro del pozo: $0.5 [m]$* \begin{Large} esto no era dato! pero los calculso lo hicimos con este valor \end{Large}
-	\item Filtro: Tramo filtrante de longitud $15~m.$
+	\item Profundidad del pozo $15~m.$
 	\item Transmisividad: $600~\left[\frac{m^2}{d}\right]$\\
-\begin{LARGE}
-Coef de trasmisividad: cuanto mas chiquito es mas lento se mueve el agua en el suelo.ver!! \\
-\end{LARGE}	
-	\item Coeficiente de almacenamiento: $5*10⁻²$ \begin{LARGE}
-	creo que este no lo usamos... ver
-	\end{LARGE}
-	\item Porosidad efectiva: $5*10⁻²$
 \end{itemize}
 \begin{Large}
 También hay que aclarar que nos encontramos en presencia de suelo saturado, esto es.....ver!\\
 \end{Large}
-
+\begin{LARGE}
+aclarar acá que por cuestiones de escala del fluido y de la geometria y dominio, simulo el pozo mayor con un caudal en funcion
+del diametro del pozo..... o sea el pozo en realidad de 2 m... en vez de 0.5 m... hacer esquemita...
+\end{LARGE}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Cálculo de la velocidad de extracción de agua a partir del caudal}
 Se procedió a convertir las unidades de los datos del problema (Caudal de extracción de los pozos a velocidad) para poder ingresarlas en el software de simulación.
@@ -248,7 +250,7 @@ A continuación se presentan los datos de los elementos que forman la geometría
 %
 \begin{figure}[tbhp]
 \centerline{\includegraphics[scale=0.6]{img/cotas_grales_YZ}}
-\caption{Vista en de las cotas en el plano YZ}
+\caption{Vista de las cotas en el plano YZ}
 \label{cotas_grales_YZ}
 \end{figure}
 %
@@ -465,7 +467,7 @@ A continuación, se presentan los tipos y cantidades de elementos con los que es
 %\end{figure}
 
 \begin{figure}[tbhp]
-\centerline{\includegraphics[width=12cm]{img/contorno_malla_yz1}}
+\centerline{\includegraphics[scale=0.50]{img/contorno_malla_yz1}}
 \caption{Vista en el plano YZ de la malla}
 \label{contorno_malla_yz1}
 \end{figure}
