@@ -61,7 +61,9 @@ Para la realización del trabajo se utilizó el software de pre y pos proceso Gi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Objetivos}
-El objetivo de este trabajo, es simular el flujo, en un medio poroso (acuífero confinado, homogéneo e isótropo), generado por un par de bombas de extracción de agua en un campo de bombeo para visualizar las lineas de corrientes y equipotenciales generadas.
+El objetivo de este trabajo, es simular el flujo, en un medio poroso (acuífero confinado, homogéneo e isótropo), generado por un par de bombas de extracción de agua en un campo de bombeo para visualizar las lineas de corrientes y equipotenciales generadas. \begin{Large}
+VER!!!!***********************************
+\end{Large}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -144,21 +146,24 @@ En el flujo subterráneo las velocidades son muy lentas y prácticamente siempre
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Desarrollo}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Para resolver el problema, se hicieron 2 simulaciones similares pero una con un dominio levemente más pequeño que la otra.
 \subsection{Datos del problema}
+Los datos para ambas geometrías del problema son los que se presentan a continuación:
 \label{datos_problema}
-Los datos que se pudieron obtener del problema son:
+\subsection*{Geometría 1 (de ahora en más la llamaremos \emph{G1}): }
+\label{geometria1}
 \begin{itemize}
 	\item Discretización del área a modelar:	
 	\begin{itemize}
-		\item Dominio: $x=1000 ~\left[m\right]$, $y=1000 ~\left[m\right]$
+		\item Dominio: $x=100 ~\left[m\right]$, $y=100 ~\left[m\right]$
 		\item Acuífero confinado, homogéneo e isótropo $(K_{xx} = K_{yy} = K_{zz})$
 		\item Espesor del acuífero: $20 ~\left[m\right]$
 	\end{itemize}
 	%
-	\item Ubicación de los Pozos de bombeo:
+	\item Coordenadas de ubicación de los Pozos de bombeo:
 	\begin{itemize}
-		\item Pozo Bombeo 1: $x=150~~\left[m\right]$, $y=650 ~~\left[m\right]$
-		\item Pozo Bombeo 2: $x=750~~\left[m\right]$, $y=250 ~~\left[m\right]$
+		\item Pozo Bombeo 1: $x=17.5~~\left[m\right]$, $y=77.5 ~~\left[m\right]$
+		\item Pozo Bombeo 2: $x=65.0~~\left[m\right]$, $y=22.5 ~~\left[m\right]$
 	\end{itemize}
 	%
 	\item Caudal de bombeo:
@@ -166,20 +171,44 @@ Los datos que se pudieron obtener del problema son:
 		\item Pozo Bombeo 1: $60~\left[\frac{m³}{h}\right]$
 		\item Pozo Bombeo 2: $40~\left[\frac{m³}{h}\right]$
 	\end{itemize}
-	\item Diámetro del pozo: $0.5 [m]$* \begin{Large} esto no era dato! pero los calculso lo hicimos con este valor \end{Large}
-	\item Profundidad del pozo $15~m.$
-	\item Transmisividad: $600~\left[\frac{m^2}{d}\right]$\\
+	\item Diámetro del pozo: $0.5 [m]$
+	\item Profundidad del pozo $15 [m]$
+	\item Transmisividad: $600~\left[\frac{m^2}{d}\right]$ \begin{LARGE}
+	eso no se si va!!!
+	\end{LARGE}\\
 \end{itemize}
-\begin{Large}
-También hay que aclarar que nos encontramos en presencia de suelo saturado, esto es.....ver!\\
-\end{Large}
-\begin{LARGE}
-aclarar acá que por cuestiones de escala del fluido y de la geometria y dominio, simulo el pozo mayor con un caudal en funcion
-del diametro del pozo..... o sea el pozo en realidad de 2 m... en vez de 0.5 m... hacer esquemita...
-\end{LARGE}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\subsection*{Geometría 2: (de ahora en más la llamaremos \emph{G2}):}
+\label{geometria2}
+\begin{itemize}
+	\item Discretización del área a modelar:	
+	\begin{itemize}
+		\item Dominio: $x=200 ~\left[m\right]$, $y=200 ~\left[m\right]$
+		\item Acuífero confinado, homogéneo e isótropo $(K_{xx} = K_{yy} = K_{zz})$
+		\item Espesor del acuífero: $20 ~\left[m\right]$
+	\end{itemize}
+	%
+	\item Coordenadas de ubicación de los Pozos de bombeo:
+	\begin{itemize}
+		\item Pozo Bombeo 1: $x=30.0 ~~\left[m\right]$, $y=135.0 ~~\left[m\right]$
+		\item Pozo Bombeo 2: $x=150.0~~\left[m\right]$, $y=50.0 ~~\left[m\right]$
+	\end{itemize}
+	%
+	\item Caudal de bombeo:
+	\begin{itemize}
+		\item Pozo Bombeo 1: $60~\left[\frac{m³}{h}\right]$
+		\item Pozo Bombeo 2: $40~\left[\frac{m³}{h}\right]$
+	\end{itemize}
+	\item Diámetro del pozo: $0.5 [m]$
+	\item Profundidad del pozo $15 [m]$
+	\item Transmisividad: $600~\left[\frac{m^2}{d}\right]$ \begin{LARGE}
+	eso no se si va!!!
+	\end{LARGE}\\
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Cálculo de la velocidad de extracción de agua a partir del caudal}
-Se procedió a convertir las unidades de los datos del problema (Caudal de extracción de los pozos a velocidad) para poder ingresarlas en el software de simulación.
+\label{subseccion_transformacion_caudal}
+Dado que el caudal de los pozos para ambas geometrías es el mismo, se procedió a convertir las unidades de los datos del problema (Caudal de extracción de los pozos a velocidad) para poder ingresarlas en el software de simulación.
 En dinámica de fluidos, \emph{caudal} es la cantidad de fluido que avanza en una unidad de tiempo. Se denomina también ``Caudal volumétrico" o ``Índice de flujo fluido". El cálculo del caudal de agua viene expresado por:
 \begin{equation}
 Q=V \cdot S
@@ -212,67 +241,64 @@ Q_2/S_2&=&V_2 \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Definición de Geometría}
 Para la geometría en tres dimensiones se tiene los siguientes datos:
-En las figuras \ref{cotas_superiores_generalesXY}, \ref{cotas_superiores_detallesXY} y \ref{cotas_grales_YZ} se pueden observar
-las dimensiones de las geometrías según los datos del problema. Hay que aclarar aquí que el cuadrado de $300~m.~x~300~m.$ que se visualiza
-en la figura \ref{cotas_superiores_detallesXY} como el rectángulo de $400~m.~x~300~m.$ en la misma figura, solo fueron dibujados con el
+En las figuras (\ref{100_xy_cotas}) y (\ref{100_xz_cotas}) se pueden observar
+las dimensiones de la \emph{G1} según los datos del problema. Análogamente, pero para \emph{G2}, se presentan las cotas en las figuras (\ref{200_xy_cotas}) y (\ref{200_xz_cotas}).
+Hay que aclarar aquí, que en ambas geometrías el cuadrado de $10~m.~x~10~m.$ que se visualiza
+alrededor de ambos pozos en las figuras (\ref{100_xy_cotas}), (\ref{100_xz_cotas}), (\ref{200_xy_cotas}) y (\ref{200_xz_cotas}), solo fueron dibujados con el
 objetivo, de a posteriori, realizar un refinamiento del dominio en la zona que más interesa visualizar.\\
-También, se debe aclarar, que tanto el \emph{tramo filtrante}, el \emph{espesor del acuífero} y el \emph{diámetro de los pozos} descriptos en la sección \ref{datos_problema} fueron redimensionados con el objetivo de tener una  mejor visualización de los resultados, quedando con las siguientes dimensiones:
-\begin{itemize}
-		\item Espesor del acuífero(amplificado por un factor 10): $200 ~\left[m\right]$*
-		\item Tramo filtrante de longitud (amplificado por un factor 10): $150~m.$*
-		\item Diámetro del pozo (amplificado por un factor 40): $20 [m]$*
-		\begin{Large}
-		que vamos a poner al final? que la simulación se hizo en un radio de 20 m? o que la redimensiones fue echa con ese objetivo? me parece que esto esta mal pero bueno.. ver que haceR!
-		\end{Large}
-\end{itemize}
-A continuación se presentan los datos de los elementos que forman la geometría:
-\begin{itemize}
-\item Número de puntos: 33
-\item Número de lineas: 52
-\item Número de superficies: 28
-\item Número de volúmenes: 3
-\end{itemize}
-
-\begin{figure}[tbhp]
-\centerline{\includegraphics[scale=0.75]{img/cotas_superiores_generalesXY}}
-\caption{Vista General de las cotas en el Plano XY}
-\label{cotas_superiores_generalesXY}
-\end{figure}
-
 %
 \begin{figure}[tbhp]
-\centerline{\includegraphics[scale=0.6]{img/cotas_superiores_detallesXY}}
-\caption{Vista en detalle (pozos) de las cotas en el Plano XY}
-\label{cotas_superiores_detallesXY}
+\centerline{\includegraphics[scale=0.4]{img/100m/100_xy_cotas}}
+\caption{Vista de las cotas en el Plano XY para \emph{G1}}
+\label{100_xy_cotas}
 \end{figure}
-%
-
 %
 \begin{figure}[tbhp]
-\centerline{\includegraphics[scale=0.6]{img/cotas_grales_YZ}}
-\caption{Vista de las cotas en el plano YZ}
-\label{cotas_grales_YZ}
+\centerline{\includegraphics[scale=0.4]{img/100m/100_xz_cotas}}
+\caption{Vista de las cotas en el Plano XZ para \emph{G1}}
+\label{100_xz_cotas}
 \end{figure}
 %
-En la figura \ref{superficies_y_volumenes} se pueden observar las generaciones de las superficies (color magenta) y volúmenes (color cyan)
-de la geometría.
 %
 \begin{figure}[tbhp]
-\centerline{\includegraphics[scale=0.75]{img/superficies_y_volumenes}}
-\caption{Superficies y Volúmenes de la Geometría}
-\label{superficies_y_volumenes}
+\centerline{\includegraphics[scale=0.4]{img/200m/200_xy_cotas}}
+\caption{Vista de las cotas en el Plano XY para \emph{G2}}
+\label{200_xy_cotas}
 \end{figure}
+%
+\begin{figure}[tbhp]
+\centerline{\includegraphics[scale=0.4]{img/200m/200_xz_cotas}}
+\caption{Vista de las cotas en el Plano XZ para \emph{G2}}
+\label{200_xz_cotas}
+\end{figure}
+%
+En la tabla (\ref{tabla_lista_entidades}) se presentan los datos de los elementos que forman G1 y G2 respectivamente:
+%
+\begin{table}[tbhp]
+\begin{center}\begin{tabular}{ccc}
+\hline \textbf{Tipo/Geometría} & \textbf{G1} & \textbf{G2} \\ 
+\hline Número de puntos: & 34 & 32 \\ 
+\hline Número de líneas: & 48 & 48 \\ 
+\hline Número de superficies: & 24 & 24 \\ 
+\hline Número de volúmenes: & 3 & 3 \\ 
+\hline 
+\label{tabla_lista_entidades}
+\end{tabular}\end{center}
+\caption{Cantidad de puntos, lineas, superficies y volúmenes para \emph{G1} y \emph{G2}}
+\end{table}
+%
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Propiedades del medio y de los materiales}
-A partir de los datos del problema se tuvieron que realizar conversiones de unidades y el cálculo de diferentes valores para ser ingresados en el programa GID para definir los parámetros del modelo.
+A partir de los datos del problema, se tuvieron que realizar conversiones de unidades y el cálculo de diferentes valores para ser ingresados en el programa \emph{GID} para definir los parámetros del modelo.
+Las propiedades asignadas son las mismas para ambas geometrías \emph{G1} y \emph{G2}, por lo cual solo se especificarán una sola vez.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Material Suelo}
 En la pestaña ransol de la ventana de materiales de fluidos para el material suelo de  se introdujeron los siguientes valores:
 \begin{itemize}
 \item Modelo de Fluido: flujo incompresible (la densidad del fluido permanece constante con el tiempo $\rho = cte.$)
-\item Densidad: $999.7~Kg/m^3$ (agua a $10° C$) \footnote{ según datos obtenidos de Tabla-libro ...}
-\item Viscosidad: $0.001307~Pa.s$ (agua a $10° C$)\footnote{ según datos obtenidos de Tabla-libro ...}
+\item Densidad: $999.7~Kg/m^3$ (agua a $10° C$) \footnote{Datos dados por GID}
+\item Viscosidad: $0.001307~Pa.s$ (agua a $10° C$)\footnote{Datos dados por GID}
 \item Resistencia de la Ley de Darcy:
 \begin{equation}
 \begin{pmatrix}{}
@@ -284,53 +310,56 @@ En la pestaña ransol de la ventana de materiales de fluidos para el material su
 \end{equation}
 Debido a que se está en presencia de un acuífero isótropo (homogéneo en todo el suelo), en (\ref{matrizdarcys}) se puede observar que sólo la diagonal principal de la matriz presenta valores diferentes de cero.
 \end{itemize}
-En la figura \ref{datos_materiales_suelo_vista} se puede observar la asignación del material definido a la parte del dominio correspondiente.
-
+En la figura \ref{100_perspectiva_material_agua} se puede observar la asignación del material definido a la parte del dominio correspondiente.
+%
 \begin{figure}[tbhp]
-\centerline{\includegraphics[scale=0.75]{img/datos_materiales_suelo_vista}}
+\centerline{\includegraphics[scale=0.5]{img/100m/100_perspectiva_material_agua}}
 \caption{Material Suelo asignado a la geometría}
-\label{datos_materiales_suelo_vista}
+\label{100_perspectiva_material_agua}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Material Wall o Pared}
-En la ventana de contornos fluidos se asigno a las paredes de ambos pozos el contorno definido por defecto Wall. El tipo de contorno seleccionado fue el \emph{V fixWall} con el ángulo por defecto de $60°$. Este es el modelo elegido en Tdyn para simular el comportamiento del flujo en las paredes del dominio. Básicamente, impone que la velocidad en las superficies asignadas será nula, modelando así la pared del pozo por la que no existe penetración de agua hacia el interior del pozo. En la figura \ref{datos_contornos_fluidos_vista} se puede observar el material asignado a ambos pozos.
+En la ventana de contornos $\rightarrow$ fluidos, se asigno a las paredes de ambos pozos el contorno definido por defecto Wall. El tipo de contorno seleccionado fue el \emph{V fixWall} con el ángulo por defecto de $60°$. Este es el modelo elegido en Tdyn para simular el comportamiento del flujo en las paredes del dominio. Básicamente, impone que la velocidad en las superficies asignadas será nula, modelando así la pared del pozo por la que no existe penetración de agua hacia el interior del del mismo. En la figura \ref{100_condiciones_vfixwall_xz} se puede observar el material asignado a ambos pozos.
+%
 \begin{figure}[tbhp]
-\centerline{\includegraphics[scale=0.75]{img/datos_contornos_fluidos_vista}}
+\centerline{\includegraphics[scale=0.5]{img/100m/100_condiciones_vfixwall_xz}}
 \caption{Material Wall o Pared asignado a la geometría}
-\label{datos_contornos_fluidos_vista}
+\label{100_condiciones_vfixwall_xz}
 \end{figure}
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Condiciones de borde}
 Para fijar las condiciones de borde, se procedió mediante el menú datos $\Rightarrow$ condiciones $\Rightarrow$ ransol. Luego se selecciono la opción de asignación de propiedades a superficies y se procedió a fijar las diferentes condiciones:
+
 \begin{figure}[tbhp]
-\centerline{\includegraphics[scale=0.75]{img/datos_condiciones_ransol_fijar_velocidadinterno_leyendas}}
+\centerline{\includegraphics[scale=0.5]{img/100m/100_condiciones_fijar_velocidad_perspectiva_interior_leyendas}}
 \caption{Velocidades Fijas}
-\label{datos_condiciones_ransol_fijar_velocidadinterno_leyendas}
+\label{100_condiciones_fijar_velocidad_perspectiva_interior_leyendas}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection*{Fijar Velocidad}
-Como se puede ver en la figura (\ref{datos_condiciones_ransol_fijar_velocidadinterno_leyendas}) las condiciones asignadas a cada una de las superficies enumeradas son las siguientes:
+Como se puede ver en la figura (\ref{100_condiciones_fijar_velocidad_perspectiva_interior_leyendas}) las condiciones asignadas a cada una de las superficies enumeradas son las siguientes:
 
 \begin{enumerate}
 
 \item Superficie 1 y 2:
 
 \begin{eqnarray*}
-V_x&=&0.0000017~[m/s]\\
+Libre~V_x&=&0.0000017~[m/s]\\
 Fija~V_y&=&0.0~[m/s]\\
-V_z&=&0.0~[m/s]
+Libre~V_z&=&0.0~[m/s]
 \end{eqnarray*}
-Observar, que en las superficies 1 y 2 marcadas en la figura (\ref{datos_condiciones_ransol_fijar_velocidadinterno_leyendas}) se fija la velocidad $V_y$ a $0$, esto se hace con el objetivo de impedir que el fluido escape del dominio (impermeabilidad de las paredes laterales). En la dirección de $x$ y $y$ el movimiento es libre.
+Observar, que en las superficies 1 y 2 marcadas en la figura (\ref{100_condiciones_fijar_velocidad_perspectiva_interior_leyendas}) se fija la velocidad $V_y$ a $0$, esto se hace con el objetivo de impedir que el fluido escape del dominio (impermeabilidad de las paredes laterales). En la dirección de $x$ y $y$ el movimiento es libre.
 
 \item Superficie 3 y 4:
 
 \begin{eqnarray*}
-V_x&=&0.0000017~[m/s]\\
-V_y&=&0.0~[m/s]\\
+Libre~V_x&=&0.0000017~[m/s]\\
+Libre~V_y&=&0.0~[m/s]\\
 Fija~V_z&=&0.0~[m/s]
 \end{eqnarray*}
 
-En estas superficies se fija la velocidad $V_z$ a $0$. En la superficie marcada con el número 4 en la figura (\ref{datos_condiciones_ransol_fijar_velocidadinterno_leyendas}), se lo hace para representar la impermeabilidad de la superficie inferior del campo, por otro lado en la superficie marcada con 3, representa la no existencia de recarga sobre el campo. En las direcciones de $x$ y $y$ el movimiento es libre.
+En estas superficies se fija la velocidad $V_z$ a $0$. En la superficie marcada con el número 4 en la figura (\ref{100_condiciones_fijar_velocidad_perspectiva_interior_leyendas}), se lo hace para representar la impermeabilidad de la superficie inferior y superior del campo (acuífero confinado). En las direcciones de $x$ y $y$ el movimiento es libre.
 
 \item Superficie 5:
 
@@ -340,126 +369,121 @@ Fija~V_y&=&0.0~[m/s]\\
 Fija~V_z&=&0.0~[m/s]\\
 \end{eqnarray*}
 
-Se puede observar que en esta superficie, se fijan las velocidades en las 3 direcciones, $x$, $y$ y $z$. Esto modela la entrada de agua que se desplaza en una sola dirección ($x$). Además ese desplazamiento es a la misma velocidad con el que se determino la constante de permeabilidad $k$ de la \emph{Ley de Darcy}.
-
+Se puede observar que en esta superficie, se fijan las velocidades en las 3 direcciones, $x$, $y$ y $z$. Esto, modela la entrada de agua que se desplaza en una sola dirección ($x$). Además ese desplazamiento es a la misma velocidad con el que se determino la constante de permeabilidad $k$ de la \emph{Ley de Darcy}.
 \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection*{Fijar Presión}
-En la figura \ref{datos_condiciones_ransol_presion} se puede observar que se fijó un valor de referencia para la presión en la superficie del extremo final de salida del campo con valor igual a $0.0~\left[Pa\right]$. Esto significa que los resultados que obtendremos para la presión serán relativos a esta condición.
-
-\begin{figure}[tbhp]
-\centerline{\includegraphics[scale=0.75]{img/datos_condiciones_ransol_presion}}
-\caption{Condición fija de presión}
-\label{datos_condiciones_ransol_presion}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection*{Campo de Velocidad}
-Para modelar la extracción de agua de los pozos, se aplicó un campo de velocidad como se observa en la figura (\ref{datos_condiciones_ransol_campo_de_velocidad}).
-Para ambos pozos se genero una función dependiente del tiempo que modela el proceso de extracción de agua de la bomba durante un periodo de tiempo. En las figuras (\ref{grafica1_0085}) y (\ref{grafica1_0057}) se puede observar una pendiente creciente entre los pasos 100 y 500 (encendido de la bomba de extracción de agua) y una pendiente decreciente entre los pasos de tiempo 50000 y 50400 (apagado de la bomba de extracción de agua).
-Entre los valores que se encuentran entre 500 y 50000 la velocidad es constante igual a la velocidad de extracción que posee la bomba del pozo.
-
-A continuación se presentan las condiciones asignadas a cada pozo:
-\begin{itemize}
-\item Pozo 1: 
-\begin{eqnarray} \label{pozo1_funcion}
-\nonumber
-Fijar~ValorX&=&0.0~[m/s]\\
-\nonumber
-Fijar~ValorY&=&0.0~[m/s]\\
-Fijar~ValorZ&=& if(t<=100 | t>50400)then(vz=0)else(if(t>100 \& t<=500)then\\
-\nonumber
-&&(vz=0.00021*(t-100))else(if(t>500 \& t<=50000)then(vz=0.085)\\&&
-\nonumber
-else(vz=-0.00021*(t-50400))endif)endif)endif~~[m/s]
-\end{eqnarray}
-La función escrita para el $ValorZ$ en (\ref{pozo1_funcion}) se puede observar en la figura (\ref{grafica1_0085}) y viene dada por la función matemática (\ref{vz_ecuacion_pozo1})
-
+Para modelar la extracción de agua de los pozos, se fijo la velocidad en el eje de las $Z$ con el valor calculado en la sección \ref{subseccion_transformacion_caudal} para cada uno de los pozos:
 %
-\begin{equation}\label{vz_ecuacion_pozo1}
-Vz_1(t) = \left\{
-\begin{array}{l@{,\quad}l}
-0 & t\leqslant 100 \vee t > 50400 \\
-0.00021*(t-100) & t > 100 \wedge t\leqslant 500 \\
-0.085 & t > 500 \wedge t\leqslant 50000 \\
--0.00021*(t-50400) & eoc
-\end{array}
-\right.
-\end{equation}
+\begin{enumerate}
+\item Pozo 1:
+\begin{eqnarray*}
+Libre~V_x&=&0.0~[m/s]\\
+Libre~V_y&=&0.0~[m/s]\\
+Fija~V_z&=&0.085~[m/s]\\
+\end{eqnarray*}
 %
-
-\begin{figure}[tbhp]
-\centerline{\includegraphics[scale=0.3]{graficas/0085}}
-\caption{Función tiempo vs. velocidad de campo de velocidad en Z representada en (\ref{pozo1_funcion}) y (\ref{vz_ecuacion_pozo1})}
-\label{grafica1_0085}
-\end{figure}
-
 \item Pozo 2:
-\begin{eqnarray} \label{pozo2_funcion}
-\nonumber
-Fijar~ValorX&=&0.0~[m/s]\\
-\nonumber
-Fijar~ValorY&=&0.0~[m/s]\\
-Fijar~ValorZ&=& if(t<=100 | t>50400) then(vz=0)else(if(t>100 \& t<=500)then\\
-\nonumber
-&&(vz=0.00014*(t-100))else(if(t>500 \& t<=50000)then(vz=0.057)\\&&
-\nonumber
-else(vz=-0.00014*(t-50400))endif)endif)endif~~[m/s]
-\end{eqnarray}
-La función escrita para el $ValorZ$ en (\ref{pozo2_funcion}) se puede observar en la figura (\ref{grafica1_0057})  y viene dada por la función matemática (\ref{vz_ecuacion_pozo2})
+\begin{eqnarray*}
+Libre~V_x&=&0.0~[m/s]\\
+Libre~V_y&=&0.0~[m/s]\\
+Fija~V_z&=&0.057~[m/s]\\
+\end{eqnarray*}
+\end{enumerate}
 %
-\begin{equation}\label{vz_ecuacion_pozo2}
-Vz_2(t) = \left\{
-\begin{array}{l@{,\quad}l}
-0 & t \leqslant 100\vee t > 50400 \\
-0.00014*(t-100) & t > 100 \wedge t \leqslant 500 \\
-0.057 & t > 500 \wedge t \leqslant 50000 \\
--0.00014*(t-50400) & eoc
-\end{array}
-\right.
-\end{equation}
-%
+En la figura (\ref{100_condiciones_fijar_velocidad_fondo_pozos}) y (\ref{fondo_pozos_detalles}) se puede ver la condición asignada en color cian y magenta, para el pozo 1 y 2 respectivamente.
 
 \begin{figure}[tbhp]
-\centerline{\includegraphics[scale=0.3]{graficas/0057}}
-\caption{Función tiempo vs. velocidad de campo de velocidad en Z representada en (\ref{pozo2_funcion}) y (\ref{vz_ecuacion_pozo2})}
-\label{grafica1_0057}
-\end{figure}
-
-\end{itemize}
-\begin{figure}[tbhp]
-\centerline{\includegraphics[scale=0.75]{img/datos_condiciones_ransol_campo_de_velocidad}}
-\caption{Condición de campo de velocidades}
-\label{datos_condiciones_ransol_campo_de_velocidad}
+\centerline{\includegraphics[scale=0.4]{img/100m/100_condiciones_fijar_velocidad_fondo_pozos}}
+\caption{Condición Fijar Velocidad para los pozos de bombeo}
+\label{100_condiciones_fijar_velocidad_fondo_pozos}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp] 
+\centering 
+\includegraphics[width=0.5\textwidth]{img/100m/100_condiciones_fijar_velocidad_fondo_pozos_arriba_izquierda} 
+\includegraphics[width=0.5\textwidth]{img/100m/100_condiciones_fijar_velocidad_fondo_pozos_abajo_derecha}
+\caption{Vista en detalle de la Figura (\ref{100_condiciones_fijar_velocidad_fondo_pozos})} 
+\label{fondo_pozos_detalles} 
+\end{figure} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection*{Fijar Presión}
+En la figura \ref{100_condiciones_presion0} se puede observar que se fijó un valor de referencia para la presión en la superficie del extremo final de salida del campo con valor igual a $0.0~\left[Pa\right]$. Esto significa que los resultados que obtendremos para la presión serán relativos a esta condición.
+
+\begin{figure}[tbhp]
+\centerline{\includegraphics[scale=0.75]{img/100m/100_condiciones_presion0}}
+\caption{Condición fija de presión}
+\label{100_condiciones_presion0}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Mallado}
-Para el mallado, se asignaron diferentes tamaños a las superficies debido a que se deseó obtener un mayor detalle en las cercanías de ambos pozos. Para ello se subdividió el dominio como se muestra en las figuras \ref{cotas_superiores_generalesXY} y \ref{cotas_superiores_detallesXY}, luego se aplicó una malla no estructurada de diferentes tamaños para las diferentes entidades como se puede ver en las figuras \ref{tam_malla_xy} y \ref{tam_malla_pozo_interior}. Además, en las preferencias de mallado de Gid (Utilidades $\rightarrow$ preferencias $\rightarrow$ pestaña malla), se fijó la transición de tamaños no estructurados a $0.4$.
-A continuación, se presentan los tipos y cantidades de elementos con los que esta conformado la geometría:
-\begin{itemize}
-\item Número de nodos: 118551
-\item Número de tetraedros: 651913. En la Fig. \ref{calidadtetraedros} se puede observar la calidad del mallado.
-\item Número de triángulos: 43082. En la Fig. \ref{calidadtriangulos} se puede observar la calidad del mallado.
-\item Total de elementos: 694995
-\end{itemize}
+Para el mallado, se asignaron diferentes tamaños a las superficies debido a que se deseó obtener un mayor detalle en las cercanías de ambos pozos. Para ello se subdividió el dominio como se muestra en las figuras (\ref{100_xy_cotas}) y (\ref{100_xz_cotas}) para \emph{G1} y en las figuras (\ref{200_xy_cotas}) y (\ref{200_xz_cotas}) para \emph{G2}, luego se aplicó una malla no estructurada de diferentes tamaños para las diferentes entidades, como se puede ver en las figuras (\ref{tam_malla_xy}) y (\ref{tam_malla_pozo_interior}) en el caso de \emph{G1} y en las figuras **** en el caso de \emph{G2}. 
+\\
+Además, en las preferencias de mallado de Gid (Utilidades $\rightarrow$ preferencias $\rightarrow$ pestaña malla), se fijó la transición de tamaños no estructurados a $0.3$.
 
+%100_calidad_malla_tetraedros.png 
+%100_calidad_malla_triangulos.png 
+%100_perspec_tam_malla.png 
+%100_xy_contorno_malla.png 
+%100_xy_tam_malla_fondo_pozos.png 
+%100_xz_contorno_malla.png 
+%100_xz_tam_malla.png
+
+
+En la tabla (\ref{tabla_lista_elementos}), se presentan los tipos y cantidades de elementos con los que esta conformado cada una de las geometrías:
+%
+\begin{table}[tbhp]
+\begin{center}\begin{tabular}{ccc}
+\hline \textbf{Tipo/Geometría} & \textbf{G1} & \textbf{G2} \\ 
+\hline Número de nodos: & 122586 & 157619 \\ 
+\hline Número de tetraedros: & 659027 & 851671\\ 
+\hline Número de triángulos: & 60952  & 70582 \\ 
+\hline Número de elementos totales: & 719979 & 922253 \\ 
+\hline 
+\label{tabla_lista_elementos}
+\end{tabular}\end{center}
+\caption{Cantidad de nodos, tetraedros, triángulos y elementos totales para \emph{G1} y \emph{G2}}
+\end{table}
+La calidad de la malla para \emph{G1} se muestra en la Fig. (\ref{100_calidad_malla_tetraedros}) y (\ref{100_calidad_malla_triangulos}); para \emph{G2} en \ref{200_calidad_malla_tetraedros} y (\ref{200_calidad_malla_triangulos}).
+
+\begin{figure}[htbp] 
+\centering 
+\includegraphics[width=0.5\textwidth]{img/100m/100_condiciones_fijar_velocidad_fondo_pozos_arriba_izquierda} 
+\includegraphics[width=0.5\textwidth]{img/100m/100_condiciones_fijar_velocidad_fondo_pozos_abajo_derecha}
+\caption{Vista en detalle de la Figura (\ref{100_condiciones_fijar_velocidad_fondo_pozos})} 
+\label{fondo_pozos_detalles} 
+\end{figure} 
+
+%
 \begin{figure}[tbhp]
-\centerline{\includegraphics[scale=0.60]{img/cant_tetraedros}}
-\caption{Calidad de la Malla - Tetraedros}
-\label{calidadtetraedros}
+\centerline{\includegraphics[scale=0.60]{img/100m/100_calidad_malla_tetraedros}}
+\caption{Calidad de la Malla \emph{G1}- Tetraedros}
+\label{100_calidad_malla_tetraedros}
 \end{figure}
-
+%
 \begin{figure}[tbhp]
-\centerline{\includegraphics[scale=0.60]{img/cant_triangulos}}
-\caption{Calida de la Malla - Triángulos}
-\label{calidadtriangulos}
+\centerline{\includegraphics[scale=0.60]{img/100m/100_calidad_malla_triangulos}}
+\caption{Calida de la Malla para \emph{G1}- Triángulos}
+\label{100_calidad_malla_triangulos}
 \end{figure}
-
+%
+\begin{figure}[tbhp]
+\centerline{\includegraphics[scale=0.60]{img/200m/200_calidad_malla_tetraedros}}
+\caption{Calidad de la Malla \emph{G2}- Tetraedros}
+\label{200_calidad_malla_tetraedros}
+\end{figure}
+%
+\begin{figure}[tbhp]
+\centerline{\includegraphics[scale=0.60]{img/200m/200_calidad_malla_triangulos}}
+\caption{Calida de la Malla para \emph{G2}- Triángulos}
+\label{200_calidad_malla_triangulos}
+\end{figure}
+%
 \begin{figure}[tbhp]
 \centerline{\includegraphics[scale=0.75]{img/contorno_malla_xy}}
 \caption{Vista en el plano XY de la malla}
 \label{contorno_malla_xy}
 \end{figure}
-
+%
 %\begin{figure}[tbhp]
 %\centerline{\includegraphics[scale=0.50]{img/contorno_malla_yz}}
 %\caption{Vista en el plano YZ de la malla}
