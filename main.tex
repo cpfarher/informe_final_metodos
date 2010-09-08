@@ -337,7 +337,7 @@ Para fijar las condiciones de borde, se procedió mediante el menú datos $\Righ
 \label{100_condiciones_fijar_velocidad_perspectiva_interior_leyendas}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection*{Fijar Velocidad}
+\subsubsection{Fijar Velocidad}
 Como se puede ver en la figura (\ref{100_condiciones_fijar_velocidad_perspectiva_interior_leyendas}) las condiciones asignadas a cada una de las superficies enumeradas son las siguientes:
 
 \begin{enumerate}
@@ -406,7 +406,7 @@ En la figura (\ref{100_condiciones_fijar_velocidad_fondo_pozos}) y (\ref{fondo_p
 \label{fondo_pozos_detalles} 
 \end{figure} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection*{Fijar Presión}
+\subsubsection{Fijar Presión}
 En la figura \ref{100_condiciones_presion0} se puede observar que se fijó un valor de referencia para la presión en la superficie del extremo final de salida del campo con valor igual a $0.0~\left[Pa\right]$. Esto significa que los resultados que obtendremos para la presión serán relativos a esta condición.
 
 \begin{figure}[tbhp]
@@ -416,19 +416,34 @@ En la figura \ref{100_condiciones_presion0} se puede observar que se fijó un va
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Mallado}
-Para el mallado, se asignaron diferentes tamaños a las superficies debido a que se deseó obtener un mayor detalle en las cercanías de ambos pozos. Para ello se subdividió el dominio como se muestra en las figuras (\ref{100_xy_cotas}) y (\ref{100_xz_cotas}) para \emph{G1} y en las figuras (\ref{200_xy_cotas}) y (\ref{200_xz_cotas}) para \emph{G2}, luego se aplicó una malla no estructurada de diferentes tamaños para las diferentes entidades, como se puede ver en las figuras (\ref{tam_malla_xy}) y (\ref{tam_malla_pozo_interior}) en el caso de \emph{G1} y en las figuras **** en el caso de \emph{G2}. 
-\\
+Para el mallado, se asignaron diferentes tamaños a las superficies debido a que se deseó obtener un mayor detalle en las cercanías de ambos pozos. Para ello se subdividió el dominio como se muestra en las figuras (\ref{100_xy_cotas}) y (\ref{100_xz_cotas}) para \emph{G1} y en las figuras (\ref{200_xy_cotas}) y (\ref{200_xz_cotas}) para \emph{G2}. Luego, se aplicó una malla no estructurada de diferentes tamaños para las diferentes entidades, como se puede ver en las figuras (\ref{100_perspec_tam_malla}) y (\ref{100_xz_tam_malla}) en el caso de \emph{G1} y en las figuras (\ref{200_perspec_tam_malla}) y (\ref{200_xz_tam_malla}) en el caso de \emph{G2}.
+
 Además, en las preferencias de mallado de Gid (Utilidades $\rightarrow$ preferencias $\rightarrow$ pestaña malla), se fijó la transición de tamaños no estructurados a $0.3$.
-
-%100_calidad_malla_tetraedros.png 
-%100_calidad_malla_triangulos.png 
-%100_perspec_tam_malla.png 
-%100_xy_contorno_malla.png 
-%100_xy_tam_malla_fondo_pozos.png 
-%100_xz_contorno_malla.png 
-%100_xz_tam_malla.png
-
-
+%
+\begin{figure}[tbhp]
+\centerline{\includegraphics[scale=0.5]{img/100m/100_perspec_tam_malla}}
+\caption{Tamaños de los elementos de la malla \emph{G1}- Vista en perspectiva}
+\label{100_perspec_tam_malla}
+\end{figure}
+%
+\begin{figure}[tbhp]
+\centerline{\includegraphics[scale=0.5]{img/100m/100_xz_tam_malla}}
+\caption{Tamaños de los elementos de la malla \emph{G1}- Vista plano XZ}
+\label{100_xz_tam_malla}
+\end{figure}
+%%
+\begin{figure}[tbhp]
+\centerline{\includegraphics[scale=0.5]{img/200m/200_xy_tam_malla}}
+\caption{Tamaños de los elementos de la malla para \emph{G2}- Vista plano XY}
+\label{200_xy_tam_malla}
+\end{figure}
+%
+\begin{figure}[tbhp]
+\centerline{\includegraphics[scale=0.5]{img/200m/200_xz_tam_malla}}
+\caption{Tamaños de los elementos de la malla \emph{G2}- Vista plano XZ}
+\label{200_xz_tam_malla}
+\end{figure}
+%
 En la tabla (\ref{tabla_lista_elementos}), se presentan los tipos y cantidades de elementos con los que esta conformado cada una de las geometrías:
 %
 \begin{table}[tbhp]
@@ -443,98 +458,61 @@ En la tabla (\ref{tabla_lista_elementos}), se presentan los tipos y cantidades d
 \end{tabular}\end{center}
 \caption{Cantidad de nodos, tetraedros, triángulos y elementos totales para \emph{G1} y \emph{G2}}
 \end{table}
-La calidad de la malla para \emph{G1} se muestra en la Fig. (\ref{100_calidad_malla_tetraedros}) y (\ref{100_calidad_malla_triangulos}); para \emph{G2} en \ref{200_calidad_malla_tetraedros} y (\ref{200_calidad_malla_triangulos}).
-
+La calidad de la malla para \emph{G1} y \emph{G2} se muestra en la Fig. (\ref{calidad_malla_g1}) y (\ref{calidad_malla_g2}) respectivamente.
+%
 \begin{figure}[htbp] 
 \centering 
-\includegraphics[width=0.5\textwidth]{img/100m/100_condiciones_fijar_velocidad_fondo_pozos_arriba_izquierda} 
-\includegraphics[width=0.5\textwidth]{img/100m/100_condiciones_fijar_velocidad_fondo_pozos_abajo_derecha}
-\caption{Vista en detalle de la Figura (\ref{100_condiciones_fijar_velocidad_fondo_pozos})} 
-\label{fondo_pozos_detalles} 
+\includegraphics[width=0.45\textwidth]{img/100m/100_calidad_malla_tetraedros} 
+\includegraphics[width=0.45\textwidth]{img/100m/100_calidad_malla_triangulos}
+\caption{Calidad de la Malla para \emph{G1}} 
+\label{calidad_malla_g1} 
 \end{figure} 
-
 %
-\begin{figure}[tbhp]
-\centerline{\includegraphics[scale=0.60]{img/100m/100_calidad_malla_tetraedros}}
-\caption{Calidad de la Malla \emph{G1}- Tetraedros}
-\label{100_calidad_malla_tetraedros}
-\end{figure}
 %
-\begin{figure}[tbhp]
-\centerline{\includegraphics[scale=0.60]{img/100m/100_calidad_malla_triangulos}}
-\caption{Calida de la Malla para \emph{G1}- Triángulos}
-\label{100_calidad_malla_triangulos}
-\end{figure}
+\begin{figure}[htbp] 
+\centering 
+\includegraphics[width=0.45\textwidth]{img/200m/200_calidad_malla_tetraedros} 
+\includegraphics[width=0.45\textwidth]{img/200m/200_calidad_malla_triangulos}
+\caption{Calidad de la Malla para \emph{G2}} 
+\label{calidad_malla_g2} 
+\end{figure} 
 %
+Finalmente, en las figuras (\ref{100_xy_contorno_malla}) y (\ref{200_xy_contorno_malla}) se puede observar la malla generada.
 \begin{figure}[tbhp]
-\centerline{\includegraphics[scale=0.60]{img/200m/200_calidad_malla_tetraedros}}
-\caption{Calidad de la Malla \emph{G2}- Tetraedros}
-\label{200_calidad_malla_tetraedros}
+\centerline{\includegraphics[scale=0.5]{img/100m/100_xy_contorno_malla}}
+\caption{Mallado generada para \emph{G1}- Vista plano XY}
+\label{100_xy_contorno_malla}
 \end{figure}
 %
 \begin{figure}[tbhp]
-\centerline{\includegraphics[scale=0.60]{img/200m/200_calidad_malla_triangulos}}
-\caption{Calida de la Malla para \emph{G2}- Triángulos}
-\label{200_calidad_malla_triangulos}
+\centerline{\includegraphics[scale=0.5]{img/200m/200_xy_contorno_malla}}
+\caption{Mallado generada para \emph{G2}- Vista plano XY}
+\label{200_xy_contorno_malla}
 \end{figure}
 %
-\begin{figure}[tbhp]
-\centerline{\includegraphics[scale=0.75]{img/contorno_malla_xy}}
-\caption{Vista en el plano XY de la malla}
-\label{contorno_malla_xy}
-\end{figure}
-%
-%\begin{figure}[tbhp]
-%\centerline{\includegraphics[scale=0.50]{img/contorno_malla_yz}}
-%\caption{Vista en el plano YZ de la malla}
-%\label{contorno_malla_yz}
-%\end{figure}
-
-\begin{figure}[tbhp]
-\centerline{\includegraphics[scale=0.50]{img/contorno_malla_yz1}}
-\caption{Vista en el plano YZ de la malla}
-\label{contorno_malla_yz1}
-\end{figure}
-
-\begin{figure}[tbhp]
-\centerline{\includegraphics[scale=0.50]{img/tam_malla_xy}}
-\caption{Tamaños de elementos de la malla - Vista en el plano XY}
-\label{tam_malla_xy}
-\end{figure}
-
-\begin{figure}[tbhp]
-\centerline{\includegraphics[scale=0.50]{img/tam_malla_pozo_interior}}
-\caption{Tamaños de elementos de la malla - Corte transversal}
-\label{tam_malla_pozo_interior}
-\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Condiciones temporales}
-La simulación se llevo a cabo con un $\Delta t = 100 \left[s\right]$ y se simularon 50400 o 50500 pasos \begin{Large}
-ver!\\
-\end{Large}
-%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Ejecución}
-cambiar el titulo esto es como se llevo a cabao la corrida
-ver graficos en un nodo o punto la evolucion de una variable. -> point evolution ->velocity->module->elijo un nodo
+Para la simulación, se hicieron 1000 pasos con un paso de tiempo $\Delta t=10~[s]$ lo que equivale 2 horas, 46 minutos y 40 segundos de extracción de agua por parte de las bombas.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Resultados}
-v(veloc) -> lineas de flujo/vect
-p->equipotenciales
-realizar cortes
-lo que vamos a ver va a ser las equipotenciales (lineas de presion que son perpendiculares al flujo).siempre es contraria a la linea de velocidad\\
-En los softwares específicos de hidrogeología, fijate que aca tenes el esquema de calculo que es una malla muy guresa en dos dimensiones, que te va a dar isocurvas de niveles. Se va a ver como esto va bombeando y ese nivel de agua cerca de la bomba va ir deprimiendose formando el cono de desenso. Eso, asi de esa forma aca no lo vamos a poder hacer, porque para poder hacer eso en 3D (en 2D si se puede) tenes que tener un soft que distinga entre suelo no saturado y suelo saturado. En el suelo saturado las ecs de gobierno son distintas a las del no saturado. El soft que tenemos solamente tiene las ecs de gob del suelo saturado, el no saturado tiene un modelo mucho mas complejo, en realidad estos modelos son bidimensionales porque no calculan el flujo en suelo saturado, lo que calculan seria la curva, la interfaz, seria la sup que los separa, nada mas, sería la ubicación de esa sup que distingue zona saturada de la no saturada. que tiene ecuaciones simples, pero no calcula detalles del flujo, este modelo calcula el flujo en suelo saturado. 
-Se coincidiera que se esta en presencia de un estrato de suleo saturado (esto es saturado de agua). 
-Vamos a tener lineas equipotenciales (unen lineas de igual potencial hidráulico) las cuales son perpendiculares a las lineas del flujo y serian valores de presión que ejerce el agua sobre el suelo. Esas líneas equipotenciales van a ser equivalentes en interpretación a las lineas de superficie que se calculan tradicionalmente en hidrologia.
+
+%v(veloc) -> lineas de flujo/vect
+%p->equipotenciales
+%realizar cortes
+%lo que vamos a ver va a ser las equipotenciales (lineas de presion que son perpendiculares al flujo).siempre es contraria a la linea de velocidad\\
+%En los softwares específicos de hidrogeología, fijate que aca tenes el esquema de calculo que es una malla muy guresa en dos dimensiones, que te va a dar isocurvas de niveles. Se va a ver como esto va bombeando y ese nivel de agua cerca de la bomba va ir deprimiendose formando el cono de desenso. Eso, asi de esa forma aca no lo vamos a poder hacer, porque para poder hacer eso en 3D (en 2D si se puede) tenes que tener un soft que distinga entre suelo no saturado y suelo saturado. En el suelo saturado las ecs de gobierno son distintas a las del no saturado. El soft que tenemos solamente tiene las ecs de gob del suelo saturado, el no saturado tiene un modelo mucho mas complejo, en realidad estos modelos son bidimensionales porque no calculan el flujo en suelo saturado, lo que calculan seria la curva, la interfaz, seria la sup que los separa, nada mas, sería la ubicación de esa sup que distingue zona saturada de la no saturada. que tiene ecuaciones simples, pero no calcula detalles del flujo, este modelo calcula el flujo en suelo saturado. 
+%Se coincidiera que se esta en presencia de un estrato de suleo saturado (esto es saturado de agua). 
+%Vamos a tener lineas equipotenciales (unen lineas de igual potencial hidráulico) las cuales son perpendiculares a las lineas del flujo y serian valores de presión que ejerce el agua sobre el suelo. Esas líneas equipotenciales van a ser equivalentes en interpretación a las lineas de superficie que se calculan tradicionalmente en hidrologia.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusiones}
-si el mod respondio
-que problemas tuvimos? ahi hacer mencion al pozo grande y tiempo de calculo...
-pozo real vs pozo simulado
+%si el mod respondio
+%que problemas tuvimos? ahi hacer mencion al pozo grande y tiempo de calculo...
+%pozo real vs pozo simulado
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
