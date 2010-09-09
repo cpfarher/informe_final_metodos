@@ -1,0 +1,7 @@
+Degree of elementsNormal
+Number of nodes122586
+Number of tetrahedras659027
+Number of triangles60952
+Total number of elements719979
+
+
