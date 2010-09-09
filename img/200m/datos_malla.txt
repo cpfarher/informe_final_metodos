@@ -1,0 +1,4 @@
+Número de nodos: 157619
+Número de tetraedros: 851671
+Número de triángulos: 70582
+Número total de elementos: 922253
