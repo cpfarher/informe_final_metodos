@@ -2,7 +2,9 @@
 %
 \usepackage[utf8x]{inputenc}
 \usepackage{ucs}
+\usepackage{subfig}
 \usepackage{amsmath}
+\usepackage{float}
 \usepackage{geometry}
 \usepackage{anysize} % Soporte para el comando \marginsize
 \usepackage{graphicx}
@@ -35,6 +37,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\listoftables %tablas
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -248,7 +252,7 @@ alrededor de ambos pozos en las figuras (\ref{100_xy_cotas}), (\ref{100_xz_cotas
 objetivo, de a posteriori, realizar un refinamiento del dominio en la zona que más interesa visualizar.\\
 %
 \begin{figure}[tbhp]
-\centerline{\includegraphics[scale=0.4]{img/100m/100_xy_cotas}}
+\centerline{\includegraphics[scale=0.5]{img/100m/100_xy_cotas}}
 \caption{Vista de las cotas en el Plano XY para \emph{G1}}
 \label{100_xy_cotas}
 \end{figure}
@@ -261,7 +265,7 @@ objetivo, de a posteriori, realizar un refinamiento del dominio en la zona que m
 %
 %
 \begin{figure}[tbhp]
-\centerline{\includegraphics[scale=0.4]{img/200m/200_xy_cotas}}
+\centerline{\includegraphics[scale=0.5]{img/200m/200_xy_cotas}}
 \caption{Vista de las cotas en el Plano XY para \emph{G2}}
 \label{200_xy_cotas}
 \end{figure}
@@ -322,7 +326,7 @@ En la figura \ref{100_perspectiva_material_agua} se puede observar la asignació
 En la ventana de contornos $\rightarrow$ fluidos, se asigno a las paredes de ambos pozos el contorno definido por defecto Wall. El tipo de contorno seleccionado fue el \emph{V fixWall} con el ángulo por defecto de $60°$. Este es el modelo elegido en Tdyn para simular el comportamiento del flujo en las paredes del dominio. Básicamente, impone que la velocidad en las superficies asignadas será nula, modelando así la pared del pozo por la que no existe penetración de agua hacia el interior del del mismo. En la figura \ref{100_condiciones_vfixwall_xz} se puede observar el material asignado a ambos pozos.
 %
 \begin{figure}[tbhp]
-\centerline{\includegraphics[scale=0.5]{img/100m/100_condiciones_vfixwall_xz}}
+\centerline{\includegraphics[scale=0.3]{img/100m/100_condiciones_vfixwall_xz}}
 \caption{Material Wall o Pared asignado a la geometría}
 \label{100_condiciones_vfixwall_xz}
 \end{figure}
@@ -332,7 +336,7 @@ En la ventana de contornos $\rightarrow$ fluidos, se asigno a las paredes de amb
 Para fijar las condiciones de borde, se procedió mediante el menú datos $\Rightarrow$ condiciones $\Rightarrow$ ransol. Luego se selecciono la opción de asignación de propiedades a superficies y se procedió a fijar las diferentes condiciones:
 
 \begin{figure}[tbhp]
-\centerline{\includegraphics[scale=0.5]{img/100m/100_condiciones_fijar_velocidad_perspectiva_interior_leyendas}}
+\centerline{\includegraphics[scale=0.4]{img/100m/100_condiciones_fijar_velocidad_perspectiva_interior_leyendas}}
 \caption{Velocidades Fijas}
 \label{100_condiciones_fijar_velocidad_perspectiva_interior_leyendas}
 \end{figure}
@@ -400,8 +404,8 @@ En la figura (\ref{100_condiciones_fijar_velocidad_fondo_pozos}) y (\ref{fondo_p
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp] 
 \centering 
-\includegraphics[width=0.5\textwidth]{img/100m/100_condiciones_fijar_velocidad_fondo_pozos_arriba_izquierda} 
-\includegraphics[width=0.5\textwidth]{img/100m/100_condiciones_fijar_velocidad_fondo_pozos_abajo_derecha}
+\includegraphics[scale=0.25]{img/100m/100_condiciones_fijar_velocidad_fondo_pozos_arriba_izquierda} 
+\includegraphics[scale=0.25]{img/100m/100_condiciones_fijar_velocidad_fondo_pozos_abajo_derecha}
 \caption{Vista en detalle de la Figura (\ref{100_condiciones_fijar_velocidad_fondo_pozos})} 
 \label{fondo_pozos_detalles} 
 \end{figure} 
@@ -410,7 +414,7 @@ En la figura (\ref{100_condiciones_fijar_velocidad_fondo_pozos}) y (\ref{fondo_p
 En la figura \ref{100_condiciones_presion0} se puede observar que se fijó un valor de referencia para la presión en la superficie del extremo final de salida del campo con valor igual a $0.0~\left[Pa\right]$. Esto significa que los resultados que obtendremos para la presión serán relativos a esta condición.
 
 \begin{figure}[tbhp]
-\centerline{\includegraphics[scale=0.75]{img/100m/100_condiciones_presion0}}
+\centerline{\includegraphics[scale=0.5]{img/100m/100_condiciones_presion0}}
 \caption{Condición fija de presión}
 \label{100_condiciones_presion0}
 \end{figure}
@@ -421,25 +425,25 @@ Para el mallado, se asignaron diferentes tamaños a las superficies debido a que
 Además, en las preferencias de mallado de Gid (Utilidades $\rightarrow$ preferencias $\rightarrow$ pestaña malla), se fijó la transición de tamaños no estructurados a $0.3$.
 %
 \begin{figure}[tbhp]
-\centerline{\includegraphics[scale=0.5]{img/100m/100_perspec_tam_malla}}
+\centerline{\includegraphics[scale=0.35]{img/100m/100_perspec_tam_malla}}
 \caption{Tamaños de los elementos de la malla \emph{G1}- Vista en perspectiva}
 \label{100_perspec_tam_malla}
 \end{figure}
 %
 \begin{figure}[tbhp]
-\centerline{\includegraphics[scale=0.5]{img/100m/100_xz_tam_malla}}
+\centerline{\includegraphics[scale=0.4]{img/100m/100_xz_tam_malla}}
 \caption{Tamaños de los elementos de la malla \emph{G1}- Vista plano XZ}
 \label{100_xz_tam_malla}
 \end{figure}
 %%
 \begin{figure}[tbhp]
-\centerline{\includegraphics[scale=0.5]{img/200m/200_xy_tam_malla}}
+\centerline{\includegraphics[scale=0.4]{img/200m/200_xy_tam_malla}}
 \caption{Tamaños de los elementos de la malla para \emph{G2}- Vista plano XY}
 \label{200_xy_tam_malla}
 \end{figure}
 %
 \begin{figure}[tbhp]
-\centerline{\includegraphics[scale=0.5]{img/200m/200_xz_tam_malla}}
+\centerline{\includegraphics[scale=0.4]{img/200m/200_xz_tam_malla}}
 \caption{Tamaños de los elementos de la malla \emph{G2}- Vista plano XZ}
 \label{200_xz_tam_malla}
 \end{figure}
@@ -479,13 +483,13 @@ La calidad de la malla para \emph{G1} y \emph{G2} se muestra en la Fig. (\ref{ca
 %
 Finalmente, en las figuras (\ref{100_xy_contorno_malla}) y (\ref{200_xy_contorno_malla}) se puede observar la malla generada.
 \begin{figure}[tbhp]
-\centerline{\includegraphics[scale=0.5]{img/100m/100_xy_contorno_malla}}
+\centerline{\includegraphics[scale=0.4]{img/100m/100_xy_contorno_malla}}
 \caption{Mallado generada para \emph{G1}- Vista plano XY}
 \label{100_xy_contorno_malla}
 \end{figure}
 %
 \begin{figure}[tbhp]
-\centerline{\includegraphics[scale=0.5]{img/200m/200_xy_contorno_malla}}
+\centerline{\includegraphics[scale=0.4]{img/200m/200_xy_contorno_malla}}
 \caption{Mallado generada para \emph{G2}- Vista plano XY}
 \label{200_xy_contorno_malla}
 \end{figure}
@@ -498,7 +502,251 @@ Para la simulación, se hicieron 1000 pasos con un paso de tiempo $\Delta t=10~[
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Resultados}
-
+A continuación se presentan los resultados de la simulación para el problema
+%100_grafico_presion_velocidad_x_centro_pozos_distancia05.png
+%100_grafico_presion_velocidad_x_centro_pozos_distancia0.png
+%100_grafico_presion_velocidad_x_centro_pozos_distancia1.png
+\subsection{Resultados para \emph{G1}}
+%
+\begin{figure}[tbhp]
+\centerline{\includegraphics[scale=0.5]{img/100m/resul/100_xy_vectores}}
+\caption{Vectores para \emph{G1}- Vista plano XY}
+\label{100_xy_vectores}
+\end{figure}
+%
+\begin{figure}[htbp]
+   \centering
+   %%----primera subfigura----
+   \subfloat[]{
+        \label{100_XZ_presion_corte_centro_pozo1}         %% Etiqueta para la primera subfigura
+        \includegraphics[scale=0.4]{img/100m/resul/100_XZ_presion_corte_centro_pozo1}}
+   \hspace{0.1\linewidth}
+   %%----segunda subfigura----
+   \subfloat[]{
+        \label{100_XZ_presion_corte_centro_pozo2}         %% Etiqueta para la segunda subfigura
+        \includegraphics[scale=0.4]{img/100m/resul/100_XZ_presion_corte_centro_pozo2}}
+    \caption{Corte a través del centro de ambos pozos para \emph{G1} - Vista en el plano XZ - (\ref{100_XZ_presion_corte_centro_pozo1}) Presión pozo 1. - (\ref{100_XZ_presion_corte_centro_pozo2})  Presión pozo 2.}
+   \label{100_XZ_presion_corte_centro}                %% Etiqueta para la figura entera
+\end{figure}
+%
+%
+%corte centro pozos:
+\begin{figure}[htbp]
+   \centering
+   %%----primera subfigura----
+   \subfloat[]{
+        \label{100_XZ_velocidad_corte_centro_pozo1}         %% Etiqueta para la primera subfigura
+        \includegraphics[scale=0.4]{img/100m/resul/100_XZ_velocidad_corte_centro_pozo1}}
+   \hspace{0.1\linewidth}
+   %%----segunda subfigura----
+   \subfloat[]{
+        \label{100_XZ_velocidad_corte_centro_pozo2}         %% Etiqueta para la segunda subfigura
+        \includegraphics[scale=0.4]{img/100m/resul/100_XZ_velocidad_corte_centro_pozo2}}
+    \caption{Corte a través del centro de ambos pozos para \emph{G1} -  - Vista en el plano XZ - (\ref{100_XZ_velocidad_corte_centro_pozo1}) Módulo de velocidad pozo 1. - (\ref{100_XZ_velocidad_corte_centro_pozo2}) Módulo de velocidad pozo 2.}
+   \label{100_XZ_velocidad_corte_centro_pozos}                %% Etiqueta para la figura entera
+\end{figure}
+%
+%
+%corte horizontal:
+\begin{figure}[htbp]
+   \centering
+   %%----primera subfigura----
+   \subfloat[]{
+        \label{100_presion_horizontal}         %% Etiqueta para la primera subfigura
+        \includegraphics[scale=0.4]{img/100m/resul/100_XZ_presion_corte_horizontal}}
+   \hspace{0.1\linewidth}
+   %%----segunda subfigura----
+   \subfloat[]{
+        \label{100_velocidad_horizontal}         %% Etiqueta para la segunda subfigura
+        \includegraphics[scale=0.4]{img/100m/resul/100_XZ_velocidad_corte_horizontal}}
+    \caption{Corte en $(x_1,y_1,z_1)=(0,50,0)$ hasta $(x_2,y_2,z_2)=(100,50,0)$ para \emph{G1} - Vista en el plano XZ - (\ref{100_presion_horizontal}) Presión. - (\ref{100_velocidad_horizontal}) Módulo de Velocidad.}
+   \label{100_velocidad_presion_horizontal}                %% Etiqueta para la figura entera
+\end{figure}
+%
+%
+\begin{figure}[htbp]
+   \centering
+   %%----primera subfigura----
+   \subfloat[]{
+        \label{100_presion_vertical}         %% Etiqueta para la primera subfigura
+        \includegraphics[scale=0.4]{img/100m/resul/100_ZY_presion_corte_vertical}}
+   \hspace{0.1\linewidth}
+   %%----segunda subfigura----
+   \subfloat[]{
+        \label{100_velocidad_vertical}         %% Etiqueta para la segunda subfigura
+        \includegraphics[scale=0.4]{img/100m/resul/100_ZY_velocidad_corte_vertical}}
+    \caption{Corte en $(x_1,y_1,z_1)=(50,0,0)$ hasta $(x_2,y_2,z_2)=(50,100,0)$ para \emph{G1} - Vista en el plano YZ - (\ref{100_presion_vertical}) Presión. - (\ref{100_velocidad_vertical}) Módulo de Velocidad.}
+   \label{100_velocidad_presion_vertical}                %% Etiqueta para la figura entera
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%graficos00:
+\begin{figure}[htbp]
+   \centering
+   %%----primera subfigura----
+   \subfloat[]{
+        \label{100_grafico_presion_x_centro_pozos_distancia0}         %% Etiqueta para la primera subfigura
+        \includegraphics[scale=0.3]{img/100m/grf/100_grafico_presion_x_centro_pozos_distancia0}}
+   \hspace{0.1\linewidth}
+   %%----segunda subfigura----
+   \subfloat[]{
+        \label{100_grafico_velocidad_x_centro_pozos_distancia0}         %% Etiqueta para la segunda subfigura
+        \includegraphics[scale=0.3]{img/100m/grf/100_grafico_velocidad_x_centro_pozos_distancia0}}
+    \caption{Perfil de presión y velocidad para los pozos 1 y 2 de \emph{G1} situados sobre la base de los pozos. (\ref{100_grafico_presion_x_centro_pozos_distancia0}) Posición en $x$ vs. presión. - (\ref{100_grafico_velocidad_x_centro_pozos_distancia0}) Posición en $x$ vs. Módulo de Velocidad.}
+   \label{100_grafico_velocidad_presion_centro_pozos_distancia0}                %% Etiqueta para la figura entera
+\end{figure}
+%
+%graficos05:
+\begin{figure}[htbp]
+   \centering
+   %%----primera subfigura----
+   \subfloat[]{
+        \label{100_grafico_presion_x_centro_pozos_distancia05}         %% Etiqueta para la primera subfigura
+        \includegraphics[scale=0.3]{img/100m/grf/100_grafico_presion_x_centro_pozos_distancia05}}
+   \hspace{0.1\linewidth}
+   %%----segunda subfigura----
+   \subfloat[]{
+        \label{100_grafico_velocidad_x_centro_pozos_distancia05}         %% Etiqueta para la segunda subfigura
+        \includegraphics[scale=0.3]{img/100m/grf/100_grafico_velocidad_x_centro_pozos_distancia05}}
+    \caption{Perfil de presión y velocidad para los pozos 1 y 2 de \emph{G1} situados a $0.5~[m]$ en dirección $-z$ de la base de los pozos. (\ref{100_grafico_presion_x_centro_pozos_distancia05}) Posición en $x$ vs. presión. - (\ref{100_grafico_velocidad_x_centro_pozos_distancia05}) Posición en $x$ vs. Módulo de Velocidad.}
+   \label{100_grafico_velocidad_presion_centro_pozos_distancia05}                %% Etiqueta para la figura entera
+\end{figure}
+%graficos1:
+\begin{figure}[htbp]
+   \centering
+   %%----primera subfigura----
+   \subfloat[]{
+        \label{100_grafico_presion_x_centro_pozos_distancia1}         %% Etiqueta para la primera subfigura
+        \includegraphics[scale=0.3]{img/100m/grf/100_grafico_presion_x_centro_pozos_distancia1}}
+   \hspace{0.1\linewidth}
+   %%----segunda subfigura----
+   \subfloat[]{
+        \label{100_grafico_velocidad_x_centro_pozos_distancia1}         %% Etiqueta para la segunda subfigura
+        \includegraphics[scale=0.3]{img/100m/grf/100_grafico_velocidad_x_centro_pozos_distancia1}}
+    \caption{Perfil de presión y velocidad para los pozos 1 y 2 de \emph{G1} situados a $1.0~[m]$ en dirección $-z$ de la base de los pozos. (\ref{100_grafico_presion_x_centro_pozos_distancia1}) Posición en $x$ vs. presión. - (\ref{100_grafico_velocidad_x_centro_pozos_distancia1}) Posición en $x$ vs. Módulo de Velocidad.}
+   \label{100_grafico_velocidad_presion_centro_pozos_distancia1}                %% Etiqueta para la figura entera
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Resultados para \emph{G2}}
+%
+\begin{figure}[tbhp]
+\centerline{\includegraphics[scale=0.4]{img/200m/resul/200_xy_vectores}}
+\caption{Vectores para \emph{G2}- Vista plano XY}
+\label{200_xy_vectores}
+\end{figure}
+%
+\begin{figure}[htbp]
+   \centering
+   %%----primera subfigura----
+   \subfloat[]{
+        \label{200_XZ_presion_corte_centro_pozo1}         %% Etiqueta para la primera subfigura
+        \includegraphics[scale=0.3]{img/200m/resul/200_XZ_presion_corte_centro_pozo1}}
+   \hspace{0.1\linewidth}
+   %%----segunda subfigura----
+   \subfloat[]{
+        \label{200_XZ_presion_corte_centro_pozo2}         %% Etiqueta para la segunda subfigura
+        \includegraphics[scale=0.3]{img/200m/resul/200_XZ_presion_corte_centro_pozo2}}
+    \caption{Corte a través del centro de ambos pozos para \emph{G2} - Vista en el plano XZ - (\ref{200_XZ_presion_corte_centro_pozo1}) Presión pozo 1. - (\ref{200_XZ_presion_corte_centro_pozo2})  Presión pozo 2.}
+   \label{200_XZ_presion_corte_centro}                %% Etiqueta para la figura entera
+\end{figure}
+%
+%
+%corte centro pozos:
+\begin{figure}[htbp]
+   \centering
+   %%----primera subfigura----
+   \subfloat[]{
+        \label{200_XZ_velocidad_corte_centro_pozo1}         %% Etiqueta para la primera subfigura
+        \includegraphics[scale=0.3]{img/200m/resul/200_XZ_velocidad_corte_centro_pozo1}}
+   \hspace{0.1\linewidth}
+   %%----segunda subfigura----
+   \subfloat[]{
+        \label{200_XZ_velocidad_corte_centro_pozo2}         %% Etiqueta para la segunda subfigura
+        \includegraphics[scale=0.3]{img/200m/resul/200_XZ_velocidad_corte_centro_pozo2}}
+    \caption{Corte a través del centro de ambos pozos para \emph{G2} -  - Vista en el plano XZ - (\ref{200_XZ_velocidad_corte_centro_pozo1}) Módulo de velocidad pozo 1. - (\ref{200_XZ_velocidad_corte_centro_pozo2}) Módulo de velocidad pozo 2.}
+   \label{200_XZ_velocidad_corte_centro_pozos}                %% Etiqueta para la figura entera
+\end{figure}
+%
+%
+%corte horizontal:
+\begin{figure}[htbp]
+   \centering
+   %%----primera subfigura----
+   \subfloat[]{
+        \label{200_presion_horizontal}         %% Etiqueta para la primera subfigura
+        \includegraphics[scale=0.3]{img/200m/resul/200_XZ_presion_corte_horizontal}}
+   \hspace{0.1\linewidth}
+   %%----segunda subfigura----
+   \subfloat[]{
+        \label{200_velocidad_horizontal}         %% Etiqueta para la segunda subfigura
+        \includegraphics[scale=0.3]{img/200m/resul/200_XZ_velocidad_corte_horizontal}}
+    \caption{Corte en $(x_1,y_1,z_1)=(0,50,0)$ hasta $(x_2,y_2,z_2)=(100,50,0)$ para \emph{G2} - Vista en el plano XZ - (\ref{200_presion_horizontal}) Presión. - (\ref{200_velocidad_horizontal}) Módulo de Velocidad.}
+   \label{200_velocidad_presion_horizontal}                %% Etiqueta para la figura entera
+\end{figure}
+%
+%
+\begin{figure}[htbp]
+   \centering
+   %%----primera subfigura----
+   \subfloat[]{
+        \label{200_presion_vertical}         %% Etiqueta para la primera subfigura
+        \includegraphics[scale=0.3]{img/200m/resul/200_ZY_presion_corte_vertical}}
+   \hspace{0.1\linewidth}
+   %%----segunda subfigura----
+   \subfloat[]{
+        \label{200_velocidad_vertical}         %% Etiqueta para la segunda subfigura
+        \includegraphics[scale=0.3]{img/200m/resul/200_ZY_velocidad_corte_vertical}}
+    \caption{Corte en $(x_1,y_1,z_1)=(50,0,0)$ hasta $(x_2,y_2,z_2)=(50,100,0)$ para \emph{G2} - Vista en el plano YZ - (\ref{200_presion_vertical}) Presión. - (\ref{200_velocidad_vertical}) Módulo de Velocidad.}
+   \label{200_velocidad_presion_vertical}                %% Etiqueta para la figura entera
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%graficos00:
+\begin{figure}[htbp]
+   \centering
+   %%----primera subfigura----
+   \subfloat[]{
+        \label{200_grafico_presion_x_centro_pozos_distancia0}         %% Etiqueta para la primera subfigura
+        \includegraphics[scale=0.3]{img/200m/grf/200_grafico_presion_x_centro_pozos_distancia0}}
+   \hspace{0.1\linewidth}
+   %%----segunda subfigura----
+   \subfloat[]{
+        \label{200_grafico_velocidad_x_centro_pozos_distancia0}         %% Etiqueta para la segunda subfigura
+        \includegraphics[scale=0.3]{img/200m/grf/200_grafico_velocidad_x_centro_pozos_distancia0}}
+    \caption{Perfil de presión y velocidad para los pozos 1 y 2 de \emph{G2} situados sobre la base de los pozos. (\ref{200_grafico_presion_x_centro_pozos_distancia0}) Posición en $x$ vs. presión. - (\ref{200_grafico_velocidad_x_centro_pozos_distancia0}) Posición en $x$ vs. Módulo de Velocidad.}
+   \label{200_grafico_velocidad_presion_centro_pozos_distancia0}                %% Etiqueta para la figura entera
+\end{figure}
+%
+%graficos05:
+\begin{figure}[htbp]
+   \centering
+   %%----primera subfigura----
+   \subfloat[]{
+        \label{200_grafico_presion_x_centro_pozos_distancia05}         %% Etiqueta para la primera subfigura
+        \includegraphics[scale=0.3]{img/200m/grf/200_grafico_presion_x_centro_pozos_distancia05}}
+   \hspace{0.1\linewidth}
+   %%----segunda subfigura----
+   \subfloat[]{
+        \label{200_grafico_velocidad_x_centro_pozos_distancia05}         %% Etiqueta para la segunda subfigura
+        \includegraphics[scale=0.3]{img/200m/grf/200_grafico_velocidad_x_centro_pozos_distancia05}}
+    \caption{Perfil de presión y velocidad para los pozos 1 y 2 de \emph{G2} situados a $0.5~[m]$ en dirección $-z$ de la base de los pozos. (\ref{200_grafico_presion_x_centro_pozos_distancia05}) Posición en $x$ vs. presión. - (\ref{200_grafico_velocidad_x_centro_pozos_distancia05}) Posición en $x$ vs. Módulo de Velocidad.}
+   \label{200_grafico_velocidad_presion_centro_pozos_distancia05}                %% Etiqueta para la figura entera
+\end{figure}
+%graficos1:
+\begin{figure}[htbp]
+   \centering
+   %%----primera subfigura----
+   \subfloat[]{
+        \label{200_grafico_presion_x_centro_pozos_distancia1}         %% Etiqueta para la primera subfigura
+        \includegraphics[scale=0.3]{img/200m/grf/200_grafico_presion_x_centro_pozos_distancia1}}
+   \hspace{0.1\linewidth}
+   %%----segunda subfigura----
+   \subfloat[]{
+        \label{200_grafico_velocidad_x_centro_pozos_distancia1}         %% Etiqueta para la segunda subfigura
+        \includegraphics[scale=0.3]{img/200m/grf/200_grafico_velocidad_x_centro_pozos_distancia1}}
+    \caption{Perfil de presión y velocidad para los pozos 1 y 2 de \emph{G2} situados a $1.0~[m]$ en dirección $-z$ de la base de los pozos. (\ref{200_grafico_presion_x_centro_pozos_distancia1}) Posición en $x$ vs. presión. - (\ref{200_grafico_velocidad_x_centro_pozos_distancia1}) Posición en $x$ vs. Módulo de Velocidad.}
+   \label{200_grafico_velocidad_presion_centro_pozos_distancia1}                %% Etiqueta para la figura entera
+\end{figure}
 %v(veloc) -> lineas de flujo/vect
 %p->equipotenciales
 %realizar cortes
