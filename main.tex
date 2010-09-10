@@ -52,10 +52,27 @@ Hay dos tipos de \emph{acuíferos}:
 \begin{itemize}
 \item \emph{Confinados: }el agua está atrapada entre las capas impermeables de la roca o entre grietas de la formación rocosa. Dicha agua podría encontrarse almacenada a presión. Si perforamos, el nivel de agua asciende hasta situarse en una determinada posición que coincide con el nivel de saturación del acuífero en el área de recarga.\\
 Si la topografía es tal que la boca del pozo está por debajo del nivel del agua, el pozo es
-surgente o artesiano; si no es así el nivel del agua ascenderá hasta el nivel correspondiente, pero no será surgente. El agua está sometida a una presión superior a la atmosférica y ocupa totalmente los poros o huecos de la formación geológica, saturándola totalmente. No existe zona no saturada. \\
+surgente o artesiano; si no es así el nivel del agua ascenderá hasta el nivel correspondiente, pero no será surgente. El agua está sometida a una presión superior a la atmosférica y ocupa totalmente los poros o huecos de la formación geológica, saturándola totalmente. No existe zona no saturada. \\ Un esquema de este tipo de acuíferos puede ser observado en la figura (\ref{libre}).
 %
 \item \emph{No confinados o libres: } los acuíferos pueden estar cerca de la superficie terrestre, con estratos continuos formados por materiales de alta permeabilidad, que se extienden desde la superficie del terreno hasta la base del acuífero. La recarga de este acuífero, se produce debido a una infiltración vertical, a través de la zona no saturada. La recarga también se puede producir a través de flujo subterráneo lateral o desde estratos inferiores.\\
+Un esquema de este tipo de acuíferos puede ser observado en la figura (\ref{confinado}).
 \end{itemize}
+%
+\begin{figure}[tbhp]
+   \centering
+   %%----primera subfigura----
+   \subfloat[]{
+        \label{libre}         %% Etiqueta para la primera subfigura
+        \includegraphics[scale=0.3]{img/libre}}
+   \hspace{0.1\linewidth}
+   %%----segunda subfigura----
+   \subfloat[]{
+        \label{confinado}         %% Etiqueta para la segunda subfigura
+        \includegraphics[scale=0.3]{img/confinado}}
+    \caption{(\ref{libre}) Esquema de un acuífero libre - (\ref{confinado}) Esquema de un acuífero confinado}
+   \label{acuiferos}                %% Etiqueta para la figura entera
+\end{figure}
+%
 %
 El problema que se presenta en el presente trabajo, trata el caso de un \emph{acuífero confinado, homogéneo e isótropo} el cual consta de dos pozos de bombeo de agua que extraen, cada uno, un caudal de agua, por un tiempo determinado.
 Un medio \emph{homogéneo} es aquel que tiene las mismas propiedades en todas las posiciones. Esto significa que la porosidad y otros parámetros son similares en cualquier posición dentro de la unidad geológica.\\
@@ -175,11 +192,12 @@ Los datos para ambas geometrías del problema son los que se presentan a continu
 		\item Pozo Bombeo 1: $60~\left[\frac{m³}{h}\right]$
 		\item Pozo Bombeo 2: $40~\left[\frac{m³}{h}\right]$
 	\end{itemize}
-	\item Diámetro del pozo: $0.5 [m]$
-	\item Profundidad del pozo $15 [m]$
-	\item Transmisividad: $600~\left[\frac{m^2}{d}\right]$ \begin{LARGE}
-	eso no se si va!!!
-	\end{LARGE}\\
+	\item Diámetro del pozo 1 y 2: $0.5 [m]$
+	\item Profundidad del pozo 1 y 2: $15 [m]$
+%	\item Transmisividad: $600~\left[\frac{m^2}{d}\right]$ \begin{LARGE}
+%	eso no se si va!!!
+%	\end{LARGE}\\
+	\item Resistencia de la ley de Darcy $k=0.0000017~[1/m^2]$
 \end{itemize}
 %
 \subsection*{Geometría 2: (de ahora en más la llamaremos \emph{G2}):}
@@ -203,11 +221,12 @@ Los datos para ambas geometrías del problema son los que se presentan a continu
 		\item Pozo Bombeo 1: $60~\left[\frac{m³}{h}\right]$
 		\item Pozo Bombeo 2: $40~\left[\frac{m³}{h}\right]$
 	\end{itemize}
-	\item Diámetro del pozo: $0.5 [m]$
-	\item Profundidad del pozo $15 [m]$
-	\item Transmisividad: $600~\left[\frac{m^2}{d}\right]$ \begin{LARGE}
-	eso no se si va!!!
-	\end{LARGE}\\
+	\item Diámetro del pozo 1 y 2: $0.5 [m]$
+	\item Profundidad del pozo 1 y 2: $15 [m]$
+%	\item Transmisividad: $600~\left[\frac{m^2}{d}\right]$ \begin{LARGE}
+%	eso no se si va!!!
+%	\end{LARGE}\\
+	\item Resistencia de la ley de Darcy $k=0.0000017~[1/m^2]$
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Cálculo de la velocidad de extracción de agua a partir del caudal}
