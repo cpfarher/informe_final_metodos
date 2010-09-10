@@ -286,9 +286,9 @@ En la tabla (\ref{tabla_lista_entidades}) se presentan los datos de los elemento
 \hline Número de superficies: & 24 & 24 \\ 
 \hline Número de volúmenes: & 3 & 3 \\ 
 \hline 
-\label{tabla_lista_entidades}
 \end{tabular}\end{center}
 \caption{Cantidad de puntos, lineas, superficies y volúmenes para \emph{G1} y \emph{G2}}
+\label{tabla_lista_entidades}
 \end{table}
 %
 %
@@ -457,9 +457,9 @@ Además, en las preferencias de mallado de Gid (Utilidades $\rightarrow$ prefere
 \hline Número de triángulos: & 60952  & 70582 \\ 
 \hline Número de elementos totales: & 719979 & 922253 \\ 
 \hline 
-\label{tabla_lista_elementos}
 \end{tabular}\end{center}
 \caption{Cantidad de nodos, tetraedros, triángulos y elementos totales para \emph{G1} y \emph{G2}}
+\label{tabla_lista_elementos}
 \end{table}
 %
 En la tabla (\ref{tabla_lista_elementos}), se presentan los tipos y cantidades de elementos con los que esta conformado cada una de las geometrías:
@@ -509,18 +509,18 @@ A continuación se presentan los resultados de la simulación para el problema
 %100_grafico_presion_velocidad_x_centro_pozos_distancia0.png
 %100_grafico_presion_velocidad_x_centro_pozos_distancia1.png
 \subsection{Resultados para \emph{G1}}
+\label{resulg1}
 En la figura (\ref{100_xy_vectores}) se pueden observar los vectores de velocidad en el plano $XY$, que se desplazan de derecha a izquierda, esto es debido a la condición de borde impuesta en la pared 5 de la figura (\ref{100_condiciones_fijar_velocidad_perspectiva_interior_leyendas}). También se puede ver que los vectores tienden hacia la posición de las bombas de succión de agua, lo cual referencia a las condiciones impuestas que se pueden ver en al figura (\ref{100_condiciones_fijar_velocidad_fondo_pozos}).
 %
-\begin{figure}[tbhp]
+\begin{figure}[htbp]
 \centerline{\includegraphics[scale=0.5]{img/100m/resul/100_xy_vectores}}
 \caption{Vectores para \emph{G1}- Vista plano XY}
 \label{100_xy_vectores}
 \end{figure}
 %
-\\
 En la figura (\ref{100_XZ_presion_corte_centro}), se puede observar la presión que existe en ambas bocas de succión de ambos pozos, lo cual se obtuvo mediante la realización de un corte que pase por el centro de cada uno de los mismos. En la figura (\ref{100_XZ_presion_corte_centro_pozo1}), se observa una depresión mayor que en (\ref{100_XZ_presion_corte_centro_pozo2}). Esto se debe, a que el pozo 1, posee una velocidad de extracción de agua mayor, que la del pozo 2.
 %
-\begin{figure}[tbhp]
+\begin{figure}[H]
    \centering
    %%----primera subfigura----
    \subfloat[]{
@@ -535,11 +535,10 @@ En la figura (\ref{100_XZ_presion_corte_centro}), se puede observar la presión 
    \label{100_XZ_presion_corte_centro}                %% Etiqueta para la figura entera
 \end{figure}
 %
-\\
 En la figura (\ref{100_XZ_velocidad_corte_centro_pozos}), se observa la velocidad en las bases de los pozos, notándose un mayor valor del módulo en la fig. (\ref{100_XZ_velocidad_corte_centro_pozo1}) que en (\ref{100_XZ_velocidad_corte_centro_pozo2}), ya que como se describió antes, la velocidad de pozo 1 es de $0.085~[m/s]$, en tanto que la del pozo 2 (es levemente menor) es igual a $0.057~[m/s]$.
 %
 %corte centro pozos:
-\begin{figure}[tbhp]
+\begin{figure}[H]
    \centering
    %%----primera subfigura----
    \subfloat[]{
@@ -554,10 +553,9 @@ En la figura (\ref{100_XZ_velocidad_corte_centro_pozos}), se observa la velocida
    \label{100_XZ_velocidad_corte_centro_pozos}                %% Etiqueta para la figura entera
 \end{figure}
 %
-\\
-En las figuras (\ref{100_presion_horizontal}) y (\ref{100_velocidad_horizontal}), se observa la presión y velocidad respectivamente, en un corte transversal del dominio unido por la linea de coordenadas $(x_1,y_1,z_1)=(0,50,0)$ y $(x_2,y_2,z_2)=(100,50,0)$; de forma similar, en las figuras (\ref{100_velocidad_presion_vertical}) y (\ref{100_velocidad_vertical}) se puede observar presión y velocidad respectivamente, en un corte transversal del dominio unido por la linea de coordenadas $(x_1,y_1,z_1)=(50,0,0)$ y $(x_2,y_2,z_2)=(50,100,0)$;
+En las figuras (\ref{100_presion_horizontal}) y (\ref{100_velocidad_horizontal}), se observa la presión y velocidad respectivamente, en un corte transversal del dominio unido por la linea de coordenadas $(x_1,y_1,z_1)=(0,50,0)$ y $(x_2,y_2,z_2)=(100,50,0)$; de forma similar, en las figuras (\ref{100_presion_vertical}) y (\ref{100_velocidad_vertical}) se puede observar presión y velocidad respectivamente, en un corte transversal del dominio unido por la linea de coordenadas $(x_1,y_1,z_1)=(50,0,0)$ y $(x_2,y_2,z_2)=(50,100,0)$;
 %corte horizontal:
-\begin{figure}[tbhp]
+\begin{figure}[H]
    \centering
    %%----primera subfigura----
    \subfloat[]{
@@ -573,7 +571,7 @@ En las figuras (\ref{100_presion_horizontal}) y (\ref{100_velocidad_horizontal})
 \end{figure}
 %
 %
-\begin{figure}[tbhp]
+\begin{figure}[H]
    \centering
    %%----primera subfigura----
    \subfloat[]{
@@ -588,10 +586,8 @@ En las figuras (\ref{100_presion_horizontal}) y (\ref{100_velocidad_horizontal})
    \label{100_velocidad_presion_vertical}                %% Etiqueta para la figura entera
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\\
 También se realizaron cortes como se puede observar en la figura (\ref{perfiles}), sobre los cuales se obtuvieron las gráficas de borde (Eje X: Variación en X, Eje Y: Presión/Velocidad) que se representan en las figuras (\ref{100_grafico_velocidad_presion_centro_pozos_distancia0}), (\ref{100_grafico_velocidad_presion_centro_pozos_distancia05}) y (\ref{100_grafico_velocidad_presion_centro_pozos_distancia1}) para \emph{G1}; y (\ref{200_grafico_velocidad_presion_centro_pozos_distancia0}),(\ref{200_grafico_velocidad_presion_centro_pozos_distancia05}) y (\ref{200_grafico_velocidad_presion_centro_pozos_distancia1}) para \emph{G2}.
-
-\begin{figure}[tbhp]
+\begin{figure}[H]
 \centerline{\includegraphics[scale=0.4]{img/200m/perfiles}}
 \caption{\\\textbf{Linea roja:} (situada sobre la base de los pozos) a partir de la cuál se obtuvieron las Gráficas de borde de la Figura (\ref{100_grafico_velocidad_presion_centro_pozos_distancia0}) y (\ref{200_grafico_velocidad_presion_centro_pozos_distancia0}).\\
 \textbf{Linea verde:} (situada a $0.5~[m]$ de la base de los pozos) a partir de la cuál se obtuvieron las Gráficas de borde de la Figura (\ref{100_grafico_velocidad_presion_centro_pozos_distancia05}) y (\ref{200_grafico_velocidad_presion_centro_pozos_distancia05}).
@@ -651,14 +647,15 @@ Se puede observar, que en las gráficas (\ref{100_grafico_velocidad_presion_cent
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Resultados para \emph{G2}}
+Para G2, se realizó la misma simulación que para G1. Debido a que los resultados obtenidos fueron similares, solo se deja para el lector imágenes de los resultados correspondientes, los cuales pueden ser interpretados de la misma manera como lo fueron en la sección (\ref{resulg1}).
 %
-\begin{figure}[tbhp]
+\begin{figure}[H]
 \centerline{\includegraphics[scale=0.4]{img/200m/resul/200_xy_vectores}}
 \caption{Vectores para \emph{G2}- Vista plano XY}
 \label{200_xy_vectores}
 \end{figure}
 %
-\begin{figure}[tbhp]
+\begin{figure}[H]
    \centering
    %%----primera subfigura----
    \subfloat[]{
@@ -675,7 +672,7 @@ Se puede observar, que en las gráficas (\ref{100_grafico_velocidad_presion_cent
 %
 %
 %corte centro pozos:
-\begin{figure}[tbhp]
+\begin{figure}[H]
    \centering
    %%----primera subfigura----
    \subfloat[]{
@@ -692,39 +689,39 @@ Se puede observar, que en las gráficas (\ref{100_grafico_velocidad_presion_cent
 %
 %
 %corte horizontal:
-\begin{figure}[tbhp]
+\begin{figure}[H]
    \centering
    %%----primera subfigura----
    \subfloat[]{
         \label{200_presion_horizontal}         %% Etiqueta para la primera subfigura
-        \includegraphics[scale=0.4]{img/200m/resul/200_XZ_presion_corte_horizontal}}
+        \includegraphics[scale=0.3]{img/200m/resul/200_XZ_presion_corte_horizontal}}
    \hspace{0.1\linewidth}
    %%----segunda subfigura----
    \subfloat[]{
         \label{200_velocidad_horizontal}         %% Etiqueta para la segunda subfigura
-        \includegraphics[scale=0.4]{img/200m/resul/200_XZ_velocidad_corte_horizontal}}
+        \includegraphics[scale=0.3]{img/200m/resul/200_XZ_velocidad_corte_horizontal}}
     \caption{Corte en $(x_1,y_1,z_1)=(0,50,0)$ hasta $(x_2,y_2,z_2)=(100,50,0)$ para \emph{G2} - Vista en el plano XZ - (\ref{200_presion_horizontal}) Presión. - (\ref{200_velocidad_horizontal}) Módulo de Velocidad.}
    \label{200_velocidad_presion_horizontal}                %% Etiqueta para la figura entera
 \end{figure}
 %
 %
-\begin{figure}[tbhp]
+\begin{figure}[H]
    \centering
    %%----primera subfigura----
    \subfloat[]{
         \label{200_presion_vertical}         %% Etiqueta para la primera subfigura
-        \includegraphics[scale=0.4]{img/200m/resul/200_ZY_presion_corte_vertical}}
+        \includegraphics[scale=0.3]{img/200m/resul/200_ZY_presion_corte_vertical}}
    \hspace{0.1\linewidth}
    %%----segunda subfigura----
    \subfloat[]{
         \label{200_velocidad_vertical}         %% Etiqueta para la segunda subfigura
-        \includegraphics[scale=0.4]{img/200m/resul/200_ZY_velocidad_corte_vertical}}
+        \includegraphics[scale=0.3]{img/200m/resul/200_ZY_velocidad_corte_vertical}}
     \caption{Corte en $(x_1,y_1,z_1)=(50,0,0)$ hasta $(x_2,y_2,z_2)=(50,100,0)$ para \emph{G2} - Vista en el plano YZ - (\ref{200_presion_vertical}) Presión. - (\ref{200_velocidad_vertical}) Módulo de Velocidad.}
    \label{200_velocidad_presion_vertical}                %% Etiqueta para la figura entera
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %graficos00:
-\begin{figure}[tbhp]
+\begin{figure}[H]
    \centering
    %%----primera subfigura----
    \subfloat[]{
@@ -740,7 +737,7 @@ Se puede observar, que en las gráficas (\ref{100_grafico_velocidad_presion_cent
 \end{figure}
 %
 %graficos05:
-\begin{figure}[tbhp]
+\begin{figure}[H]
    \centering
    %%----primera subfigura----
    \subfloat[]{
@@ -755,7 +752,7 @@ Se puede observar, que en las gráficas (\ref{100_grafico_velocidad_presion_cent
    \label{200_grafico_velocidad_presion_centro_pozos_distancia05}                %% Etiqueta para la figura entera
 \end{figure}
 %graficos1:
-\begin{figure}[tbhp]
+\begin{figure}[H]
    \centering
    %%----primera subfigura----
    \subfloat[]{
@@ -769,6 +766,9 @@ Se puede observar, que en las gráficas (\ref{100_grafico_velocidad_presion_cent
     \caption{Perfil de presión y velocidad para los pozos 1 y 2 de \emph{G2} situados a $1.0~[m]$ en dirección $-z$ de la base de los pozos. (\ref{200_grafico_presion_x_centro_pozos_distancia1}) Posición en $x$ vs. presión. - (\ref{200_grafico_velocidad_x_centro_pozos_distancia1}) Posición en $x$ vs. Módulo de Velocidad.}
    \label{200_grafico_velocidad_presion_centro_pozos_distancia1}                %% Etiqueta para la figura entera
 \end{figure}
+Claramente se puede observar, que no existe interacción significante entre los pozos, esto se debe a que se esta en presencia de un flujo laminar (es decir de movimiento muy lento) debido a las características del medio poroso. Incluso, y a pesar de tener un dominio más pequeño (\emph{G1}), tampoco se pudo ver algún tipo de influencia entre los pozos en las simulaciones llevadas a cabo.
+\\
+Se podría  plantear la realización de la simulación para otros tipos de medios porosos, con diferentes valores de transmisividad y con mayor cantidad de pozos, para observar si existe algún tipo de influencia entre los mismos, pero dado que esto escapa a los alcances del presente trabajo, se deja como un trabajo futuro.
 %v(veloc) -> lineas de flujo/vect
 %p->equipotenciales
 %realizar cortes
@@ -780,6 +780,9 @@ Se puede observar, que en las gráficas (\ref{100_grafico_velocidad_presion_cent
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusiones}
+Se puede concluir, que a partir del presente trabajo, se pudieron integrar los conocimientos incorporados en la materia \emph{``Métodos numéricos y simulación''} de forma práctica y satisfactoria. \\
+La realización del trabajo, con dos geometrías de diferentes dimensiones, permitió comparar resultados, viendo la existencia o no de interacción entre las bombas de succión de agua en un acuífero confinado, homogéneo e isótropo con un fluido laminar en un  medio poroso.
+Por otro lado, se supo identificar los datos y condiciones inherentes al problema de manera de poder ser ingresados en el Software (\emph{GID}), para poder llevar a cabo la simulación y luego, a posteriori, la interpretación de los resultados de un problema Hidrológico de la vida real.
 %si el mod respondio
 %que problemas tuvimos? ahi hacer mencion al pozo grande y tiempo de calculo...
 %pozo real vs pozo simulado
