@@ -52,10 +52,10 @@ Hay dos tipos de \emph{acuíferos}:
 \begin{itemize}
 \item \emph{Confinados: }el agua está atrapada entre las capas impermeables de la roca o entre grietas de la formación rocosa. Dicha agua podría encontrarse almacenada a presión. Si perforamos, el nivel de agua asciende hasta situarse en una determinada posición que coincide con el nivel de saturación del acuífero en el área de recarga.\\
 Si la topografía es tal que la boca del pozo está por debajo del nivel del agua, el pozo es
-surgente o artesiano; si no es así el nivel del agua ascenderá hasta el nivel correspondiente, pero no será surgente. El agua está sometida a una presión superior a la atmosférica y ocupa totalmente los poros o huecos de la formación geológica, saturándola totalmente. No existe zona no saturada. \\ Un esquema de este tipo de acuíferos puede ser observado en la figura (\ref{libre}).
+surgente o artesiano; si no es así el nivel del agua ascenderá hasta el nivel correspondiente, pero no será surgente. El agua está sometida a una presión superior a la atmosférica y ocupa totalmente los poros o huecos de la formación geológica, saturándola totalmente. No existe zona no saturada. \\ Un esquema de este tipo de acuíferos puede ser observado en la figura (\ref{confinado}).
 %
 \item \emph{No confinados o libres: } los acuíferos pueden estar cerca de la superficie terrestre, con estratos continuos formados por materiales de alta permeabilidad, que se extienden desde la superficie del terreno hasta la base del acuífero. La recarga de este acuífero, se produce debido a una infiltración vertical, a través de la zona no saturada. La recarga también se puede producir a través de flujo subterráneo lateral o desde estratos inferiores.\\
-Un esquema de este tipo de acuíferos puede ser observado en la figura (\ref{confinado}).
+Un esquema de este tipo de acuíferos puede ser observado en la figura (\ref{libre}).
 \end{itemize}
 %
 \begin{figure}[tbhp]
@@ -82,9 +82,10 @@ Para la realización del trabajo se utilizó el software de pre y pos proceso Gi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Objetivos}
-El objetivo de este trabajo, es simular el flujo, en un medio poroso (acuífero confinado, homogéneo e isótropo), generado por un par de bombas de extracción de agua en un campo de bombeo para visualizar las lineas de corrientes y equipotenciales generadas. \begin{Large}
-VER!!!!***********************************
-\end{Large}
+El objetivo de este trabajo, es simular el flujo, en un medio poroso (acuífero confinado, homogéneo e isótropo), generado por un par de bombas de extracción de agua en un campo de bombeo y comprobar la existencia o no de algún tipo de interacción entre los pozos de succión de agua. 
+%para visualizar las lineas de corrientes y equipotenciales generadas. \begin{Large}
+%VER!!!!***********************************
+%\end{Large}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -148,7 +149,7 @@ donde:
 La ley de Darcy es válida para todo suelo donde el flujo sea laminar (esto es, que tiene un movimiento lento): arenas finas a medias, arenas gruesas bien graduadas, arcillas y limos. Entre sus limitaciones, es posible afirmar que la constante de proporcionalidad $K$ no es propia del medio poroso, sino que depende de las características del fluido (peso específico y viscosidad cinemática). 
 El factor $K$ se puede descomponer como se puede ver en (\ref{k_descompuesto}) 
 \begin{eqnarray}
-	K&=& k \cdot x \cdot \gamma \cdot \mu \label{k_descompuesto}
+	K&=&k \cdot \frac{\gamma}{\mu} \label{k_descompuesto}
 \end{eqnarray}
 donde: 
 \begin{itemize}
