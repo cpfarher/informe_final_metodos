@@ -1,0 +1,240 @@
+\documentclass[spanish]{beamer}
+%
+\include{conf/preconfig}
+\include{conf/packages}
+\include{conf/config}
+\include{beamerconf}
+%
+
+%\usetheme{Warsaw}
+\usetheme{Marburg}
+%\usetheme{Antibes}
+%\usetheme{Berlin}
+%\usetheme{classic}
+%\usetheme{Darmstadt}
+%\usetheme{Montpellier}
+%\usetheme{Goettingen}
+\usecolortheme{orchid}
+%
+%
+%\maketitle
+
+\title{Cálculo de flujo subterráneo generado por bombeo}
+\author{Christian N. Pfarher, Juan Pablo Garbarino, Marina Castro\\
+\textit{Trabajo práctico final de ``Métodos numéricos y simulación'', II-FICH-UNL.}}
+\markboth{Método numérico y simulación: TRABAJO FINAL}{}
+\date{\today}
+%
+\begin{document}
+%
+\frame{\titlepage}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Objetivo}
+\begin{frame}
+  \frametitle{Objetivo}
+Simular el flujo, en un medio poroso (acuífero confinado, homogéneo e isótropo), generado por un par de bombas de extracción de agua en un campo de bombeo y comprobar la existencia o no de algún tipo de interacción entre los pozos de succión de agua. 
+\end{frame}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introducción}
+\subsection{Acuífero libre o no confinado}
+\begin{frame}{Acuífero Libre o no confinado}
+\begin{center}
+\includegraphics[width=7cm]{../img/libre}
+\end{center}
+\end{frame}
+%  \begin{itemize}
+%  \item<1-> Transformada de Hough
+%  \item<2-> Histograma
+%  \end{itemize}
+
+\subsection{Acuífero confinado}
+\begin{frame}{Acuífero Confinado}
+\begin{center}
+\includegraphics[width=7cm]{../img/confinado}
+\end{center}
+\end{frame}
+%\begin{frame}{frame confiando}
+%  \begin{itemize}
+%  \item<1-> Transformada de Hough
+%  \item<2-> Histograma
+%  \end{itemize}
+%\end{frame}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Base Teórica}
+%
+\subsection{Ec. de Navier-Stokes}
+\begin{frame}{Ecuación de Navier-Stokes}
+%\begin{center}
+%  \includegraphics[width=9cm]{../img/confinado}
+%\end{center}
+%\begin{itemize}
+%\item Umbralizado:
+%  \begin{equation*}
+%    \label{umbral}
+%    f(I)=
+%    \begin{cases}
+%      0, & I\leq U\\
+%      255, & I > U
+%    \end{cases}
+%  \end{equation*}
+%\item Salida: vector de 60 características
+%\end{itemize}
+\end{frame}
+%
+\subsection{Ley de Darcy}
+\begin{frame}{Técnica 2: Estadísticas del histograma}
+%  \includegraphics[width=7cm]{../img/confinado}
+%\end{frame}
+%\begin{frame}{Técnica 2: Estadísticas del histograma}
+%  \includegraphics[width=10cm]{../img/confinado}
+%  \begin{itemize}
+%  \item Salida: vector de 45 características
+%  \end{itemize}
+\end{frame}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Desarrollo del problema}
+%
+\subsection{Datos del problema}
+\subsubsection{Geometría G1}
+\begin{frame}{Entrenamiento}
+%  \begin{itemize}
+%  %% \item Extracción de características: a partir de cada imagen junto a su etiqueta
+%  %% \item Etiquetado de imágenes: asignación de nombre a cada imagen
+%  %% \item Generación de prototipos: promediado de caracteristicas de las 10
+%  %%   imágenes de cada etiqueta
+%  \item Entrada: base de datos de imágenes etiquetadas
+%  \item Se generan ``prototipos'' que promedian las características de las
+%    imágenes con igual etiqueta
+%  \end{itemize}
+\end{frame}
+%
+\subsubsection{Geometría G2}
+\begin{frame}{Clasificación}
+%  \begin{itemize}
+%  \item Entrada: imagen a clasificar
+%  \item Se calculan las características de la imagen a clasificar
+%  \item Se etiqueta según el prototipo que minimice el MSE entre sus
+%    características y las de la imagen:
+%\begin{equation}
+%  p_{\T{ganador}}=\arg \min_i\left\{ \frac{1}{\sum N_j}
+%                \sum_{j=1}^K\sum_{n=1}^{N_j}(t_j[n]-p_{ij}[n])^2\right\}
+%\end{equation}
+%\item Donde $p_i$ será el prototipo ganador
+%\item Con la etiqueta del prototipo, se encuentra la clase
+%  \end{itemize}
+\end{frame}
+%
+\subsection{Relación Caudal - Velocidad}
+\begin{frame}{algo}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Propiedades del medio y de los Materiales}
+\subsubsection{Material Suelo}
+\subsubsection{Material Wall o Pared}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Condiciones de Borde}
+\subsubsection{Fijar Velocidad}
+\subsubsection{Fijar Presión}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Mallado}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Ejecución}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Resultados}
+%
+\subsection{Resultados para G1}
+\begin{frame}{Armado de la base de datos}
+%  \begin{itemize}
+%  \item Imágenes de 640x480
+%  \item Obtenidas con celular
+%  \item Diferentes condiciones de iluminación: día, noche, interiores
+%  \end{itemize}
+\end{frame}
+\subsection{Resultados para G2}
+%
+%\subsection{Conjunto de Imágenes}
+%\begin{frame}{Base de datos}
+%  \includegraphics[width=10cm]{../img/confinado}
+%\end{frame}
+%%
+%\begin{frame}{Imágenes de prueba (validación)}
+%  \includegraphics[width=10cm]{../img/confinado}
+%\end{frame}
+%
+%\subsection{Sólo con técnica de T. de Hough}
+\begin{frame}{Obtención de parámetros óptimos para Hough}
+%  Determinación de umbral y cantidad de máximos a utilizar
+%  \begin{center}
+%    \includegraphics[width=9cm]{../img/confinado}
+%  \end{center}
+\end{frame}
+%
+%\subsection{Sólo con técnica de histograma}
+\begin{frame}{Prueba del método}
+%Se generan 3 particiones con 5 etiquetas c/u y se prueba:
+%  \begin{itemize}
+%  \item Utilizando la técnica de Hough sola
+%  \item Utilizando la técnica de histogramas
+%  \item Utilizando Hough e histogramas con igual ponderación
+%  \end{itemize}
+%También se prueba para la base de datos completa
+\end{frame}
+%
+%\subsection{Cómo se hicieron?}
+\begin{frame}{Procedimiento}
+%  \begin{center}
+%    \includegraphics[width=10cm]{../img/confinado}
+%  \end{center}
+\end{frame}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Resultados}
+\begin{frame}{Resultados}
+%  Se considera la tasa de error según:
+%  \begin{equation*}
+%    E_{\%}=100\cdot\frac{\T{número de errores}}{\T{número de pruebas}},
+%  \end{equation*}
+%
+%  Tasas de error para las técnicas de extracción de características
+%  \begin{center}\begin{tabular}{ccc}
+%      \hline \emph{{Técnica}} & \emph{5 etiquetas} & \emph{15 etiquetas}\\
+%      \hline Histogramas & 0\% & 0\%\\
+%      \hline Hough & 35.5\% & 60.43\%\\
+%      \hline Ambas & 2.22\% & 4.17\%\\
+%      \hline
+%  \end{tabular}\end{center}
+\end{frame}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusiones}
+\begin{frame}{Conclusiones}
+%  \begin{itemize}
+%  \item Satisfactorio coinciderando restricciones
+%  \item Optimización para dispositivos móviles
+%  \item Preprocesamiento de la imágen
+%  \end{itemize}
+\end{frame}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Trabajos futuros}
+\begin{frame}{Trabajos futuros}
+%  \begin{itemize}
+%  \item Preprocesamiento
+%  \item Filtrado homomórfico
+%  \item Warping
+%  \item Optimización de la implementación
+%  \item Hough local
+%  \end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+%  \begin{itemize}
+%  \item<1-1> ¿Preguntas?
+%  \item<2-2> ¡Muchas gracias!
+%  \end{itemize}
+\end{frame}
+\end{document}
