@@ -6,23 +6,22 @@
 \beamer@subsectionintoc {2}{2}{Acu\IeC {\'\i }fero confinado}{4}{0}{2}
 \beamer@sectionintoc {3}{Base Te\IeC {\'o}rica}{5}{0}{3}
 \beamer@subsectionintoc {3}{1}{Ec. de Navier-Stokes}{5}{0}{3}
-\beamer@subsectionintoc {3}{2}{Ley de Darcy}{6}{0}{3}
-\beamer@sectionintoc {4}{Desarrollo del problema}{7}{0}{4}
-\beamer@subsectionintoc {4}{1}{Datos del problema}{7}{0}{4}
-\beamer@subsubsectionintoc {0}{4}{1}{1}{7}{4}{Geometr\IeC {\'\i }a G1}
-\beamer@subsubsectionintoc {0}{4}{1}{2}{8}{4}{Geometr\IeC {\'\i }a G2}
-\beamer@subsectionintoc {4}{2}{Relaci\IeC {\'o}n Caudal - Velocidad}{9}{0}{4}
-\beamer@subsectionintoc {4}{3}{Propiedades del medio y de los Materiales}{10}{0}{4}
-\beamer@subsubsectionintoc {0}{4}{3}{1}{10}{4}{Material Suelo}
-\beamer@subsubsectionintoc {0}{4}{3}{2}{10}{4}{Material Wall o Pared}
-\beamer@subsectionintoc {4}{4}{Condiciones de Borde}{10}{0}{4}
-\beamer@subsubsectionintoc {0}{4}{4}{1}{10}{4}{Fijar Velocidad}
-\beamer@subsubsectionintoc {0}{4}{4}{2}{10}{4}{Fijar Presi\IeC {\'o}n}
-\beamer@subsectionintoc {4}{5}{Mallado}{10}{0}{4}
-\beamer@subsectionintoc {4}{6}{Ejecuci\IeC {\'o}n}{10}{0}{4}
-\beamer@sectionintoc {5}{Resultados}{10}{0}{5}
-\beamer@subsectionintoc {5}{1}{Resultados para G1}{10}{0}{5}
-\beamer@subsectionintoc {5}{2}{Resultados para G2}{11}{0}{5}
-\beamer@sectionintoc {6}{Resultados}{14}{0}{6}
-\beamer@sectionintoc {7}{Conclusiones}{15}{0}{7}
-\beamer@sectionintoc {8}{Trabajos futuros}{16}{0}{8}
+\beamer@subsectionintoc {3}{2}{Ley de Darcy}{9}{0}{3}
+\beamer@sectionintoc {4}{Desarrollo del problema}{13}{0}{4}
+\beamer@subsectionintoc {4}{1}{Datos del problema}{14}{0}{4}
+\beamer@subsubsectionintoc {0}{4}{1}{1}{14}{4}{Geometr\IeC {\'\i }a G1}
+\beamer@subsubsectionintoc {0}{4}{1}{2}{15}{4}{Geometr\IeC {\'\i }a G2}
+\beamer@subsectionintoc {4}{2}{Relaci\IeC {\'o}n Caudal - Velocidad}{16}{0}{4}
+\beamer@subsectionintoc {4}{3}{Propiedades del medio y de los Materiales}{17}{0}{4}
+\beamer@subsubsectionintoc {0}{4}{3}{1}{17}{4}{Material Suelo}
+\beamer@subsubsectionintoc {0}{4}{3}{2}{19}{4}{Material Wall o Pared}
+\beamer@subsectionintoc {4}{4}{Condiciones de Borde}{20}{0}{4}
+\beamer@subsubsectionintoc {0}{4}{4}{1}{20}{4}{Fijar Velocidad}
+\beamer@subsubsectionintoc {0}{4}{4}{2}{22}{4}{Fijar Presi\IeC {\'o}n}
+\beamer@subsectionintoc {4}{5}{Mallado}{23}{0}{4}
+\beamer@subsectionintoc {4}{6}{Ejecuci\IeC {\'o}n}{30}{0}{4}
+\beamer@sectionintoc {5}{Resultados}{31}{0}{5}
+\beamer@subsectionintoc {5}{1}{Resultados para G1}{31}{0}{5}
+\beamer@subsectionintoc {5}{2}{Resultados para G2}{34}{0}{5}
+\beamer@sectionintoc {6}{Conclusiones}{35}{0}{6}
+\beamer@sectionintoc {7}{Trabajos futuros}{36}{0}{7}
