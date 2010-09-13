@@ -5,16 +5,19 @@
 \include{conf/config}
 \include{beamerconf}
 %
-
+\newcommand{\grad}{\hspace{-2mm}$\phantom{a}^{\circ}$} %simbolo de grado
 %\usetheme{Warsaw}
-\usetheme{Marburg}
+%\usetheme{Marburg}
 %\usetheme{Antibes}
-%\usetheme{Berlin}
+\usetheme{Berlin}
+%\usetheme{Boadilla}
 %\usetheme{classic}
 %\usetheme{Darmstadt}
 %\usetheme{Montpellier}
 %\usetheme{Goettingen}
 \usecolortheme{orchid}
+%\usecolortheme{albatross}
+\useinnertheme{rounded}
 %
 %
 %\maketitle
@@ -38,177 +41,396 @@ Simular el flujo, en un medio poroso (acuífero confinado, homogéneo e isótrop
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introducción}
-\subsection{Acuífero libre o no confinado}
-\begin{frame}{Acuífero Libre o no confinado}
-\begin{center}
-\includegraphics[width=7cm]{../img/libre}
-\end{center}
-\end{frame}
+	\subsection{Acuífero libre o no confinado}
+		\begin{frame}{Acuífero Libre o no confinado}
+			\begin{center}
+				\includegraphics[width=7cm]{../img/libre}
+			\end{center}
+		\end{frame}
 %  \begin{itemize}
 %  \item<1-> Transformada de Hough
 %  \item<2-> Histograma
 %  \end{itemize}
 
 \subsection{Acuífero confinado}
-\begin{frame}{Acuífero Confinado}
-\begin{center}
-\includegraphics[width=7cm]{../img/confinado}
-\end{center}
-\end{frame}
-%\begin{frame}{frame confiando}
-%  \begin{itemize}
-%  \item<1-> Transformada de Hough
-%  \item<2-> Histograma
-%  \end{itemize}
-%\end{frame}
+	\begin{frame}{Acuífero Confinado}
+	\begin{itemize}
+		\item El caso del problema:
+		\begin{center}
+			\includegraphics[width=7cm]{../img/confinado}
+		\end{center}
+		\item Homogéneo
+		\item Isótropo
+	\end{itemize}
+	\end{frame}
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Base Teórica}
 %
-\subsection{Ec. de Navier-Stokes}
-\begin{frame}{Ecuación de Navier-Stokes}
-%\begin{center}
-%  \includegraphics[width=9cm]{../img/confinado}
-%\end{center}
-%\begin{itemize}
-%\item Umbralizado:
-%  \begin{equation*}
-%    \label{umbral}
-%    f(I)=
-%    \begin{cases}
-%      0, & I\leq U\\
-%      255, & I > U
-%    \end{cases}
-%  \end{equation*}
-%\item Salida: vector de 60 características
-%\end{itemize}
+	\subsection{Ec. de Navier-Stokes}
+		\begin{frame}{Ecuación de Navier-Stokes}
+		\begin{itemize}
+\item \emph{Tdyn} $\rightarrow$ basado en la solución numérica de las ecuaciones de \emph{Navier-Stokes} empleando el \emph{FEM}.		
+\item \emph{Tdyn} $\rightarrow$ resuelve las ecuaciones de Navier-Stokes en tres dimensiones para un fluido incompresible o ligeramente compresible de un dominio $\Omega$ dado y un intervalo de tiempo $(0,t):$
+		\end{itemize}
+	\end{frame}
+	\begin{frame}
+\begin{eqnarray}
+\label{ecns1}
+\rho \left(\frac{\partial u}{\partial t}+\left( u \bullet  \nabla \right)u \right)+ \nabla p - \nabla \bullet(\mu \nabla u) &=& \rho f~ \mbox{ en  }\Omega \times (0,t)\\
+\nabla \bullet u&=&0 ~ \mbox{ en  } \Omega \times (0,t)
+\label{ecns2}
+\end{eqnarray}
+\begin{itemize}
+\item $u = u(x,t):$ denota el vector velocidad,
+\item $p=p(x,t)$ el campo de presiones, 
+\item $\rho$ la densidad (constante), 
+\item $\mu$ la viscosidad dinámica del fluido y 
+\item $f$ la aceleración volumétrica.
+\end{itemize}
+\end{frame}
+%
+\begin{frame}
+Las Ec. (\ref{ecns1}) y (\ref{ecns2}) necesitan ser combinadas con las siguientes condiciones de borde:
+\begin{eqnarray}
+u &=& u_c \mbox{ en  } \Gamma_D \times (0,t);\\
+p &=& p_c \mbox{ en  } \Gamma_P \times (0,t);\\
+n \cdot \sigma \cdot g_1=0 \mbox{, } n \cdot \sigma \cdot g_2=0~ \mbox{, } n \cdot u&=&u_M \mbox{ en  } \Gamma_M \times (0,t);\\
+u(x,0)&=&u_0(x) \mbox{ en  } \Omega_D \times \lbrace 0 \rbrace ;\\
+p(x,0)&=&p_0(x) \mbox{ en  } \Omega_D \times \lbrace 0 \rbrace ;
+\end{eqnarray}
+\end{frame}
+%
+\begin{frame}
+\begin{itemize} 
+\item $\Gamma = \partial \Omega$ denota la frontera del dominio $\Omega$, siendo $n$ el vector normal unitario 
+\item $g_1$, $g_2$ los vectores tangentes de la frontera $\partial \Omega$,
+\item $u_c$ es el campo de velocidad sobre $\Gamma_D$,
+\item $p_c$ la presión sobre $\Gamma_P$,
+\item $\sigma$ es el campo de tensiones,
+\item $u_M$ el valor de la velocidad normal y 
+\item $u_0$, $p_0$ los campos de velocidad y presión iniciales
+\item {$\Gamma_D \cup \Gamma_P \cup \Gamma_M=\Gamma$.\\ 
+$\Gamma_D \cap \Gamma_P \cap \Gamma_M=\bigcirc$. , ya que un punto de la frontera puede ser parte de un único tipo de superficie, a menos que forme parte del borde entre dos de ellas.}
+\end{itemize}
 \end{frame}
 %
 \subsection{Ley de Darcy}
-\begin{frame}{Técnica 2: Estadísticas del histograma}
-%  \includegraphics[width=7cm]{../img/confinado}
-%\end{frame}
-%\begin{frame}{Técnica 2: Estadísticas del histograma}
-%  \includegraphics[width=10cm]{../img/confinado}
-%  \begin{itemize}
-%  \item Salida: vector de 45 características
-%  \end{itemize}
+\begin{frame}{Ley de Darcy}
+Expresa que el flujo de agua en un medio poroso, homogéneo e isotrópico es proporcional 
+a la conductividad del medio poroso o conductividad hidráulica $K$ y a una fuerza conductora o gradiente hidráulico $i$.
+\begin{eqnarray}
+Q&=&K \frac{h_3 - h_4}{L} A = K \cdot i \cdot A \label{darcy_formula}
+\end{eqnarray}
+donde:
+\end{frame}
+\begin{frame}
+\begin{itemize}
+	\item[$Q=$] gasto, descarga o caudal en $m^3/s$,
+	\item[$L=$] longitud en metros de la muestra, %seria la longitud del dominio nuestro.
+	\item[$K=$] una constante, actualmente conocida como coeficiente de permeabilidad de Darcy, variable en función del material de la muestra, en $m/s$,
+	\item[$A=$] área de la sección transversal de la muestra, en $m^2$,
+	\item[$h_3=$] altura, sobre el plano de referencia que alcanza el agua en un tubo colocado a la entrada de la capa filtrante,
+	\item[$h_4=$] altura, sobre el plano de referencia que alcanza el agua en un tubo colocado a la salida de la capa filtrante,
+	\item[$i=$] $\frac{h_3 - h_4}{L}=$ el gradiente hidráulico.
+\end{itemize}
+\end{frame}
+\begin{frame}
+%
+\begin{figure}[tbhp]
+\centerline{\includegraphics[scale=0.6]{../img/darcy_grafica}}
+\caption{Ley de Darcy}
+\label{graf_leydarcy}
+\end{figure}
 \end{frame}
 %
+\begin{frame}
+\begin{itemize}
+\item $K$ depende tanto del medio como del propio fluido
+\item La parte que depende del fluido, normalmente es despreciable
+	\begin{itemize} 
+		\item viscosidad y peso específico del \textbf{agua} varían poco con la temperatura.
+	\end{itemize}
+\item A efectos prácticos asumimos: \emph{conductividad hidráulica} ($K$ de Darcy) es una característica del medio poroso.
+\item Cuando el valor de $K$ es muy bajo o cuando las velocidades del flujo son muy altas $\rightarrow$ la relación entre el caudal y el gradiente hidráulico no es lineal 
+\item En el flujo subterráneo las velocidades son muy lentas y prácticamente siempre la relación es lineal, salvo en las proximidades de captaciones bombeando en ciertas condiciones.
+\end{itemize}
+\end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Desarrollo del problema}
 %
+\begin{frame}
+\begin{itemize}
+\item 2 geometrías: \emph{G1} y \emph{G2}
+\item 2 simulaciones
+\end{itemize}
+\end{frame}
+%
 \subsection{Datos del problema}
 \subsubsection{Geometría G1}
-\begin{frame}{Entrenamiento}
-%  \begin{itemize}
-%  %% \item Extracción de características: a partir de cada imagen junto a su etiqueta
-%  %% \item Etiquetado de imágenes: asignación de nombre a cada imagen
-%  %% \item Generación de prototipos: promediado de caracteristicas de las 10
-%  %%   imágenes de cada etiqueta
-%  \item Entrada: base de datos de imágenes etiquetadas
-%  \item Se generan ``prototipos'' que promedian las características de las
-%    imágenes con igual etiqueta
-%  \end{itemize}
+\begin{frame}{Geometría G1}
+\begin{itemize}
+	\item Discretización del área a modelar:	
+	\begin{itemize}
+		\item \textbf{Dominio: $x=100 ~\left[m\right]$, $y=100 ~\left[m\right]$}
+		\item Acuífero confinado, homogéneo e isótropo $(K_{xx} = K_{yy} = K_{zz})$
+		\item Espesor del acuífero: $20 ~\left[m\right]$
+	\end{itemize}
+	%
+	\item Coordenadas de ubicación de los Pozos de bombeo:
+	\begin{itemize}
+		\item Pozo Bombeo 1: $x=17.5~~\left[m\right]$, $y=77.5 ~~\left[m\right]$
+		\item Pozo Bombeo 2: $x=65.0~~\left[m\right]$, $y=22.5 ~~\left[m\right]$
+	\end{itemize}
+	%
+	\item Caudal de bombeo:
+	\begin{itemize}
+		\item Pozo Bombeo 1: $60~\left[\frac{m^3}{h}\right]$
+		\item Pozo Bombeo 2: $40~\left[\frac{m^3}{h}\right]$
+	\end{itemize}
+	\item Diámetro del pozo 1 y 2: $0.5 [m]$
+	\item Profundidad del pozo 1 y 2: $15 [m]$
+%	\item Transmisividad: $600~\left[\frac{m^2}{d}\right]$ \begin{LARGE}
+%	eso no se si va!!!
+%	\end{LARGE}\\
+	\item Resistencia de la ley de Darcy $k=0.0000017~[1/m^2]$
+\end{itemize}
 \end{frame}
 %
 \subsubsection{Geometría G2}
-\begin{frame}{Clasificación}
-%  \begin{itemize}
-%  \item Entrada: imagen a clasificar
-%  \item Se calculan las características de la imagen a clasificar
-%  \item Se etiqueta según el prototipo que minimice el MSE entre sus
-%    características y las de la imagen:
-%\begin{equation}
-%  p_{\T{ganador}}=\arg \min_i\left\{ \frac{1}{\sum N_j}
-%                \sum_{j=1}^K\sum_{n=1}^{N_j}(t_j[n]-p_{ij}[n])^2\right\}
-%\end{equation}
-%\item Donde $p_i$ será el prototipo ganador
-%\item Con la etiqueta del prototipo, se encuentra la clase
-%  \end{itemize}
+\begin{frame}{Geometría G2}
+\begin{itemize}
+	\item Discretización del área a modelar:	
+	\begin{itemize}
+		\item \textbf{Dominio: $x=200 ~\left[m\right]$, $y=200 ~\left[m\right]$}
+		\item Acuífero confinado, homogéneo e isótropo $(K_{xx} = K_{yy} = K_{zz})$
+		\item Espesor del acuífero: $20 ~\left[m\right]$
+	\end{itemize}
+	%
+	\item Coordenadas de ubicación de los Pozos de bombeo:
+	\begin{itemize}
+		\item Pozo Bombeo 1: $x=30.0 ~~\left[m\right]$, $y=135.0 ~~\left[m\right]$
+		\item Pozo Bombeo 2: $x=150.0~~\left[m\right]$, $y=50.0 ~~\left[m\right]$
+	\end{itemize}
+	%
+	\item Caudal de bombeo:
+	\begin{itemize}
+		\item Pozo Bombeo 1: $60~\left[\frac{m^3}{h}\right]$
+		\item Pozo Bombeo 2: $40~\left[\frac{m^3}{h}\right]$
+	\end{itemize}
+	\item Diámetro del pozo 1 y 2: $0.5 [m]$
+	\item Profundidad del pozo 1 y 2: $15 [m]$
+%	\item Transmisividad: $600~\left[\frac{m^2}{d}\right]$ \begin{LARGE}
+%	eso no se si va!!!
+%	\end{LARGE}\\
+	\item Resistencia de la ley de Darcy $k=0.0000017~[1/m^2]$
+\end{itemize}
 \end{frame}
 %
 \subsection{Relación Caudal - Velocidad}
-\begin{frame}{algo}
+\begin{frame}{``Caudal volumétrico"}
+\begin{equation}
+Q=V \cdot S
+\label{caudal}
+\end{equation}
+\begin{itemize}
+\item $Q$ es el caudal,
+\item $V$ es la velocidad y 
+\item $S$ es la sección de la tubería
+\end{itemize}
+Caudal de bombeo:
+	\begin{itemize}
+		\item Pozo Bombeo 1: $60~\left[\frac{m^3}{h}\right] \Longrightarrow V=0.085$
+		\item Pozo Bombeo 2: $40~\left[\frac{m^3}{h}\right] \Longrightarrow V=0.057$
+	\end{itemize}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Propiedades del medio y de los Materiales}
 \subsubsection{Material Suelo}
+\begin{frame}
+\begin{itemize}
+\item Modelo de Fluido: flujo incompresible ($\rho = cte.$)
+\item Densidad: $999.7~Kg/m^3$ (agua a $10$\grad$C$)
+\item Viscosidad: $0.001307~Pa.s$ (agua a $10$\grad$C$)
+\item Resistencia de la Ley de Darcy:
+\begin{equation}
+\begin{pmatrix}{}
+0.0000017 & 0.0 & 0.0 \\ 
+0.0 & 0.0000017 & 0.0 \\ 
+0.0 & 0.0 & 0.0000017
+\end{pmatrix} [1/m^2]
+\label{matrizdarcys}
+\end{equation}
+\item acuífero isótropo (homogéneo en todo el suelo)
+\end{itemize}
+\end{frame}
+%
+\begin{frame}
+\begin{center}
+\begin{figure}[tbhp]
+\centerline{\includegraphics[scale=0.4]{../img/100m/100_perspectiva_material_agua}}
+\caption{Material Suelo asignado a la geometría}
+\label{100_perspectiva_material_agua}
+\end{figure}
+\end{center}
+\end{frame}
+%
 \subsubsection{Material Wall o Pared}
+\begin{frame}
+V fixWall
+\begin{center}
+\begin{figure}[tbhp]
+\centerline{\includegraphics[scale=0.25]{../img/100m/100_condiciones_vfixwall_xz}}
+\caption{Material Wall o Pared asignado a la geometría}
+\label{100_condiciones_vfixwall_xz}
+\end{figure}
+\end{center}
+\end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Condiciones de Borde}
 \subsubsection{Fijar Velocidad}
+\begin{frame}\begin{center}
+\begin{figure}[tbhp]
+\centerline{\includegraphics[scale=0.4]{../img/100m/100_condiciones_fijar_velocidad_perspectiva_interior_leyendas}}
+\caption{Velocidades Fijas}
+\label{100_condiciones_fijar_velocidad_perspectiva_interior_leyendas}
+\end{figure}
+\end{center}
+\end{frame}
+%
+\begin{frame}\begin{center}
+\begin{figure}[htbp] 
+\centering 
+\includegraphics[scale=0.18]{../img/100m/100_condiciones_fijar_velocidad_fondo_pozos_arriba_izquierda} 
+\includegraphics[scale=0.18]{../img/100m/100_condiciones_fijar_velocidad_fondo_pozos_abajo_derecha}
+%\caption{Vista en detalle de la Figura (\ref{100_condiciones_fijar_velocidad_perspectiva_interior_leyendas})} 
+\label{fondo_pozos_detalles} 
+\end{figure} 
+\end{center}
+\end{frame}
 \subsubsection{Fijar Presión}
+\begin{frame}\begin{center}
+\begin{figure}[tbhp]
+\centerline{\includegraphics[scale=0.4]{../img/100m/100_condiciones_presion0}}
+\caption{Condición fija de presión}
+\label{100_condiciones_presion0}
+\end{figure}
+\end{center}
+\end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Mallado}
+\begin{frame}{G1}\begin{center}
+\begin{itemize}
+\item Transición de tamaños no estructurados $=0.3$.
+\end{itemize}
+\begin{figure}[tbhp]
+\centerline{\includegraphics[scale=0.21]{../img/100m/100_perspec_tam_malla}}
+\caption{Tamaños de los elementos de la malla \emph{G1}- Vista en perspectiva}
+\label{100_perspec_tam_malla}
+\end{figure}
+\end{center}\end{frame}
+%
+\begin{frame}{G1}\begin{center}
+\begin{figure}[tbhp]
+\centerline{\includegraphics[scale=0.23]{../img/100m/100_xz_tam_malla}}
+\caption{Tamaños de los elementos de la malla \emph{G1}- Vista plano XZ}
+\label{100_xz_tam_malla}
+\end{figure}
+\end{center}\end{frame}
+%%%%%%%
+\begin{frame}{G2}\begin{center}
+\begin{itemize}
+\item Transición de tamaños no estructurados $=0.3$.
+\end{itemize}
+\begin{figure}[tbhp]
+\centerline{\includegraphics[scale=0.21]{../img/200m/200_xy_tam_malla}}
+\caption{Tamaños de los elementos de la malla para \emph{G2}- Vista plano XY}
+\label{200_xy_tam_malla}
+\end{figure}
+\end{center}\end{frame}
+%
+\begin{frame}{G2}\begin{center}
+\begin{figure}[tbhp]
+\centerline{\includegraphics[scale=0.22]{../img/200m/200_xz_tam_malla}}
+\caption{Tamaños de los elementos de la malla \emph{G2}- Vista plano XZ}
+\label{200_xz_tam_malla}
+\end{figure}
+\end{center}\end{frame}
+\begin{frame}
+\begin{table}[tbhp]
+\begin{center}\begin{tabular}{ccc}
+\hline \textbf{Tipo/Geometría} & \textbf{G1} & \textbf{G2} \\ 
+\hline Número de nodos: & 122586 & 157619 \\ 
+\hline Número de tetraedros: & 659027 & 851671\\ 
+\hline Número de triángulos: & 60952  & 70582 \\ 
+\hline Número de elementos totales: & 719979 & 922253 \\ 
+\hline 
+\end{tabular}\end{center}
+\caption{Cantidad de nodos, tetraedros, triángulos y elementos totales para \emph{G1} y \emph{G2}}
+\label{tabla_lista_elementos}
+\end{table}
+\end{frame}
+%
+\begin{frame}{Malla para G1}\begin{center}
+\begin{figure}[tbhp]
+\centerline{\includegraphics[scale=0.25]{../img/100m/100_xy_contorno_malla}}
+\caption{Mallado generada para \emph{G1}- Vista plano XY}
+\label{100_xy_contorno_malla}
+\end{figure}
+\end{center}\end{frame}
+%
+\begin{frame}{Malla para G2}\begin{center}
+\begin{figure}[tbhp]
+\centerline{\includegraphics[scale=0.25]{../img/200m/200_xy_contorno_malla}}
+\caption{Mallado generada para \emph{G2}- Vista plano XY}
+\label{200_xy_contorno_malla}
+\end{figure}
+\end{center}\end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Ejecución}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Resultados}
-%
-\subsection{Resultados para G1}
-\begin{frame}{Armado de la base de datos}
-%  \begin{itemize}
-%  \item Imágenes de 640x480
-%  \item Obtenidas con celular
-%  \item Diferentes condiciones de iluminación: día, noche, interiores
-%  \end{itemize}
+\begin{frame}
+\begin{itemize}
+\item 1000 pasos
+\item $\Delta t=10~[s]$
+\item 2 h., 46 m., 40 seg.
+\end{itemize}
 \end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Resultados}
+%%
+%\subsection{Resultados para G1}
+%%
+%\begin{frame}{Vectores de velocidad}\begin{center}
+%\begin{figure}[tbhp]
+%\centerline{\includegraphics[scale=0.3]{../img/100m/resul/100_xy_vectores}
+%\caption{Vectores para \emph{G1}- Vista plano XY}
+%\label{100_xy_vectores}
+%\end{figure}
+%\end{center}\end{frame}
+%%
+%\begin{frame}{Presión}\begin{center}
+%\begin{figure}[tbhp]
+%        \label{100_XZ_presion_corte_centro_pozo1}         %% Etiqueta para la primera subfigura
+%        \includegraphics[scale=0.4]{../img/100m/resul/100_XZ_presion_corte_centro_pozo1}
+%\end{figure}
+%\end{center}\end{frame}
+%%
+%\begin{frame}\begin{center}
+%\begin{figure}
+%        \label{100_XZ_presion_corte_centro_pozo2}         %% Etiqueta para la segunda subfigura
+%        \includegraphics[scale=0.4]{../img/100m/resul/100_XZ_presion_corte_centro_pozo2}
+%    \caption{Corte a través del centro de ambos pozos para \emph{G1} - Vista en el plano XZ - (\ref{100_XZ_presion_corte_centro_pozo1}) Presión pozo 1. - (\ref{100_XZ_presion_corte_centro_pozo2})  Presión pozo 2.}
+%\end{figure}
+%\end{center}
+%\end{frame}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Resultados para G2}
 %
-%\subsection{Conjunto de Imágenes}
-%\begin{frame}{Base de datos}
-%  \includegraphics[width=10cm]{../img/confinado}
-%\end{frame}
-%%
-%\begin{frame}{Imágenes de prueba (validación)}
-%  \includegraphics[width=10cm]{../img/confinado}
-%\end{frame}
-%
-%\subsection{Sólo con técnica de T. de Hough}
 \begin{frame}{Obtención de parámetros óptimos para Hough}
-%  Determinación de umbral y cantidad de máximos a utilizar
-%  \begin{center}
-%    \includegraphics[width=9cm]{../img/confinado}
-%  \end{center}
+%
 \end{frame}
-%
-%\subsection{Sólo con técnica de histograma}
-\begin{frame}{Prueba del método}
-%Se generan 3 particiones con 5 etiquetas c/u y se prueba:
-%  \begin{itemize}
-%  \item Utilizando la técnica de Hough sola
-%  \item Utilizando la técnica de histogramas
-%  \item Utilizando Hough e histogramas con igual ponderación
-%  \end{itemize}
-%También se prueba para la base de datos completa
-\end{frame}
-%
-%\subsection{Cómo se hicieron?}
-\begin{frame}{Procedimiento}
-%  \begin{center}
-%    \includegraphics[width=10cm]{../img/confinado}
-%  \end{center}
-\end{frame}
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Resultados}
-\begin{frame}{Resultados}
-%  Se considera la tasa de error según:
-%  \begin{equation*}
-%    E_{\%}=100\cdot\frac{\T{número de errores}}{\T{número de pruebas}},
-%  \end{equation*}
-%
-%  Tasas de error para las técnicas de extracción de características
-%  \begin{center}\begin{tabular}{ccc}
-%      \hline \emph{{Técnica}} & \emph{5 etiquetas} & \emph{15 etiquetas}\\
-%      \hline Histogramas & 0\% & 0\%\\
-%      \hline Hough & 35.5\% & 60.43\%\\
-%      \hline Ambas & 2.22\% & 4.17\%\\
-%      \hline
-%  \end{tabular}\end{center}
-\end{frame}
-%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusiones}
 \begin{frame}{Conclusiones}
@@ -231,7 +453,7 @@ Simular el flujo, en un medio poroso (acuífero confinado, homogéneo e isótrop
 %  \end{itemize}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
+\begin{frame}{d}
 %  \begin{itemize}
 %  \item<1-1> ¿Preguntas?
 %  \item<2-2> ¡Muchas gracias!
