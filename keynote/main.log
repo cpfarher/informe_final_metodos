@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.8.26)  13 SEP 2010 19:07
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.8.26)  13 SEP 2010 19:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1692,7 +1692,7 @@ Overfull \vbox (6.67792pt too high) detected at line 736
 Here is how much of TeX's memory you used:
  14558 strings out of 494999
  258149 string characters out of 1180816
- 405436 words of memory out of 3000000
+ 405430 words of memory out of 3000000
  17075 multiletter control sequences out of 15000+50000
  58703 words of font info for 118 fonts, out of 3000000 for 9000
  54 hyphenation exceptions out of 8191
@@ -1707,7 +1707,7 @@ sr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-te
 xlive/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texmf-texlive/fonts/type
 1/urw/symbol/usyr.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.p
 fb>
-Output written on main.pdf (66 pages, 2178242 bytes).
+Output written on main.pdf (66 pages, 2178261 bytes).
 PDF statistics:
  6531 PDF objects out of 7423 (max. 8388607)
  177 named destinations out of 1000 (max. 500000)
