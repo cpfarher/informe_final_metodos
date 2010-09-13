@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.8.26)  13 SEP 2010 17:26
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.8.26)  13 SEP 2010 19:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -946,30 +946,30 @@ Package: beamerinnerthemerounded 2007/01/28  (rcs-revision 1.5)
 )
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\\' on input line 27.
+(hyperref)                removing `\\' on input line 28.
 
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/pzccm/m/n on input line 31.
-LaTeX Font Info:    Try loading font information for OMS+pzccm on input line 31
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/pzccm/m/n on input line 32.
+LaTeX Font Info:    Try loading font information for OMS+pzccm on input line 32
 .
  (/usr/share/texmf-texlive/tex/latex/psnfss/omspzccm.fd
 File: omspzccm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/pzccm.
 )
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
 
 (/usr/share/texmf/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1025,7 +1025,7 @@ driver: pdftex
 
 (1in=72.27pt, 1cm=28.45pt)
 -----------------------
-Package hyperref Info: Link coloring OFF on input line 31.
+Package hyperref Info: Link coloring OFF on input line 32.
 (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 
@@ -1034,8 +1034,8 @@ Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
 \c@section@level=\count159
 )
-LaTeX Info: Redefining \ref on input line 31.
-LaTeX Info: Redefining \pageref on input line 31.
+LaTeX Info: Redefining \ref on input line 32.
+LaTeX Info: Redefining \pageref on input line 32.
  (./main.out)
 (./main.out)
 \@outlinefile=\write4
@@ -1043,68 +1043,68 @@ LaTeX Info: Redefining \pageref on input line 31.
 
 \AtBeginShipoutBox=\box56
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/ptmcm/m/n --> OT1/cmss/m/n on input line 31.
+(Font)                  OT1/ptmcm/m/n --> OT1/cmss/m/n on input line 32.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/ptmcm/m/n --> OT1/cmss/bx/n on input line 31.
+(Font)                  OT1/ptmcm/m/n --> OT1/cmss/bx/n on input line 32.
 \symnumbers=\mathgroup9
 \sympureletters=\mathgroup10
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/ptm/m/n on input line 31.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 31.
+(Font)                  OT1/cmss/m/n --> OT1/ptm/m/n on input line 32.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 32.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/ptm/bx/n --> OT1/phv/bx/n on input line 31.
+(Font)                  OT1/ptm/bx/n --> OT1/phv/bx/n on input line 32.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/ptm/bx/n --> OT1/phv/bx/n on input line 31.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 31.
+(Font)                  OT1/ptm/bx/n --> OT1/phv/bx/n on input line 32.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 32.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/phv/m/n on input line 31.
+(Font)                  OT1/cmss/m/n --> OT1/phv/m/n on input line 32.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/phv/m/n on input line 31.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 31.
+(Font)                  OT1/cmss/bx/n --> OT1/phv/m/n on input line 32.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 32.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/ptm/m/it --> OT1/phv/m/it on input line 31.
+(Font)                  OT1/ptm/m/it --> OT1/phv/m/it on input line 32.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/ptm/m/it --> OT1/phv/m/it on input line 31.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 31.
+(Font)                  OT1/ptm/m/it --> OT1/phv/m/it on input line 32.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 32.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/pcr/m/n on input line 31.
+(Font)                  OT1/cmtt/m/n --> OT1/pcr/m/n on input line 32.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/pcr/m/n on input line 31.
+(Font)                  OT1/cmtt/m/n --> OT1/pcr/m/n on input line 32.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/phv/m/n --> OT1/phv/bx/n on input line 31.
+(Font)                  OT1/phv/m/n --> OT1/phv/bx/n on input line 32.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/phv/m/it --> OT1/phv/bx/it on input line 31.
+(Font)                  OT1/phv/m/it --> OT1/phv/bx/it on input line 32.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/ptm/bx/n on input line 31.
+(Font)                  OT1/cmss/bx/n --> OT1/ptm/bx/n on input line 32.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/phv/bx/n --> OT1/phv/bx/n on input line 31.
+(Font)                  OT1/phv/bx/n --> OT1/phv/bx/n on input line 32.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/phv/m/n --> OT1/phv/bx/n on input line 31.
+(Font)                  OT1/phv/m/n --> OT1/phv/bx/n on input line 32.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/phv/m/it --> OT1/phv/bx/it on input line 31.
+(Font)                  OT1/phv/m/it --> OT1/phv/bx/it on input line 32.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/pcr/m/n --> OT1/pcr/bx/n on input line 31.
+(Font)                  OT1/pcr/m/n --> OT1/pcr/bx/n on input line 32.
 
 (/usr/share/texmf-texlive/tex/latex/translator/translator-theorem-dictionary-En
 glish.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 ) (./main.nav)
 LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
-(Font)              scaled to size 5.39996pt on input line 31.
+(Font)              scaled to size 5.39996pt on input line 32.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <6> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 31.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 32.
 LaTeX Font Info:    Font shape `OT1/phv/m/sl' will be
-(Font)              scaled to size 5.39996pt on input line 31.
+(Font)              scaled to size 5.39996pt on input line 32.
 LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
-(Font)              scaled to size 12.9599pt on input line 33.
+(Font)              scaled to size 12.9599pt on input line 34.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10.95> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 33.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 34.
 LaTeX Font Info:    Font shape `OT1/phv/m/sl' will be
-(Font)              scaled to size 9.85492pt on input line 33.
+(Font)              scaled to size 9.85492pt on input line 34.
 LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
-(Font)              scaled to size 7.19995pt on input line 33.
+(Font)              scaled to size 7.19995pt on input line 34.
 LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
-(Font)              scaled to size 3.59998pt on input line 33.
+(Font)              scaled to size 3.59998pt on input line 34.
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
@@ -1117,55 +1117,55 @@ LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
 
 ] [2
 
-] <../img/libre.png, id=291, 544.0325pt x 269.005pt>
+] <../img/libre.png, id=414, 544.0325pt x 269.005pt>
 File: ../img/libre.png Graphic file (type png)
  <use ../img/libre.png>
 [3
 
  <../img/libre.png (PNG copy)>]
-<../img/confinado.png, id=356, 542.025pt x 273.02pt>
+<../img/confinado.png, id=509, 542.025pt x 273.02pt>
 File: ../img/confinado.png Graphic file (type png)
 
 <use ../img/confinado.png> [4
 
  <../img/confinado.png (PNG copy)>]
-LaTeX Font Info:    Try loading font information for OML+ptmcm on input line 76
+LaTeX Font Info:    Try loading font information for OML+ptmcm on input line 77
 .
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/omlptmcm.fd
 File: omlptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ptmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+psycm on input line 76
+LaTeX Font Info:    Try loading font information for OMX+psycm on input line 77
 .
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/omxpsycm.fd
 File: omxpsycm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/psycm.
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 76.
+LaTeX Font Info:    Try loading font information for U+msa on input line 77.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 76.
+LaTeX Font Info:    Try loading font information for U+msb on input line 77.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 76.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 77.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 76.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 77.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 76.
-LaTeX Font Info:    Try loading font information for U+lasy on input line 76.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 77.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 77.
 
 (/usr/share/texmf-texlive/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <8> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 76.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 77.
 LaTeX Font Info:    Font shape `OT1/phv/m/sl' will be
-(Font)              scaled to size 7.19995pt on input line 76.
+(Font)              scaled to size 7.19995pt on input line 77.
  [5
 
 ] [6
@@ -1179,50 +1179,50 @@ LaTeX Font Info:    Font shape `OT1/phv/m/sl' will be
 ] [10
 
 ]
-<../img/darcy_grafica.png, id=811, 250.9375pt x 241.90375pt>
+<../img/darcy_grafica.png, id=1174, 250.9375pt x 241.90375pt>
 File: ../img/darcy_grafica.png Graphic file (type png)
 
 <use ../img/darcy_grafica.png>
 LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 145.
+(Font)              scaled to size 8.99994pt on input line 146.
 
-Overfull \vbox (2.65138pt too high) detected at line 145
+Overfull \vbox (2.65138pt too high) detected at line 146
  []
 
 [11
 
  <../img/darcy_grafica.png (PNG copy)>]
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 158.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 159.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 8.99994pt on input line 158.
+(Font)              scaled to size 8.99994pt on input line 159.
  [12
 
 ] [13
 
 ]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 198.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 199.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 198.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 199.
 LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
-(Font)              scaled to size 6.65994pt on input line 198.
+(Font)              scaled to size 6.65994pt on input line 199.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 198.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 199.
 LaTeX Font Info:    Font shape `OT1/phv/m/sl' will be
-(Font)              scaled to size 8.99994pt on input line 198.
+(Font)              scaled to size 8.99994pt on input line 199.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <7.4> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 198.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 199.
 LaTeX Font Info:    Font shape `OT1/phv/m/sl' will be
-(Font)              scaled to size 6.65994pt on input line 198.
+(Font)              scaled to size 6.65994pt on input line 199.
 
-Overfull \vbox (8.31998pt too high) detected at line 198
+Overfull \vbox (8.31998pt too high) detected at line 199
  []
 
 [14
 
 ]
-Overfull \vbox (8.31998pt too high) detected at line 228
+Overfull \vbox (8.31998pt too high) detected at line 229
  []
 
 [15
@@ -1232,24 +1232,24 @@ Overfull \vbox (8.31998pt too high) detected at line 228
 ] [17
 
 ]
-<../img/100m/100_perspectiva_material_agua.png, id=1263, 603.2136pt x 366.168pt
+<../img/100m/100_perspectiva_material_agua.png, id=1836, 603.2136pt x 366.168pt
 >
 File: ../img/100m/100_perspectiva_material_agua.png Graphic file (type png)
  <use ../img/100m/100_perspectiva_material_agua.png>
-Overfull \vbox (3.97263pt too high) detected at line 276
+Overfull \vbox (3.97263pt too high) detected at line 277
  []
 
 [18
 
  <../img/100m/100_perspectiva_material_agua.png (PNG copy)>]
-<../img/100m/100_condiciones_vfixwall_xz.png, id=1328, 1219.9176pt x 310.2792pt
+<../img/100m/100_condiciones_vfixwall_xz.png, id=1931, 1219.9176pt x 310.2792pt
 >
 File: ../img/100m/100_condiciones_vfixwall_xz.png Graphic file (type png)
  <use ../img/100m/100_condiciones_vfixwall_xz.png> [19
 
  <../img/100m/100_condiciones_vfixwall_xz.png (PNG copy)>]
 <../img/100m/100_condiciones_fijar_velocidad_perspectiva_interior_leyendas.png,
- id=1395, 763.1712pt x 213.9192pt>
+ id=2028, 763.1712pt x 213.9192pt>
 File: ../img/100m/100_condiciones_fijar_velocidad_perspectiva_interior_leyendas
 .png Graphic file (type png)
 
@@ -1259,14 +1259,14 @@ png> [20
  <../img/100m/100_condiciones_fijar_velocidad_perspectiva_interior_leyendas.png
 >]
 <../img/100m/100_condiciones_fijar_velocidad_fondo_pozos_arriba_izquierda.png, 
-id=1463, 784.3704pt x 539.616pt>
+id=2126, 784.3704pt x 539.616pt>
 File: ../img/100m/100_condiciones_fijar_velocidad_fondo_pozos_arriba_izquierda.
 png Graphic file (type png)
 
 <use ../img/100m/100_condiciones_fijar_velocidad_fondo_pozos_arriba_izquierda.p
 ng>
 <../img/100m/100_condiciones_fijar_velocidad_fondo_pozos_abajo_derecha.png, id=
-1464, 792.0792pt x 526.1256pt>
+2127, 792.0792pt x 526.1256pt>
 File: ../img/100m/100_condiciones_fijar_velocidad_fondo_pozos_abajo_derecha.png
  Graphic file (type png)
 
@@ -1276,66 +1276,66 @@ File: ../img/100m/100_condiciones_fijar_velocidad_fondo_pozos_abajo_derecha.png
  <../img/100m/100_condiciones_fijar_velocidad_fondo_pozos_arriba_izquierda.png 
 (PNG copy)> <../img/100m/100_condiciones_fijar_velocidad_fondo_pozos_abajo_dere
 cha.png (PNG copy)>]
-<../img/100m/100_condiciones_presion0.png, id=1529, 578.16pt x 317.988pt>
+<../img/100m/100_condiciones_presion0.png, id=2222, 578.16pt x 317.988pt>
 File: ../img/100m/100_condiciones_presion0.png Graphic file (type png)
 
 <use ../img/100m/100_condiciones_presion0.png> [22
 
  <../img/100m/100_condiciones_presion0.png (PNG copy)>]
-<../img/100m/100_perspec_tam_malla.png, id=1595, 923.1288pt x 522.2712pt>
+<../img/100m/100_perspec_tam_malla.png, id=2318, 923.1288pt x 522.2712pt>
 File: ../img/100m/100_perspec_tam_malla.png Graphic file (type png)
 
 <use ../img/100m/100_perspec_tam_malla.png>
-Overfull \vbox (18.29207pt too high) detected at line 331
+Overfull \vbox (18.29207pt too high) detected at line 332
  []
 
 [23
 
  <../img/100m/100_perspec_tam_malla.png (PNG copy)>]
-<../img/100m/100_xz_tam_malla.png, id=1660, 872.058pt x 302.5704pt>
+<../img/100m/100_xz_tam_malla.png, id=2413, 872.058pt x 302.5704pt>
 File: ../img/100m/100_xz_tam_malla.png Graphic file (type png)
 
 <use ../img/100m/100_xz_tam_malla.png> [24
 
  <../img/100m/100_xz_tam_malla.png (PNG copy)>] <../img/200m/200_xy_tam_malla.p
-ng, id=1725, 726.5544pt x 539.616pt>
+ng, id=2508, 726.5544pt x 539.616pt>
 File: ../img/200m/200_xy_tam_malla.png Graphic file (type png)
 
 <use ../img/200m/200_xy_tam_malla.png>
-Overfull \vbox (21.93459pt too high) detected at line 350
+Overfull \vbox (21.93459pt too high) detected at line 351
  []
 
 [25
 
  <../img/200m/200_xy_tam_malla.png (PNG copy)>]
-<../img/200m/200_xz_tam_malla.png, id=1791, 867.24pt x 423.984pt>
+<../img/200m/200_xz_tam_malla.png, id=2604, 867.24pt x 423.984pt>
 File: ../img/200m/200_xz_tam_malla.png Graphic file (type png)
 
 <use ../img/200m/200_xz_tam_malla.png> [26
 
  <../img/200m/200_xz_tam_malla.png (PNG copy)>]
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 372.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 373.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 9.85492pt on input line 372.
+(Font)              scaled to size 9.85492pt on input line 373.
  [27
 
 ]
-<../img/100m/100_xy_contorno_malla.png, id=1920, 595.5048pt x 510.708pt>
+<../img/100m/100_xy_contorno_malla.png, id=2793, 595.5048pt x 510.708pt>
 File: ../img/100m/100_xy_contorno_malla.png Graphic file (type png)
 
 <use ../img/100m/100_xy_contorno_malla.png>
-Overfull \vbox (14.56433pt too high) detected at line 380
+Overfull \vbox (14.56433pt too high) detected at line 381
  []
 
 [28
 
  <../img/100m/100_xy_contorno_malla.png (PNG copy)>]
-<../img/200m/200_xy_contorno_malla.png, id=1985, 666.8112pt x 533.8344pt>
+<../img/200m/200_xy_contorno_malla.png, id=2888, 666.8112pt x 533.8344pt>
 File: ../img/200m/200_xy_contorno_malla.png Graphic file (type png)
 
 <use ../img/200m/200_xy_contorno_malla.png>
-Overfull \vbox (20.34592pt too high) detected at line 388
+Overfull \vbox (20.34592pt too high) detected at line 389
  []
 
 [29
@@ -1343,45 +1343,340 @@ Overfull \vbox (20.34592pt too high) detected at line 388
  <../img/200m/200_xy_contorno_malla.png (PNG copy)>] [30
 
 ]
-<../img/100m/resul/100_xy_vectores.png, id=2113, 516.4896pt x 462.528pt>
+<../img/100m/resul/100_xy_vectores.png, id=3076, 516.4896pt x 462.528pt>
 File: ../img/100m/resul/100_xy_vectores.png Graphic file (type png)
 
 <use ../img/100m/resul/100_xy_vectores.png>
-Overfull \vbox (69.8931pt too high) detected at line 409
+Overfull \vbox (69.8931pt too high) detected at line 410
  []
 
 [31
 
  <../img/100m/resul/100_xy_vectores.png (PNG copy)>]
-<../img/100m/resul/100_XZ_presion_corte_centro_pozo1.png, id=2178, 615.7404pt x
+<../img/100m/resul/100_XZ_presion_corte_centro_pozo1.png, id=3171, 615.7404pt x
  453.8556pt>
 File: ../img/100m/resul/100_XZ_presion_corte_centro_pozo1.png Graphic file (typ
 e png)
  <use ../img/100m/resul/100_XZ_presion_corte_centro_pozo1.png>
-Overfull \vbox (21.04292pt too high) detected at line 418
+Overfull \vbox (21.04292pt too high) detected at line 419
  []
 
 [32
 
  <../img/100m/resul/100_XZ_presion_corte_centro_pozo1.png (PNG copy)>]
-<../img/100m/resul/100_XZ_presion_corte_centro_pozo2.png, id=2242, 754.4988pt x
+<../img/100m/resul/100_XZ_presion_corte_centro_pozo2.png, id=3265, 754.4988pt x
  441.3288pt>
 File: ../img/100m/resul/100_XZ_presion_corte_centro_pozo2.png Graphic file (typ
 e png)
  <use ../img/100m/resul/100_XZ_presion_corte_centro_pozo2.png>
-Overfull \vbox (17.28485pt too high) detected at line 427
+Overfull \vbox (17.28485pt too high) detected at line 428
  []
 
 [33
 
  <../img/100m/resul/100_XZ_presion_corte_centro_pozo2.png (PNG copy)>]
+<../img/100m/resul/100_XZ_velocidad_corte_centro_pozo1.png, id=3359, 570.4512pt
+ x 541.5432pt>
+File: ../img/100m/resul/100_XZ_velocidad_corte_centro_pozo1.png Graphic file (t
+ype png)
+ <use ../img/100m/resul/100_XZ_velocidad_corte_centro_pozo1.png>
+Overfull \vbox (20.27066pt too high) detected at line 437
+ []
+
 [34
 
-] [35
+ <../img/100m/resul/100_XZ_velocidad_corte_centro_pozo1.png (PNG copy)>]
+<../img/100m/resul/100_XZ_velocidad_corte_centro_pozo2.png, id=3453, 551.1792pt
+ x 481.8pt>
+File: ../img/100m/resul/100_XZ_velocidad_corte_centro_pozo2.png Graphic file (t
+ype png)
+ <use ../img/100m/resul/100_XZ_velocidad_corte_centro_pozo2.png>
+Overfull \vbox (5.33488pt too high) detected at line 446
+ []
 
-] [36
+[35
 
-] [37
+ <../img/100m/resul/100_XZ_velocidad_corte_centro_pozo2.png (PNG copy)>]
+<../img/100m/resul/100_XZ_presion_corte_horizontal.png, id=3547, 905.784pt x 23
+1.264pt>
+File: ../img/100m/resul/100_XZ_presion_corte_horizontal.png Graphic file (type 
+png)
+ <use ../img/100m/resul/100_XZ_presion_corte_horizontal.png> [36
+
+ <../img/100m/resul/100_XZ_presion_corte_horizontal.png (PNG copy)>]
+<../img/100m/resul/100_XZ_velocidad_corte_horizontal.png, id=3641, 911.5656pt x
+ 253.4268pt>
+File: ../img/100m/resul/100_XZ_velocidad_corte_horizontal.png Graphic file (typ
+e png)
+ <use ../img/100m/resul/100_XZ_velocidad_corte_horizontal.png>
+[37
+
+ <../img/100m/resul/100_XZ_velocidad_corte_horizontal.png (PNG copy)>]
+<../img/200m/resul/200_XZ_presion_corte_horizontal.png, id=3736, 1211.2452pt x 
+342.078pt>
+File: ../img/200m/resul/200_XZ_presion_corte_horizontal.png Graphic file (type 
+png)
+ <use ../img/200m/resul/200_XZ_presion_corte_horizontal.png> [38
+
+ <../img/200m/resul/200_XZ_presion_corte_horizontal.png (PNG copy)>]
+<../img/200m/resul/200_XZ_velocidad_corte_horizontal.png, id=3830, 1207.3908pt 
+x 342.078pt>
+File: ../img/200m/resul/200_XZ_velocidad_corte_horizontal.png Graphic file (typ
+e png)
+ <use ../img/200m/resul/200_XZ_velocidad_corte_horizontal.png>
+[39
+
+ <../img/200m/resul/200_XZ_velocidad_corte_horizontal.png (PNG copy)>]
+<../img/200m/perfiles.png, id=3924, 1165.956pt x 306.4248pt>
+File: ../img/200m/perfiles.png Graphic file (type png)
+
+<use ../img/200m/perfiles.png> [40
+
+ <../img/200m/perfiles.png (PNG copy)>]
+<../img/100m/grf/100_grafico_presion_x_centro_pozos_distancia0.png, id=4018, 12
+32.4444pt x 542.5068pt>
+File: ../img/100m/grf/100_grafico_presion_x_centro_pozos_distancia0.png Graphic
+ file (type png)
+
+<use ../img/100m/grf/100_grafico_presion_x_centro_pozos_distancia0.png>
+Overfull \vbox (20.51155pt too high) detected at line 504
+ []
+
+[41
+
+ <../img/100m/grf/100_grafico_presion_x_centro_pozos_distancia0.png>]
+<../img/100m/grf/100_grafico_velocidad_x_centro_pozos_distancia0.png, id=4112, 
+1232.4444pt x 542.5068pt>
+File: ../img/100m/grf/100_grafico_velocidad_x_centro_pozos_distancia0.png Graph
+ic file (type png)
+
+<use ../img/100m/grf/100_grafico_velocidad_x_centro_pozos_distancia0.png>
+Overfull \vbox (20.51155pt too high) detected at line 514
+ []
+
+[42
+
+ <../img/100m/grf/100_grafico_velocidad_x_centro_pozos_distancia0.png>]
+<../img/100m/grf/100_grafico_presion_x_centro_pozos_distancia05.png, id=4206, 1
+232.4444pt x 542.5068pt>
+File: ../img/100m/grf/100_grafico_presion_x_centro_pozos_distancia05.png Graphi
+c file (type png)
+
+<use ../img/100m/grf/100_grafico_presion_x_centro_pozos_distancia05.png>
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 524.
+LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <14.4> not available
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 524.
+LaTeX Font Info:    Font shape `OT1/phv/m/sl' will be
+(Font)              scaled to size 12.9599pt on input line 524.
+
+Overfull \vbox (20.51155pt too high) detected at line 524
+ []
+
+[43
+
+ <../img/100m/grf/100_grafico_presion_x_centro_pozos_distancia05.png>]
+<../img/100m/grf/100_grafico_velocidad_x_centro_pozos_distancia05.png, id=4302,
+ 1207.3908pt x 542.5068pt>
+File: ../img/100m/grf/100_grafico_velocidad_x_centro_pozos_distancia05.png Grap
+hic file (type png)
+
+<use ../img/100m/grf/100_grafico_velocidad_x_centro_pozos_distancia05.png>
+Overfull \vbox (20.51155pt too high) detected at line 534
+ []
+
+[44
+
+ <../img/100m/grf/100_grafico_velocidad_x_centro_pozos_distancia05.png>]
+<../img/100m/grf/100_grafico_presion_x_centro_pozos_distancia1.png, id=4396, 12
+32.4444pt x 542.5068pt>
+File: ../img/100m/grf/100_grafico_presion_x_centro_pozos_distancia1.png Graphic
+ file (type png)
+
+<use ../img/100m/grf/100_grafico_presion_x_centro_pozos_distancia1.png>
+Overfull \vbox (20.51155pt too high) detected at line 544
+ []
+
+[45
+
+ <../img/100m/grf/100_grafico_presion_x_centro_pozos_distancia1.png>]
+<../img/100m/grf/100_grafico_velocidad_x_centro_pozos_distancia1.png, id=4490, 
+1232.4444pt x 542.5068pt>
+File: ../img/100m/grf/100_grafico_velocidad_x_centro_pozos_distancia1.png Graph
+ic file (type png)
+
+<use ../img/100m/grf/100_grafico_velocidad_x_centro_pozos_distancia1.png>
+Overfull \vbox (20.51155pt too high) detected at line 554
+ []
+
+[46
+
+ <../img/100m/grf/100_grafico_velocidad_x_centro_pozos_distancia1.png>]
+[47
+
+] <../img/200m/resul/200_xy_vectores.png, id=4677, 693.792pt x 542.5068pt>
+File: ../img/200m/resul/200_xy_vectores.png Graphic file (type png)
+
+<use ../img/200m/resul/200_xy_vectores.png>
+Overfull \vbox (47.63849pt too high) detected at line 574
+ []
+
+[48
+
+ <../img/200m/resul/200_xy_vectores.png (PNG copy)>]
+<../img/200m/resul/200_XZ_presion_corte_centro_pozo1.png, id=4771, 583.9416pt x
+ 450.9648pt>
+File: ../img/200m/resul/200_XZ_presion_corte_centro_pozo1.png Graphic file (typ
+e png)
+ <use ../img/200m/resul/200_XZ_presion_corte_centro_pozo1.png>
+Overfull \vbox (20.17566pt too high) detected at line 583
+ []
+
+[49
+
+ <../img/200m/resul/200_XZ_presion_corte_centro_pozo1.png (PNG copy)>]
+<../img/200m/resul/200_XZ_presion_corte_centro_pozo2.png, id=4866, 621.522pt x 
+404.712pt>
+File: ../img/200m/resul/200_XZ_presion_corte_centro_pozo2.png Graphic file (typ
+e png)
+ <use ../img/200m/resul/200_XZ_presion_corte_centro_pozo2.png>
+Overfull \vbox (6.29973pt too high) detected at line 592
+ []
+
+[50
+
+ <../img/200m/resul/200_XZ_presion_corte_centro_pozo2.png (PNG copy)>]
+<../img/200m/resul/200_XZ_velocidad_corte_centro_pozo1.png, id=4960, 741.972pt 
+x 542.5068pt>
+File: ../img/200m/resul/200_XZ_velocidad_corte_centro_pozo1.png Graphic file (t
+ype png)
+ <use ../img/200m/resul/200_XZ_velocidad_corte_centro_pozo1.png>
+Overfull \vbox (20.51155pt too high) detected at line 601
+ []
+
+[51
+
+ <../img/200m/resul/200_XZ_velocidad_corte_centro_pozo1.png (PNG copy)>]
+<../img/200m/resul/200_XZ_velocidad_corte_centro_pozo2.png, id=5054, 666.8112pt
+ x 485.6544pt>
+File: ../img/200m/resul/200_XZ_velocidad_corte_centro_pozo2.png Graphic file (t
+ype png)
+ <use ../img/200m/resul/200_XZ_velocidad_corte_centro_pozo2.png>
+Overfull \vbox (6.2985pt too high) detected at line 610
+ []
+
+[52
+
+ <../img/200m/resul/200_XZ_velocidad_corte_centro_pozo2.png (PNG copy)>]
+File: ../img/200m/resul/200_XZ_presion_corte_horizontal.png Graphic file (type 
+png)
+
+<use ../img/200m/resul/200_XZ_presion_corte_horizontal.png> [53
+
+]
+File: ../img/200m/resul/200_XZ_velocidad_corte_horizontal.png Graphic file (typ
+e png)
+
+<use ../img/200m/resul/200_XZ_velocidad_corte_horizontal.png> [54
+
+]
+File: ../img/200m/resul/200_XZ_presion_corte_horizontal.png Graphic file (type 
+png)
+
+<use ../img/200m/resul/200_XZ_presion_corte_horizontal.png> [55
+
+]
+File: ../img/200m/resul/200_XZ_velocidad_corte_horizontal.png Graphic file (typ
+e png)
+
+<use ../img/200m/resul/200_XZ_velocidad_corte_horizontal.png> [56
+
+]
+File: ../img/200m/perfiles.png Graphic file (type png)
+
+<use ../img/200m/perfiles.png> [57
+
+]
+<../img/200m/grf/200_grafico_presion_x_centro_pozos_distancia0.png, id=5614, 12
+32.4444pt x 542.5068pt>
+File: ../img/200m/grf/200_grafico_presion_x_centro_pozos_distancia0.png Graphic
+ file (type png)
+
+<use ../img/200m/grf/200_grafico_presion_x_centro_pozos_distancia0.png>
+Overfull \vbox (20.51155pt too high) detected at line 668
+ []
+
+[58
+
+ <../img/200m/grf/200_grafico_presion_x_centro_pozos_distancia0.png>]
+<../img/200m/grf/200_grafico_velocidad_x_centro_pozos_distancia0.png, id=5708, 
+1232.4444pt x 542.5068pt>
+File: ../img/200m/grf/200_grafico_velocidad_x_centro_pozos_distancia0.png Graph
+ic file (type png)
+
+<use ../img/200m/grf/200_grafico_velocidad_x_centro_pozos_distancia0.png>
+Overfull \vbox (20.51155pt too high) detected at line 678
+ []
+
+[59
+
+ <../img/200m/grf/200_grafico_velocidad_x_centro_pozos_distancia0.png>]
+<../img/200m/grf/200_grafico_presion_x_centro_pozos_distancia05.png, id=5802, 1
+232.4444pt x 542.5068pt>
+File: ../img/200m/grf/200_grafico_presion_x_centro_pozos_distancia05.png Graphi
+c file (type png)
+
+<use ../img/200m/grf/200_grafico_presion_x_centro_pozos_distancia05.png>
+Overfull \vbox (20.51155pt too high) detected at line 688
+ []
+
+[60
+
+ <../img/200m/grf/200_grafico_presion_x_centro_pozos_distancia05.png>]
+<../img/200m/grf/200_grafico_velocidad_x_centro_pozos_distancia05.png, id=5896,
+ 1232.4444pt x 542.5068pt>
+File: ../img/200m/grf/200_grafico_velocidad_x_centro_pozos_distancia05.png Grap
+hic file (type png)
+
+<use ../img/200m/grf/200_grafico_velocidad_x_centro_pozos_distancia05.png>
+Overfull \vbox (20.51155pt too high) detected at line 698
+ []
+
+[61
+
+ <../img/200m/grf/200_grafico_velocidad_x_centro_pozos_distancia05.png>]
+<../img/200m/grf/200_grafico_presion_x_centro_pozos_distancia1.png, id=5991, 12
+32.4444pt x 542.5068pt>
+File: ../img/200m/grf/200_grafico_presion_x_centro_pozos_distancia1.png Graphic
+ file (type png)
+
+<use ../img/200m/grf/200_grafico_presion_x_centro_pozos_distancia1.png>
+Overfull \vbox (20.51155pt too high) detected at line 708
+ []
+
+[62
+
+ <../img/200m/grf/200_grafico_presion_x_centro_pozos_distancia1.png>]
+<../img/200m/grf/200_grafico_velocidad_x_centro_pozos_distancia1.png, id=6085, 
+1232.4444pt x 542.5068pt>
+File: ../img/200m/grf/200_grafico_velocidad_x_centro_pozos_distancia1.png Graph
+ic file (type png)
+
+<use ../img/200m/grf/200_grafico_velocidad_x_centro_pozos_distancia1.png>
+Overfull \vbox (20.51155pt too high) detected at line 718
+ []
+
+[63
+
+ <../img/200m/grf/200_grafico_velocidad_x_centro_pozos_distancia1.png>]
+Overfull \vbox (6.67792pt too high) detected at line 736
+ []
+
+[64
+
+] [65
+
+] [66
 
 ]
 \tf@nav=\write5
@@ -1395,25 +1690,26 @@ Overfull \vbox (17.28485pt too high) detected at line 427
 
  (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 14296 strings out of 494999
- 249633 string characters out of 1180816
- 363253 words of memory out of 3000000
- 16905 multiletter control sequences out of 15000+50000
- 50862 words of font info for 103 fonts, out of 3000000 for 9000
+ 14558 strings out of 494999
+ 258149 string characters out of 1180816
+ 405436 words of memory out of 3000000
+ 17075 multiletter control sequences out of 15000+50000
+ 58703 words of font info for 118 fonts, out of 3000000 for 9000
  54 hyphenation exceptions out of 8191
  45i,19n,57p,336b,742s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/shar
 e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-tex
 live/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/
 type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-texlive/fonts/type1/publi
-c/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhv
-b8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/sha
-re/texmf-texlive/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texmf-texlive
-/fonts/type1/urw/symbol/usyr.pfb></usr/share/texmf-texlive/fonts/type1/urw/time
-s/utmri8a.pfb>
-Output written on main.pdf (37 pages, 918666 bytes).
+c/amsfonts/cm/cmss12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
+cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvb8a.pfb></u
+sr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-te
+xlive/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texmf-texlive/fonts/type
+1/urw/symbol/usyr.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.p
+fb>
+Output written on main.pdf (66 pages, 2178242 bytes).
 PDF statistics:
- 2618 PDF objects out of 2984 (max. 8388607)
- 118 named destinations out of 1000 (max. 500000)
- 287 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6531 PDF objects out of 7423 (max. 8388607)
+ 177 named destinations out of 1000 (max. 500000)
+ 415 words of extra memory for PDF output out of 10000 (max. 10000000)
 

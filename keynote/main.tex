@@ -16,6 +16,7 @@
 %\usetheme{Montpellier}
 %\usetheme{Goettingen}
 \usecolortheme{orchid}
+%\usecolortheme{fly}
 %\usecolortheme{albatross}
 \useinnertheme{rounded}
 %
@@ -408,7 +409,7 @@ V fixWall
 \end{center}
 \end{frame}
 %
-\begin{frame}{Presión}
+\begin{frame}{Corte por el centro de los pozos}
 \begin{center}
 \begin{figure}[htbp]
 \centerline{\includegraphics[scale=0.3]{../img/100m/resul/100_XZ_presion_corte_centro_pozo1}}
@@ -417,7 +418,7 @@ V fixWall
 \end{center}
 \end{frame}
 %
-\begin{frame}{Presión}
+\begin{frame}{Corte por el centro de los pozos}
 \begin{center}
 \begin{figure}[htbp]
 \centerline{\includegraphics[scale=0.3]{../img/100m/resul/100_XZ_presion_corte_centro_pozo2}}
@@ -425,39 +426,333 @@ V fixWall
 \end{figure}
 \end{center}
 \end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Resultados para G2}
 %
-\begin{frame}{Obtención de parámetros óptimos para Hough}
-%
+\begin{frame}{Corte por el centro de los pozos}
+\begin{center}
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.25]{../img/100m/resul/100_XZ_velocidad_corte_centro_pozo1}}
+\caption{Módulo de velocidad pozo 1}
+\end{figure}
+\end{center}
 \end{frame}
+%
+\begin{frame}{Corte por el centro de los pozos}
+\begin{center}
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.25]{../img/100m/resul/100_XZ_velocidad_corte_centro_pozo2}}
+\caption{Módulo de velocidad pozo 2}
+\end{figure}
+\end{center}
+\end{frame}
+%
+\begin{frame}{Corte transversal - H}
+\begin{center}
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.3]{../img/100m/resul/100_XZ_presion_corte_horizontal}}
+\caption{Corte en $(x_1,y_1,z_1)=(0,50,0)$ hasta $(x_2,y_2,z_2)=(100,50,0)$ - Vista en el plano XZ - Presión}
+\end{figure}
+\end{center}
+\end{frame}
+%
+\begin{frame}{Corte transversal - H}
+\begin{center}
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.3]{../img/100m/resul/100_XZ_velocidad_corte_horizontal}}
+\caption{Corte en $(x_1,y_1,z_1)=(0,50,0)$ hasta $(x_2,y_2,z_2)=(100,50,0)$ - Vista en el plano XZ - Módulo de Velocidad}
+\end{figure}
+\end{center}
+\end{frame}
+%
+\begin{frame}{Corte transversal - V}
+\begin{center}
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.3]{../img/200m/resul/200_XZ_presion_corte_horizontal}}
+\caption{Corte en $(x_1,y_1,z_1)=(50,0,0)$ hasta $(x_2,y_2,z_2)=(50,100,0)$ - Vista en el plano XZ - Presión}
+\end{figure}
+\end{center}
+\end{frame}
+%
+\begin{frame}{Corte transversal - V}
+\begin{center}
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.3]{../img/200m/resul/200_XZ_velocidad_corte_horizontal}}
+\caption{Corte en $(x_1,y_1,z_1)=(50,0,0)$ hasta $(x_2,y_2,z_2)=(50,100,0)$ - Vista en el plano XZ - Módulo de velocidad}
+\end{figure}
+\end{center}
+\end{frame}
+%
+\begin{frame}{Gráficas de borde}
+\begin{center}
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.3]{../img/200m/perfiles}}
+\end{figure}
+\end{center}
+\begin{itemize}
+\item \color{red} Linea roja: situada sobre la base de los pozos
+\item \color{green} Linea verde: situada a $0.5~[m]$ de la base de los pozos
+\item \color{black} Linea negra: situada a $1.0~[m]$ de la base de los pozos
+\end{itemize}
+\end{frame}
+%
+\begin{frame}{Gráficas de borde situada sobre la base de los pozos}
+\begin{center}
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.25]{../img/100m/grf/100_grafico_presion_x_centro_pozos_distancia0}}
+\caption{Presión}
+\end{figure}
+\end{center}
+\end{frame}
+%
+%
+\begin{frame}{Gráficas de borde situada sobre la base de los pozos}
+\begin{center}
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.25]{../img/100m/grf/100_grafico_velocidad_x_centro_pozos_distancia0}}
+\caption{Velocidad}
+\end{figure}
+\end{center}
+\end{frame}
+%
+%
+\begin{frame}{Gráficas de borde situada a $0.5[m]$ de la base de los pozos}
+\begin{center}
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.25]{../img/100m/grf/100_grafico_presion_x_centro_pozos_distancia05}}
+\caption{Presión}
+\end{figure}
+\end{center}
+\end{frame}
+%
+%
+\begin{frame}{Gráficas de borde situada a $0.5[m]$ de la base de los pozos}
+\begin{center}
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.25]{../img/100m/grf/100_grafico_velocidad_x_centro_pozos_distancia05}}
+\caption{Velocidad}
+\end{figure}
+\end{center}
+\end{frame}
+%
+%
+\begin{frame}{Gráficas de borde situada a $1.0[m]$ de la base de los pozos}
+\begin{center}
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.25]{../img/100m/grf/100_grafico_presion_x_centro_pozos_distancia1}}
+\caption{Presión}
+\end{figure}
+\end{center}
+\end{frame}
+%
+%
+\begin{frame}{Gráficas de borde situada a $1.0[m]$ de la base de los pozos}
+\begin{center}
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.25]{../img/100m/grf/100_grafico_velocidad_x_centro_pozos_distancia1}}
+\caption{Velocidad}
+\end{figure}
+\end{center}
+\end{frame}
+%
+\begin{frame}
+\begin{itemize}
+\item a medida que se aleja de las bases de los pozos, módulo de velocidad disminuye y  la presión aumenta
+\item depresión mayor en el pozo 1 que en la base del pozo 2 $\rightarrow$ velocidades de los pozos
+\item no hay interacción notable entre los pozos $\rightarrow$ Flujo laminar y tipo de medio poroso.
+\end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\subsection{Resultados para G2}
+\begin{frame}{Vectores de velocidad}
+\begin{center}
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.3]{../img/200m/resul/200_xy_vectores}}
+\caption{Vectores para \emph{G2}- Vista plano XY}
+\end{figure}
+\end{center}
+\end{frame}
+%
+\begin{frame}{Corte por el centro de los pozos}
+\begin{center}
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.3]{../img/200m/resul/200_XZ_presion_corte_centro_pozo1}}
+\caption{Presión pozo 1}
+\end{figure}
+\end{center}
+\end{frame}
+%
+\begin{frame}{Corte por el centro de los pozos}
+\begin{center}
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.3]{../img/200m/resul/200_XZ_presion_corte_centro_pozo2}}
+\caption{Presión pozo 2}
+\end{figure}
+\end{center}
+\end{frame}
+%
+\begin{frame}{Corte por el centro de los pozos}
+\begin{center}
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.25]{../img/200m/resul/200_XZ_velocidad_corte_centro_pozo1}}
+\caption{Módulo de velocidad pozo 1}
+\end{figure}
+\end{center}
+\end{frame}
+%
+\begin{frame}{Corte por el centro de los pozos}
+\begin{center}
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.25]{../img/200m/resul/200_XZ_velocidad_corte_centro_pozo2}}
+\caption{Módulo de velocidad pozo 2}
+\end{figure}
+\end{center}
+\end{frame}
+%
+\begin{frame}{Corte transversal - H}
+\begin{center}
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.25]{../img/200m/resul/200_XZ_presion_corte_horizontal}}
+\caption{Corte en $(x_1,y_1,z_1)=(0,50,0)$ hasta $(x_2,y_2,z_2)=(100,50,0)$ - Vista en el plano XZ - Presión}
+\end{figure}
+\end{center}
+\end{frame}
+%
+\begin{frame}{Corte transversal - H}
+\begin{center}
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.25]{../img/200m/resul/200_XZ_velocidad_corte_horizontal}}
+\caption{Corte en $(x_1,y_1,z_1)=(0,50,0)$ hasta $(x_2,y_2,z_2)=(100,50,0)$ - Vista en el plano XZ - Módulo de Velocidad}
+\end{figure}
+\end{center}
+\end{frame}
+%
+\begin{frame}{Corte transversal - V}
+\begin{center}
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.25]{../img/200m/resul/200_XZ_presion_corte_horizontal}}
+\caption{Corte en $(x_1,y_1,z_1)=(50,0,0)$ hasta $(x_2,y_2,z_2)=(50,100,0)$ - Vista en el plano XZ - Presión}
+\end{figure}
+\end{center}
+\end{frame}
+%
+\begin{frame}{Corte transversal - V}
+\begin{center}
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.25]{../img/200m/resul/200_XZ_velocidad_corte_horizontal}}
+\caption{Corte en $(x_1,y_1,z_1)=(50,0,0)$ hasta $(x_2,y_2,z_2)=(50,100,0)$ - Vista en el plano XZ - Módulo de velocidad}
+\end{figure}
+\end{center}
+\end{frame}
+%
+\begin{frame}{Gráficas de borde}
+\begin{center}
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.25]{../img/200m/perfiles}}
+\end{figure}
+\end{center}
+\begin{itemize}
+\item \color{red} Linea roja: situada sobre la base de los pozos
+\item \color{green} Linea verde: situada a $0.5~[m]$ de la base de los pozos
+\item \color{black} Linea negra: situada a $1.0~[m]$ de la base de los pozos
+\end{itemize}
+\end{frame}
+%
+\begin{frame}{Gráficas de borde situada sobre la base de los pozos}
+\begin{center}
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.25]{../img/200m/grf/200_grafico_presion_x_centro_pozos_distancia0}}
+\caption{Presión}
+\end{figure}
+\end{center}
+\end{frame}
+%
+%
+\begin{frame}{Gráficas de borde situada sobre la base de los pozos}
+\begin{center}
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.25]{../img/200m/grf/200_grafico_velocidad_x_centro_pozos_distancia0}}
+\caption{Velocidad}
+\end{figure}
+\end{center}
+\end{frame}
+%
+%
+\begin{frame}{Gráficas de borde situada a $0.5[m]$ de la base de los pozos}
+\begin{center}
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.25]{../img/200m/grf/200_grafico_presion_x_centro_pozos_distancia05}}
+\caption{Presión}
+\end{figure}
+\end{center}
+\end{frame}
+%
+%
+\begin{frame}{Gráficas de borde situada a $0.5[m]$ de la base de los pozos}
+\begin{center}
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.25]{../img/200m/grf/200_grafico_velocidad_x_centro_pozos_distancia05}}
+\caption{Velocidad}
+\end{figure}
+\end{center}
+\end{frame}
+%
+%
+\begin{frame}{Gráficas de borde situada a $1.0[m]$ de la base de los pozos}
+\begin{center}
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.25]{../img/200m/grf/200_grafico_presion_x_centro_pozos_distancia1}}
+\caption{Presión}
+\end{figure}
+\end{center}
+\end{frame}
+%
+%
+\begin{frame}{Gráficas de borde situada a $1.0[m]$ de la base de los pozos}
+\begin{center}
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.25]{../img/200m/grf/200_grafico_velocidad_x_centro_pozos_distancia1}}
+\caption{Velocidad}
+\end{figure}
+\end{center}
+\end{frame}
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusiones}
 \begin{frame}{Conclusiones}
-%  \begin{itemize}
-%  \item Satisfactorio coinciderando restricciones
-%  \item Optimización para dispositivos móviles
-%  \item Preprocesamiento de la imágen
-%  \end{itemize}
+\begin{itemize}
+\item Se integraron los conocimientos incorporados en la materia \emph{``Métodos numéricos y simulación''}
+\item Tener dos geometrías de diferentes dimensiones, permitió comparar resultados
+\item Verificar la interacción (o no) entre las bombas de succión de agua en un acuífero 
+\begin{itemize}
+\item confinado, 
+\item homogéneo e 
+\item isótropo
+\end{itemize}
+con un fluido laminar en un  medio poroso.
+\item Se supo identificar los datos y condiciones del problema para aplicarlos al software.
+\item Se adquirieron conocimientos básicos de Hidrología
+\end{itemize}
 \end{frame}
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Trabajos futuros}
 \begin{frame}{Trabajos futuros}
-%  \begin{itemize}
-%  \item Preprocesamiento
-%  \item Filtrado homomórfico
-%  \item Warping
-%  \item Optimización de la implementación
-%  \item Hough local
-%  \end{itemize}
+  \begin{itemize}
+  \item Cambiar características del medio poroso - Transmisividad
+  \item Agregado de pozos
+  \item Tamaño del dominio
+  \end{itemize}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{d}
-%  \begin{itemize}
-%  \item<1-1> ¿Preguntas?
-%  \item<2-2> ¡Muchas gracias!
-%  \end{itemize}
+\section{Bibliografía}
+\begin{frame}{Bibliografía}
+  \begin{itemize}
+  \item GID The Personal Pre and Post Processor. Ayuda de \textbf{GID 9.04}. http://gid.cimne.upc.es/. 13 de septiembre de 2010, 18:00 hs. 
+  \item Compass Ingeniería y Sistemas. Ayuda de \textbf{Tdyn3d 5.9.0.11}. http://www.compassis.com/compass. 13 de septiembre de 2010, 18:00 hs.
+  \item Apuntes de la materia \textbf{``Métodos numéricos y simulación''}, II-FICH-UNL.
+  \item Zienkiewicz,  O.C. y Morgan K. \textbf{Finite Elements and Approximation}. John Wiley \& Sons Australia, Limited. 1983.
+  \item Ven Te Chow, David R. Maidment, Larry W. Mays. \textbf{Hidrología aplicada}. McGRAW-HILL. Enero del 2000.
+ \end{itemize}
 \end{frame}
 \end{document}
